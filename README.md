@@ -552,6 +552,22 @@ hands-on work.
 6. **`/qa-plan` + `/regression-suite`** so the refactor doesn't quietly break what
    already worked.
 
+**You have an existing native-engine game (Godot / Unity / Unreal)**
+
+Same flow — only the engine specialist changes:
+
+1. Install + `claude`, then **`/setup-engine godot 4.6`** (or `unity` / `unreal`).
+   This matters most for native engines: it pins your version and pulls
+   version-aware reference docs, so the specialist won't suggest APIs from a
+   different engine release (e.g. Godot 4.4→4.6 changed a lot post-training-cutoff).
+2. **`/reverse-document`** — reconstruct the GDD + architecture from your existing
+   scripts and scenes (`.gd`/`.cs`, `.unity`/prefabs, `.cpp`/Blueprints).
+3. **`/adopt`** → migration plan, then **`/create-stories` → `/dev-story` →
+   `/code-review` → `/story-done`**. `/dev-story` routes to the right specialist
+   set automatically: `godot-specialist` (+ `godot-gdscript`/`godot-csharp`/
+   `godot-shader`), `unity-specialist` (+ DOTS / Shaders / Addressables / UI
+   Toolkit), or `unreal-specialist` (+ GAS / Blueprints / Replication / UMG).
+
 The throughline: **docs first (even reverse-engineered), then incremental stories,
 with version-pinned engine specialists and reviewed against a control manifest** —
 that's "the proper way," applied to code that already exists.
