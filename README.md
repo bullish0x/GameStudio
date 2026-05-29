@@ -399,14 +399,36 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
 
 ### Existing project
 
-Bring the studio scaffolding into your repo, then let it audit what you already have:
+Bring the studio scaffolding into your repo, then let it audit what you already have.
+
+> ⚠️ **If your project already has a `.claude/` folder, do NOT blindly copy over it** —
+> you'd clobber your own `settings.json` (hooks/permissions) and any existing
+> agents/skills. Back it up first and **merge `settings.json` by hand**.
 
 ```bash
 # from inside your existing project
-git clone https://github.com/bullish0x/gamestudio.git /tmp/gs
-cp -r /tmp/gs/.claude /tmp/gs/CLAUDE.md .                  # the studio brain
-cp -rn /tmp/gs/docs /tmp/gs/design /tmp/gs/production .    # structure (-n = never overwrite yours)
-rm -rf /tmp/gs
+git clone --depth 1 https://github.com/bullish0x/gamestudio.git /tmp/gs
+
+# back up your existing Claude config if you have one
+[ -d .claude ] && cp -r .claude .claude.backup
+
+# copy the studio brain WITHOUT overwriting your own files (-n = never clobber)
+mkdir -p .claude
+cp -rn /tmp/gs/.claude/. .claude/
+cp -n  /tmp/gs/CLAUDE.md .
+cp -rn /tmp/gs/docs /tmp/gs/design /tmp/gs/production .
+# NOTE: /tmp/gs is kept on purpose — you'll merge settings.json from it next.
+```
+
+Because of `-n`, **your existing `.claude/settings.json` is preserved** (the
+studio's copy is skipped). To pick up the studio's hooks/permissions, diff your
+file against the studio's and **merge the `hooks` and `permissions` blocks into
+yours** — don't replace the whole file:
+
+```bash
+# (skip this if you had no prior .claude/settings.json — the studio's is already in place)
+diff .claude/settings.json /tmp/gs/.claude/settings.json   # then merge by hand
+rm -rf /tmp/gs .claude.backup                              # clean up once you're satisfied
 claude
 ```
 
