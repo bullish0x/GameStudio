@@ -209,15 +209,15 @@ Type `/` in Claude Code to access all 183 skills:
 **Team Orchestration** (coordinate multiple agents on a single feature)
 | Command | What it does |
 |---------|--------------|
-| `/team-combat` | game-designer + gameplay-programmer + ai-programmer + technical-artist + sound-designer + qa-tester |
-| `/team-narrative` | narrative-director + writer + world-builder + level-designer |
-| `/team-ui` | ux-designer + ui-programmer + art-director + accessibility-specialist |
-| `/team-release` | release-manager + qa-lead + devops-engineer + producer |
-| `/team-polish` | performance-analyst + technical-artist + sound-designer + qa-tester |
-| `/team-audio` | audio-director + sound-designer + technical-artist + gameplay-programmer |
-| `/team-level` | level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester |
-| `/team-live-ops` | live-ops-designer + economy-designer + community-manager + analytics-engineer |
-| `/team-qa` | qa-lead + qa-tester + gameplay-programmer + producer |
+| `/team-combat` | Game-designer + gameplay-programmer + ai-programmer + technical-artist + sound-designer + qa-tester |
+| `/team-narrative` | Narrative-director + writer + world-builder + level-designer |
+| `/team-ui` | Ux-designer + ui-programmer + art-director + accessibility-specialist |
+| `/team-release` | Release-manager + qa-lead + devops-engineer + producer |
+| `/team-polish` | Performance-analyst + technical-artist + sound-designer + qa-tester |
+| `/team-audio` | Audio-director + sound-designer + technical-artist + gameplay-programmer |
+| `/team-level` | Level-designer + narrative-director + world-builder + art-director + systems-designer + qa-tester |
+| `/team-live-ops` | Live-ops-designer + economy-designer + community-manager + analytics-engineer |
+| `/team-qa` | Qa-lead + qa-tester + gameplay-programmer + producer |
 
 **Web · 3D Rendering (Three.js)**
 | Command | What it does |
@@ -242,10 +242,10 @@ Type `/` in Claude Code to access all 183 skills:
 | `/threejs-instancing-advanced` | Advanced instancing techniques in Three.js including InstancedMesh, dynamic updates, LOD instancing, frustum culling, and custom attributes |
 | `/threejs-sprites` | Sprites and billboards in Three.js including sprite materials, texture atlases, sprite animation, and particle sprites |
 | `/threejs-best-practices` | Comprehensive best practices for Three.js development including optimization, architecture, debugging, and production deployment |
-| `/threejs-loaders` | Three.js asset loading - GLTF, textures, images, models, async patterns. Use when loading 3D models, textures, HDR environments, or managing loading progress. |
-| `/threejs-shaders` | Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials. |
-| `/threejs-postprocessing` | Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders. |
-| `/threejs-animation` | Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations. |
+| `/threejs-loaders` | Three.js asset loading - GLTF, textures, images, models, async patterns. |
+| `/threejs-shaders` | Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. |
+| `/threejs-postprocessing` | Three.js post-processing - EffectComposer, bloom, DOF, screen effects. |
+| `/threejs-animation` | Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. |
 
 **Web · React Three Fiber**
 | Command | What it does |
@@ -301,70 +301,70 @@ Type `/` in Claude Code to access all 183 skills:
 **Web · Foundations & 2D**
 | Command | What it does |
 |---------|--------------|
-| `/web-game-foundations` | Set browser-game architecture before implementation. Use when the user needs engine choice, simulation and render boundaries, input model, asset organization, or save/debug/performance strategy. |
-| `/phaser-2d-game` | Implement 2D browser games with Phaser. Use when the user wants a Phaser, TypeScript, and Vite stack for scenes, gameplay systems, cameras, sprite animation, and DOM-overlay HUD patterns. |
+| `/web-game-foundations` | Set browser-game architecture before implementation. |
+| `/phaser-2d-game` | Implement 2D browser games with Phaser. |
 
 
 **Web · PixiJS (2D interactive)**
 | Command | What it does |
 |---------|--------------|
-| `/pixi` | Use this skill first for ANY PixiJS v8 task; it routes to the right specialized skill for the job. Covers the full PixiJS surface: Application setup, the scene graph (Container, Sprite, Graphics, Text, Mesh, ParticleContainer, DOMContainer, GifSprite), rendering (WebGL/WebGPU/Canvas, render loop, custom shaders, filters, blend modes), assets, events, color, math, ticker, accessibility, performance, environments, migration from v7, and project scaffolding. Triggers on: pixi, pixi.js, pixijs, PixiJS, v8, Application, app.init, Sprite, Container, Graphics, Text, Mesh, ParticleContainer, DOMContainer, GifSprite, Assets, Ticker, renderer, WebGL, WebGPU, scene graph, filter, shader, blend mode, texture, BitmapText, create-pixi, how do I draw, how do I render, how do I animate in pixi. |
-| `/pixi-accessibility` | Use this skill when adding screen reader and keyboard navigation to PixiJS v8 apps. Covers AccessibilitySystem options (enabledByDefault, debug, activateOnTab, deactivateOnMouseMove), per-container accessibility properties, shadow DOM overlay, mobile touch-hook activation. Triggers on: accessibility, a11y, screen reader, ARIA, keyboard navigation, tab order, AccessibilitySystem, accessibleTitle, accessibleHint, tabIndex, accessibleChildren. |
-| `/pixi-application` | Use this skill when creating and configuring a PixiJS v8 Application. Covers new Application() + async app.init() options (width, height, background, antialias, resolution, autoDensity, preference, resizeTo, autoStart, sharedTicker, canvas, useBackBuffer, powerPreference, eventFeatures, accessibilityOptions, gcActive, bezierSmoothness, webgl/webgpu/canvasOptions per-renderer overrides), app.stage/renderer/canvas/screen/domContainerRoot access, ResizePlugin, TickerPlugin, CullerPlugin (cullable, cullArea), custom ApplicationPlugin creation via ExtensionType.Application, start/stop lifecycle, and app.destroy() with releaseGlobalResources. Triggers on: Application, app.init, app.stage, app.renderer, app.canvas, app.screen, app.domContainerRoot, ApplicationOptions, ApplicationPlugin, ExtensionType.Application, resizeTo, preference, autoStart, sharedTicker, useBackBuffer, powerPreference, skipExtensionImports, preferWebGLVersion, preserveDrawingBuffer, cullable, CullerPlugin, app.start, app.stop, app.destroy, releaseGlobalResources. |
-| `/pixi-assets` | Use this skill when loading and managing resources in PixiJS v8. Covers Assets.init, Assets.load/add/unload, bundles, manifests, background loading, onProgress, caching, spritesheets, video textures, web fonts, bitmap fonts, animated GIFs, compressed textures, SVG as texture or Graphics, resolution detection, per-asset data options, and forcing a specific loader with the parser field (for extension-less URLs). Triggers on: Assets, Assets.load, Assets.init, loadBundle, manifest, backgroundLoad, Spritesheet, Cache, LoadOptions, unload, parser, loadParser, loadWebFont, loadBitmapFont, loadVideoTextures, GifSource, VideoSourceOptions. |
-| `/pixi-blend-modes` | Use this skill when compositing display objects with blend modes in PixiJS v8. Covers standard modes (normal, add, multiply, screen, erase, min, max), advanced modes via pixi.js/advanced-blend-modes (color-burn, overlay, hard-light, etc.), batch-friendly ordering. Triggers on: blendMode, additive, multiply, screen, overlay, color-burn, color-dodge, advanced-blend-modes, glow, erase. |
-| `/pixi-color` | Use this skill when creating, converting, or manipulating colors in PixiJS v8. Covers Color class input formats (hex, CSS names, RGB/HSL objects, arrays, Uint8Array), conversion methods (toHex, toNumber, toArray, toRgba), component access, setAlpha/multiply/premultiply, Color.shared singleton. Triggers on: Color, ColorSource, hex, rgb, hsl, tint, premultiply, Color.shared, color conversion. |
-| `/pixi-core-concepts` | Use this skill when understanding how PixiJS v8 renders frames: the systems-and-pipes renderer, the render loop, and how the library adapts to different environments. Covers WebGLRenderer/WebGPURenderer/CanvasRenderer selection, renderer.render() pipeline, environment detection, and pointers to per-topic deep dives. Triggers on: renderer, WebGL, WebGPU, Canvas, render loop, render pipeline, systems, environments, autoDetectRenderer. |
-| `/pixi-create` | Use this skill when scaffolding a new PixiJS v8 project with the create-pixi CLI or adding PixiJS to an existing project. Covers npm/yarn/pnpm/bun create commands, interactive vs non-interactive flows, bundler vs creation template categories, available template presets (bundler-vite, bundler-webpack, bundler-esbuild, bundler-import-map, creation-web, framework-react, extension-default), Node version requirements, `npm install pixi.js` for existing projects, post-scaffold dev flow, and the Vite top-level-await production-build gotcha. Triggers on: create pixi.js, npm create, npm install pixi.js, scaffold, template, bundler-vite, bundler-webpack, creation-web, framework-react, new project, existing project, getting started, quick start. |
-| `/pixi-custom-rendering` | Use this skill when writing custom shaders, uniforms, filters, or batchers in PixiJS v8. Covers Shader.from({gl, gpu, resources}), GlProgram/GpuProgram, UniformGroup with typed uniforms (f32, vec2, mat4x4), UBO mode, textures as resources, custom Filter via Filter.from, GLSL ES 3.0 conventions (in/out, finalColor, texture()), uBackTexture sampling, pixi.js/unsafe-eval for strict CSP, custom Batcher via extensions. Triggers on: Shader, GlProgram, GpuProgram, UniformGroup, Batcher, Filter, Filter.from, GLSL, WGSL, UBO, uniform, custom shader, finalColor, uBackTexture, blendRequired, unsafe-eval. |
-| `/pixi-environments` | Use this skill when running PixiJS v8 outside a standard browser: Web Workers, OffscreenCanvas, Node/SSR, or CSP-restricted contexts. Covers DOMAdapter.set, BrowserAdapter, WebWorkerAdapter, custom Adapter interface, pixi.js/unsafe-eval for strict CSP. Triggers on: DOMAdapter, BrowserAdapter, WebWorkerAdapter, Web Worker, OffscreenCanvas, Node, headless, SSR, CSP, unsafe-eval, Adapter. |
-| `/pixi-events` | Use this skill when handling pointer, mouse, touch, or wheel input in PixiJS v8. Covers eventMode (none, passive, auto, static, dynamic), FederatedEvent types, propagation and capture phase, hitArea, interactiveChildren, cursor and cursorStyles, global move events for drag, eventFeatures config. Triggers on: eventMode, FederatedPointerEvent, pointerdown, click, tap, globalpointermove, drag, hitArea, cursor, stopPropagation. |
-| `/pixi-filters` | Use this skill when applying visual effects to PixiJS v8 containers via the filter pipeline. Covers built-in filters (AlphaFilter, BlurFilter, ColorMatrixFilter, DisplacementFilter, NoiseFilter), custom Filter.from() with GLSL/WGSL, options (resolution, padding, antialias, blendRequired), filterArea optimization, pixi-filters community package. Triggers on: filters, BlurFilter, ColorMatrixFilter, DisplacementFilter, NoiseFilter, Filter.from, GLSL filter, pixi-filters, filterArea. |
-| `/pixi-math` | Use this skill when working with coordinates, vectors, matrices, shapes, hit testing, or layout rectangles in PixiJS v8. Covers Point/ObservablePoint, Matrix (2D affine, decompose, apply, applyInverse), shapes (Rectangle, Circle, Ellipse, Polygon, RoundedRectangle, Triangle), Rectangle layout helpers (pad, fit, enlarge, ceil, scale, getBounds), strokeContains hit tests, Polygon isClockwise/containsPolygon, toGlobal/toLocal, PointData/PointLike/Size types, DEG_TO_RAD, and pixi.js/math-extras vector and intersection helpers. Triggers on: Point, ObservablePoint, Matrix, Rectangle, Circle, Polygon, Triangle, RoundedRectangle, toGlobal, toLocal, hitArea, strokeContains, pad, fit, enlarge, ceil, getBounds, containsRect, intersects, isClockwise, math-extras, lineIntersection, segmentIntersection, DEG_TO_RAD, PointData. |
-| `/pixi-migration-v8` | Use this skill when upgrading to PixiJS v8 from v7 or diagnosing broken v7 code after an upgrade. Covers async app.init, single pixi.js package (deprecated @pixi/* sub-packages), Graphics shape-then-fill, BaseTexture → TextureSource, shader/uniform rework, ParticleContainer+Particle, constructor options objects, DisplayObject removal, settings/utils removal, Ticker signature, events rewrite. Triggers on: migrate v7, v8 breaking changes, @pixi/ import, DisplayObject, beginFill, endFill, cacheAsBitmap, BaseTexture, deprecated. |
-| `/pixi-performance` | Use this skill when profiling or optimizing a PixiJS v8 app for FPS, draw calls, or GPU memory. Covers destroy patterns (cacheAsTexture(false), releaseGlobalResources), GCSystem and TextureGCSystem, PrepareSystem, object pooling, batching rules, BitmapText for dynamic text, culling (Culler, CullerPlugin, cullable, cullArea), resolution/antialias tradeoffs. Triggers on: FPS, jank, draw calls, batching, object pool, GCSystem, PrepareSystem, Culler, cacheAsTexture, memory leak, destroy patterns. |
-| `/pixi-scene-container` | Use this skill when grouping, positioning, or transforming display objects in PixiJS v8. Covers Container constructor options (isRenderGroup, sortableChildren, boundsArea), addChild/removeChild/addChildAt/swapChildren/setChildIndex, position/scale/rotation/pivot/skew/alpha/tint, getBounds/getGlobalPosition/toLocal/toGlobal, zIndex sorting, cullable, onRender per-frame callback, destroy. Triggers on: Container, addChild, removeChild, addChildAt, swapChildren, sortableChildren, zIndex, position, scale, rotation, pivot, getBounds, toGlobal, toLocal, onRender, destroy, constructor options, ContainerOptions. |
-| `/pixi-scene-core-concepts` | Use this skill when reasoning about the PixiJS v8 scene graph as a whole: how containers, leaves, transforms, and render order fit together. Covers leaf vs container distinction, local/world coordinates, culling, render groups, sortable children, masking, RenderLayer, constructor options shared by every scene node, and which leaf skill covers which display object. Triggers on: scene graph, display list, Container, Sprite, Graphics, Text, Mesh, ParticleContainer, DOMContainer, GifSprite, masking, render group, RenderLayer, world transform, constructor options, ContainerOptions. |
-| `/pixi-scene-dom-container` | Use this skill when overlaying HTML elements on the PixiJS v8 canvas. Covers DOMContainer with element, anchor, and scene-graph-driven CSS transforms, the pixi.js/dom side-effect import, DOMPipe registration, visibility sync, pointer-events handling. Triggers on: DOMContainer, pixi.js/dom, DOMPipe, HTML overlay, input on canvas, iframe overlay, DOMContainerOptions, element, anchor, constructor options. |
-| `/pixi-scene-gif` | Use this skill when displaying animated GIFs in PixiJS v8. Covers the pixi.js/gif side-effect import, Assets.load returning a GifSource, GifSprite playback (play/stop/currentFrame/animationSpeed), autoPlay/loop options, onComplete/onLoop/onFrameChange callbacks, GifSource sharing, clone, destroy. Triggers on: GifSprite, GifSource, pixi.js/gif, animationSpeed, currentFrame, autoPlay, onComplete, onFrameChange, constructor options, GifSpriteOptions. |
-| `/pixi-scene-graphics` | Use this skill when drawing vector shapes and paths in PixiJS v8. Covers the Graphics API: shape-then-fill methods (rect/circle/ellipse/poly/roundRect/star/regularPoly/roundPoly/roundShape/filletRect/chamferRect), path methods (moveTo/lineTo/bezierCurveTo/quadraticCurveTo/arc/arcTo/arcToSvg/closePath), fill/stroke/cut, holes, FillGradient (linear/radial), FillPattern, GraphicsContext sharing, svg import/export, containsPoint hit testing, cloning, clearing, bounds, fillStyle/strokeStyle, draw-time transforms (rotateTransform/scaleTransform/translateTransform/setTransform/save/restore), default styles, GraphicsPath reuse. Triggers on: Graphics, GraphicsContext, rect, circle, poly, roundRect, fill, stroke, cut, hole, beginHole, FillGradient, FillPattern, moveTo, bezierCurveTo, svg, graphicsContextToSvg, svg export, GraphicsOptions, containsPoint, clone, clear, bounds, rotateTransform, translateTransform, setFillStyle, setStrokeStyle, GraphicsPath. |
-| `/pixi-scene-mesh` | Use this skill when rendering custom geometry in PixiJS v8. Covers Mesh with MeshGeometry (positions, uvs, indices, topology), MeshSimple for per-frame vertex animation, MeshPlane for subdivided deformation, MeshRope for path-following textures, PerspectiveMesh for 2.5D corners. Triggers on: Mesh, MeshGeometry, MeshSimple, MeshPlane, MeshRope, PerspectiveMesh, positions, uvs, indices, topology, setCorners, constructor options, MeshOptions, MeshPlaneOptions, MeshRopeOptions, SimpleMeshOptions, PerspectivePlaneOptions. |
-| `/pixi-scene-particle-container` | Use this skill when rendering thousands of lightweight sprites in PixiJS v8. Covers ParticleContainer with Particle instances, addParticle/removeParticle, particleChildren array, dynamicProperties (vertex, position, rotation, uvs, color), boundsArea, roundPixels, update. Triggers on: ParticleContainer, Particle, IParticle, addParticle, particleChildren, dynamicProperties, boundsArea, particle effects, constructor options, ParticleContainerOptions, ParticleOptions. |
-| `/pixi-scene-sprite` | Use this skill when drawing images in PixiJS v8. Covers Sprite with anchor/tint/texture, AnimatedSprite for frame animation, NineSliceSprite for resizable UI panels, TilingSprite for scrolling/repeating backgrounds. Triggers on: Sprite, AnimatedSprite, NineSliceSprite, TilingSprite, Sprite.from, anchor, tint, tilePosition, animationSpeed, gotoAndPlay, leftWidth, topHeight, constructor options, SpriteOptions, AnimatedSpriteOptions, NineSliceSpriteOptions, TilingSpriteOptions. |
-| `/pixi-scene-text` | Use this skill when rendering text in PixiJS v8. Covers Text for canvas-quality styled labels, BitmapText for cheap per-frame updates via glyph atlas, HTMLText for HTML/CSS markup via SVG, SplitText and SplitBitmapText for per-character animation, TextStyle, tagStyles, constructor options, TextOptions, HTMLTextOptions, BitmapText, SplitTextOptions, SplitBitmapTextOptions. Triggers on: Text, BitmapText, HTMLText, SplitText, SplitBitmapText, TextStyle, HTMLTextStyle, BitmapFont.install, tagStyles, fontFamily, wordWrap. |
-| `/pixi-ticker` | Use this skill when running per-frame logic or controlling the PixiJS v8 render loop. Covers Ticker.add/addOnce/remove, deltaTime vs deltaMS vs elapsedMS, UPDATE_PRIORITY ordering, maxFPS/minFPS capping, speed scaling, Ticker.shared vs new instances, per-object onRender hook, manual rendering. Triggers on: Ticker, UPDATE_PRIORITY, deltaTime, deltaMS, elapsedMS, onRender, app.ticker, maxFPS, minFPS, Ticker.shared. |
+| `/pixi` | PixiJS v8 task; it routes to the right specialized skill for the job. |
+| `/pixi-accessibility` | Adding screen reader and keyboard navigation to PixiJS v8 apps. |
+| `/pixi-application` | Creating and configuring a PixiJS v8 Application. |
+| `/pixi-assets` | Loading and managing resources in PixiJS v8. |
+| `/pixi-blend-modes` | Compositing display objects with blend modes in PixiJS v8. |
+| `/pixi-color` | Creating, converting, or manipulating colors in PixiJS v8. |
+| `/pixi-core-concepts` | Understanding how PixiJS v8 renders frames: the systems-and-pipes renderer, the render loop, and how the library adapts to different environments. |
+| `/pixi-create` | Scaffolding a new PixiJS v8 project with the create-pixi CLI or adding PixiJS to an existing project. |
+| `/pixi-custom-rendering` | Writing custom shaders, uniforms, filters, or batchers in PixiJS v8. |
+| `/pixi-environments` | Running PixiJS v8 outside a standard browser: Web Workers, OffscreenCanvas, Node/SSR, or CSP-restricted contexts. |
+| `/pixi-events` | Handling pointer, mouse, touch, or wheel input in PixiJS v8. |
+| `/pixi-filters` | Applying visual effects to PixiJS v8 containers via the filter pipeline. |
+| `/pixi-math` | Working with coordinates, vectors, matrices, shapes, hit testing, or layout rectangles in PixiJS v8. |
+| `/pixi-migration-v8` | Upgrading to PixiJS v8 from v7 or diagnosing broken v7 code after an upgrade. |
+| `/pixi-performance` | Profiling or optimizing a PixiJS v8 app for FPS, draw calls, or GPU memory. |
+| `/pixi-scene-container` | Grouping, positioning, or transforming display objects in PixiJS v8. |
+| `/pixi-scene-core-concepts` | Reasoning about the PixiJS v8 scene graph as a whole: how containers, leaves, transforms, and render order fit together. |
+| `/pixi-scene-dom-container` | Overlaying HTML elements on the PixiJS v8 canvas. |
+| `/pixi-scene-gif` | Displaying animated GIFs in PixiJS v8. |
+| `/pixi-scene-graphics` | Drawing vector shapes and paths in PixiJS v8. |
+| `/pixi-scene-mesh` | Rendering custom geometry in PixiJS v8. |
+| `/pixi-scene-particle-container` | Rendering thousands of lightweight sprites in PixiJS v8. |
+| `/pixi-scene-sprite` | Drawing images in PixiJS v8. |
+| `/pixi-scene-text` | Rendering text in PixiJS v8. |
+| `/pixi-ticker` | Running per-frame logic or controlling the PixiJS v8 render loop. |
 
 **Web · Phaser 4 (2D games)**
 | Command | What it does |
 |---------|--------------|
-| `/phaser-actions-and-utilities` | Use this skill when working with Phaser 4 utility functions, actions, alignment, grid layout, or batch operations on game objects. Triggers on: align, grid layout, actions, set operations on groups of game objects. |
-| `/phaser-animations` | Use this skill when creating or controlling sprite animations in Phaser 4. Covers spritesheets, atlases, AnimationManager, AnimationState, play/stop/chain, frame callbacks, and animation events. Triggers on: sprite animation, spritesheet, play animation, animation frames. |
-| `/phaser-audio-and-sound` | Use this skill when adding audio or sound to a Phaser 4 game. Covers loading audio, playing sounds, music, volume, spatial audio, Web Audio API, and SoundManager. Triggers on: sound, audio, music, volume, mute. |
-| `/phaser-cameras` | Use this skill when working with cameras in Phaser 4. Covers camera effects (shake, fade, flash, pan, zoom), following sprites, scroll, bounds, viewports, multiple cameras, and minimap. Triggers on: camera, viewport, scroll, zoom, follow, shake, fade. |
-| `/phaser-curves-and-paths` | Use this skill when working with curves and paths in Phaser 4. Covers splines, bezier curves, lines, ellipses, path followers, and mathematical curve types. Triggers on: curve, path, spline, bezier, path follower. |
-| `/phaser-data-manager` | Use this skill when using the Phaser 4 DataManager to store custom key-value data on game objects, listen for data change events, or manage game state. Triggers on: setData, getData, data events, custom data storage. |
-| `/phaser-events-system` | Use this skill when working with the Phaser 4 event system. Covers EventEmitter, scene events, game events, custom events, and event-driven communication. Triggers on: events, on, emit, EventEmitter, scene events, listeners. |
-| `/phaser-filters-and-postfx` | Use this skill when applying visual filters or post-processing effects in Phaser 4. Covers bloom, blur, glow, color matrix, barrel distortion, displacement, custom shaders, and the filter pipeline. Triggers on: filter, post-processing, shader, bloom, blur, glow, color effects. |
-| `/phaser-game-object-components` | Use this skill when working with Phaser 4 game object components and the mixin system. Covers Transform, Alpha, Tint, Origin, Depth, Flip, Mask, GetBounds, Lighting, and other shared component behaviors. Triggers on: component, mixin, transform, mask, bounds, lighting. |
-| `/phaser-game-setup-and-config` | Use this skill when creating a new Phaser 4 game instance or configuring GameConfig options. Covers renderer selection, canvas setup, scaling, pixel art, FPS settings, boot sequence, and all config sub-objects. Triggers on: new Phaser.Game, GameConfig, game setup, renderer, pixel art, FPS. |
-| `/phaser-geometry-and-math` | Use this skill when using Phaser 4 math and geometry utilities. Covers vectors, rectangles, circles, triangles, polygons, random number generation, angles, distance, interpolation, and snapping. Triggers on: Vector2, Rectangle, Circle, math, distance, angle, random, lerp. |
-| `/phaser-graphics-and-shapes` | Use this skill when drawing shapes and graphics in Phaser 4. Covers the Graphics game object, lines, rectangles, circles, arcs, polygons, gradients, fill, stroke, and generated textures. Triggers on: Graphics, draw shape, fillRect, lineStyle, polygon, arc. |
-| `/phaser-groups-and-containers` | Use this skill when using Groups or Containers in Phaser 4. Covers organizing game objects, object pooling, batch operations, and nested transforms with Containers. Triggers on: Group, Container, object pool, getFirstDead, children. |
-| `/phaser-input-keyboard-mouse-touch` | Use this skill when handling user input in Phaser 4. Covers keyboard keys, mouse clicks and movement, touch events, pointer handling, drag and drop, hit areas, interactive objects, and gamepad support. Triggers on: keyboard, mouse, touch, pointer, drag, drop, click, input, gamepad, cursor keys. |
-| `/phaser-loading-assets` | Use this skill when loading assets in Phaser 4. Covers the Loader plugin, loading images, spritesheets, atlases, audio, JSON, tilemaps, bitmap fonts, and tracking load progress. Triggers on: preload, this.load, asset loading, spritesheet, atlas, load progress. |
-| `/phaser-particles` | Use this skill when creating particle effects in Phaser 4. Covers ParticleEmitter, emission zones, death zones, particle properties, textures, gravity wells, and particle movement. Triggers on: particles, emitter, particle effect, explosion, fire, smoke. |
-| `/phaser-physics-arcade` | Use this skill when using Arcade Physics in Phaser 4. Covers enabling physics, velocity, acceleration, gravity, collisions, overlap, world bounds, physics groups, static bodies, and collision categories. Triggers on: physics, arcade, velocity, gravity, collide, overlap, bounce, physics body. |
-| `/phaser-physics-matter` | Use this skill when using Matter.js physics in Phaser 4. Covers rigid bodies, constraints, composite bodies, sensors, collision filtering, world configuration, and advanced physics shapes. Triggers on: Matter, matter physics, constraint, joint, rigid body, sensor. |
-| `/phaser-render-textures` | Use this skill when using RenderTexture or DynamicTexture in Phaser 4. Covers drawing game objects to textures, dynamic texture creation, snapshot/screenshot, stamps, and off-screen rendering. Triggers on: RenderTexture, DynamicTexture, snapshot, draw to texture, stamp. |
-| `/phaser-scale-and-responsive` | Use this skill when making a Phaser 4 game responsive or handling display scaling. Covers ScaleManager, scale modes (FIT, RESIZE, EXPAND, ENVELOP), auto-center, fullscreen, and browser resize handling. Triggers on: ScaleManager, responsive, resize, fullscreen, FIT, scale mode. |
-| `/phaser-scenes` | Use this skill when working with Phaser 4 scenes. Covers scene lifecycle methods, scene transitions, parallel scenes, scene communication, sleeping, pausing, restarting, and the SceneManager. Triggers on: Scene, scene lifecycle, preload, create, update, scene transition, SceneManager. |
-| `/phaser-sprites-and-images` | Use this skill when creating Sprites or Images in Phaser 4. Covers factory methods, texture/frame selection, position, scale, rotation, tint, flip, alpha, origin, depth, and the component mixin system. Triggers on: Sprite, Image, this.add.sprite, this.add.image, texture, setTint, setAlpha. |
-| `/phaser-text-and-bitmaptext` | Use this skill when displaying text in Phaser 4. Covers Text game objects, BitmapText, web fonts, text styling, word wrap, alignment, padding, and dynamic text content. Triggers on: Text, BitmapText, this.add.text, font, word wrap, text style. |
-| `/phaser-tilemaps` | Use this skill when working with tilemaps in Phaser 4. Covers loading Tiled JSON maps, creating tilemap layers, tile collision, dynamic tiles, tile properties, and tilemap camera culling. Triggers on: Tilemap, Tiled, tilemap layer, tile collision, tile properties. |
-| `/phaser-time-and-timers` | Use this skill when using timers and time-based events in Phaser 4. Covers TimerEvent, delayed calls, looping timers, the Clock plugin, and time scaling. Triggers on: timer, delay, delayedCall, TimerEvent, Clock, time event. |
-| `/phaser-tweens` | Use this skill when animating properties over time in Phaser 4. Covers tweens, tween chains, easing functions, stagger, yoyo, repeat, callbacks, number tweens, and the TweenManager. Triggers on: tween, ease, animate, this.tweens.add, tween chain, stagger. |
-| `/phaser-v3-to-v4-migration` | Use this skill when migrating a Phaser 3 project to Phaser 4, or when a user asks about breaking changes, API differences, or how to update their v3 code. Covers renderer changes (pipelines to render nodes), FX/masks to filters, tint system, camera matrix, texture coordinates, DynamicTexture, shaders, lighting, removed game objects, and a full migration checklist. Triggers on: migrate, upgrade, v3 to v4, breaking changes, Phaser 3 to 4, migration guide, update from v3. |
-| `/phaser-v4-new-features` | Use this skill when learning about new features, game objects, components, and rendering capabilities added in Phaser 4. Covers Filters, RenderNodes, CaptureFrame, Gradient, Noise, SpriteGPULayer, TilemapGPULayer, Lighting component, RenderSteps, and new tint modes. Triggers on: new in v4, Phaser 4 features, RenderNode, SpriteGPULayer, CaptureFrame, Gradient game object, Noise game object, new tint modes. For migrating v3 code to v4, see the v3-to-v4-migration skill instead. |
+| `/phaser-actions-and-utilities` | Working with Phaser 4 utility functions, actions, alignment, grid layout, or batch operations on game objects. |
+| `/phaser-animations` | Creating or controlling sprite animations in Phaser 4. |
+| `/phaser-audio-and-sound` | Adding audio or sound to a Phaser 4 game. |
+| `/phaser-cameras` | Working with cameras in Phaser 4. |
+| `/phaser-curves-and-paths` | Working with curves and paths in Phaser 4. |
+| `/phaser-data-manager` | Using the Phaser 4 DataManager to store custom key-value data on game objects, listen for data change events, or manage game state. |
+| `/phaser-events-system` | Working with the Phaser 4 event system. |
+| `/phaser-filters-and-postfx` | Applying visual filters or post-processing effects in Phaser 4. |
+| `/phaser-game-object-components` | Working with Phaser 4 game object components and the mixin system. |
+| `/phaser-game-setup-and-config` | Creating a new Phaser 4 game instance or configuring GameConfig options. |
+| `/phaser-geometry-and-math` | Using Phaser 4 math and geometry utilities. |
+| `/phaser-graphics-and-shapes` | Drawing shapes and graphics in Phaser 4. |
+| `/phaser-groups-and-containers` | Using Groups or Containers in Phaser 4. |
+| `/phaser-input-keyboard-mouse-touch` | Handling user input in Phaser 4. |
+| `/phaser-loading-assets` | Loading assets in Phaser 4. |
+| `/phaser-particles` | Creating particle effects in Phaser 4. |
+| `/phaser-physics-arcade` | Using Arcade Physics in Phaser 4. |
+| `/phaser-physics-matter` | Using Matter.js physics in Phaser 4. |
+| `/phaser-render-textures` | Using RenderTexture or DynamicTexture in Phaser 4. |
+| `/phaser-scale-and-responsive` | Making a Phaser 4 game responsive or handling display scaling. |
+| `/phaser-scenes` | Working with Phaser 4 scenes. |
+| `/phaser-sprites-and-images` | Creating Sprites or Images in Phaser 4. |
+| `/phaser-text-and-bitmaptext` | Displaying text in Phaser 4. |
+| `/phaser-tilemaps` | Working with tilemaps in Phaser 4. |
+| `/phaser-time-and-timers` | Using timers and time-based events in Phaser 4. |
+| `/phaser-tweens` | Animating properties over time in Phaser 4. |
+| `/phaser-v3-to-v4-migration` | Migrating a Phaser 3 project to Phaser 4, or when a user asks about breaking changes, API differences, or how to update their v3 code. |
+| `/phaser-v4-new-features` | Learning about new features, game objects, components, and rendering capabilities added in Phaser 4. |
 
 ## Getting Started
 
@@ -376,26 +376,53 @@ Type `/` in Claude Code to access all 183 skills:
 
 All hooks fail gracefully if optional tools are missing — nothing breaks, you just lose validation.
 
-### Setup
+### New project
 
-1. **Clone or use as template**:
+1. **Clone the template** (or click **"Use this template"** on GitHub for a fresh repo with no history):
    ```bash
    git clone https://github.com/bullish0x/gamestudio.git my-game
    cd my-game
    ```
-
-2. **Open Claude Code** and start a session:
+2. **Open Claude Code:**
    ```bash
    claude
    ```
+3. **Run `/start`** — it asks where you are (no idea / vague concept / clear
+   design / existing work) and routes you. No assumptions.
+4. **Run `/setup-engine`** — pick your track (guided, or name it:
+   `/setup-engine godot 4.6`, `/setup-engine phaser`, `/setup-engine threejs`).
+   It pins the version in `CLAUDE.md` and fills version-aware reference docs.
+5. Follow the pipeline (see [How to Use](#how-to-use)) — `/help` always tells
+   you the next step.
 
-3. **Run `/start`** — the system asks where you are (no idea, vague concept,
-   clear design, existing work) and guides you to the right workflow. No assumptions.
+> Prefer to jump straight in? `/brainstorm` explores ideas from scratch.
 
-   Or jump directly to a specific skill if you already know what you need:
-   - `/brainstorm` — explore game ideas from scratch
-   - `/setup-engine godot 4.6` — configure your engine if you already know
-   - `/project-stage-detect` — analyze an existing project
+### Existing project
+
+Bring the studio scaffolding into your repo, then let it audit what you already have:
+
+```bash
+# from inside your existing project
+git clone https://github.com/bullish0x/gamestudio.git /tmp/gs
+cp -r /tmp/gs/.claude /tmp/gs/CLAUDE.md .                  # the studio brain
+cp -rn /tmp/gs/docs /tmp/gs/design /tmp/gs/production .    # structure (-n = never overwrite yours)
+rm -rf /tmp/gs
+claude
+```
+
+Then in the session:
+
+1. **`/project-stage-detect`** — audits your repo and reports which phase you're
+   in and what's missing.
+2. **`/adopt`** — brownfield format audit: checks your existing GDDs/ADRs/stories
+   against the template's expected structure and produces a numbered migration plan.
+3. **`/setup-engine <yours>`** — pin the engine you already use so agents verify
+   APIs against your version.
+4. **`/reverse-document`** — generate any missing design/architecture docs from
+   your existing code.
+
+> The `cp` commands above are POSIX (macOS/Linux/Git Bash). On Windows PowerShell
+> use `Copy-Item -Recurse` (and `-Force` only where you intend to overwrite).
 
 ## How to Use
 
