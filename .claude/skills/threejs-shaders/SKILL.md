@@ -640,6 +640,6 @@ color = mix(colorB, colorA, step(0.5, value));
 
 ## See Also
 
-- `threejs-materials` - Built-in material types
+- `threejs-material-systems` - Built-in material types
 - `threejs-postprocessing` - Full-screen shader effects
-- `threejs-textures` - Texture sampling in shaders
+- `threejs-texture-management` - Texture sampling in shaders

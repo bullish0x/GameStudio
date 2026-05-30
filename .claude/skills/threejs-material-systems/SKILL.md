@@ -559,6 +559,6 @@ materialPool.dispose();
 ## Related Skills
 
 - `threejs-texture-management` - Texture loading and optimization
-- `threejs-shader-development` - Advanced shader techniques
+- `threejs-shaders` - Advanced shader techniques
 - `mobile-performance` - Mobile-specific optimizations
 - `threejs-scene-setup` - Scene and rendering setup

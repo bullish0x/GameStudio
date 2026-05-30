@@ -6,23 +6,24 @@
 | **Release Date** | December 2025 |
 | **Project Pinned** | 2026-02-13 |
 | **Last Docs Verified** | 2026-02-13 |
-| **LLM Knowledge Cutoff** | May 2025 |
+| **LLM Knowledge Cutoff** | January 2026 |
 
 ## Knowledge Gap Warning
 
-The LLM's training data likely covers Unity up to ~2022 LTS (2022.3). The entire
-Unity 6 release series (formerly Unity 2023 Tech Stream) introduced significant
-changes that the model does NOT know about. Always cross-reference this directory
-before suggesting Unity API calls.
+The LLM's training data (cutoff January 2026) likely covers the Unity 6 series
+through ~6.2. Version 6.3 LTS (Dec 2025) sits near the cutoff boundary, so the
+model's knowledge of its newest APIs is unreliable and may be incomplete. Always
+cross-reference this directory before suggesting Unity API calls, and treat any
+6.3-specific signature as verify-before-use.
 
-## Post-Cutoff Version Timeline
+## Version Timeline (risk relative to the Jan 2026 cutoff)
 
 | Version | Release | Risk Level | Key Theme |
 |---------|---------|------------|-----------|
-| 6.0 | Oct 2024 | HIGH | Unity 6 rebrand, new rendering features, Entities 1.3, DOTS improvements |
-| 6.1 | Nov 2024 | MEDIUM | Bug fixes, stability improvements |
-| 6.2 | Dec 2024 | MEDIUM | Performance optimizations, new input system improvements |
-| 6.3 LTS | Dec 2025 | HIGH | First LTS since 6.0, production-ready DOTS, enhanced graphics features |
+| 6.0 | Oct 2024 | LOW | Unity 6 rebrand, new rendering features, Entities 1.3, DOTS improvements |
+| 6.1 | Nov 2024 | LOW | Bug fixes, stability improvements |
+| 6.2 | Dec 2024 | LOW | Performance optimizations, new input system improvements |
+| 6.3 LTS | Dec 2025 | MEDIUM | First LTS since 6.0, production-ready DOTS, enhanced graphics features |
 
 ## Major Changes from 2022 LTS to Unity 6.3 LTS
 
@@ -33,7 +34,7 @@ before suggesting Unity API calls.
 - **Addressables**: Asset management workflow changes
 - **Scripting**: C# 9 support, new API patterns
 
-### New Features (Post-Cutoff)
+### New Features (Unity 6 series)
 - **DOTS**: Production-ready Entity Component System (Entities 1.3+)
 - **Graphics**: Enhanced URP/HDRP pipelines, GPU Resident Drawer
 - **Multiplayer**: Netcode for GameObjects improvements

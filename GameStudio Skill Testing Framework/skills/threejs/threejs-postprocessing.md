@@ -27,5 +27,4 @@ A concise, Quick-Start-first reference for the Three.js `EffectComposer` pipelin
 - [ ] Aligns with pinned three 0.184; WebGPU post-processing (`postProcessing` node-based API) preview is noted as `r150+` — flag as experimental / subject to change; verify `three/addons/nodes/Nodes.js` path at 0.184
 
 ## Known Gaps / Notes
-- `threejs-post-processing` (the other post-processing skill) uses a class-based TypeScript approach while this skill uses plain JavaScript — both are valid but testers should note the differing style.
 - No `TAA` pass is listed despite being in `three/addons/postprocessing/TAARenderPass.js`.

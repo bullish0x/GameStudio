@@ -10,7 +10,7 @@ if command -v jq &>/dev/null; then
   MESSAGE=$(echo "$INPUT" | jq -r '.message // empty' 2>/dev/null)
 fi
 if [ -z "$MESSAGE" ]; then
-  MESSAGE=$(echo "$INPUT" | grep -oE '"message":"[^"]*"' | sed 's/"message":"//;s/"//')
+  MESSAGE=$(echo "$INPUT" | grep -oE '"message"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/"message"[[:space:]]*:[[:space:]]*"//;s/"$//')
 fi
 if [ -z "$MESSAGE" ]; then
   MESSAGE="Claude Code needs your attention"

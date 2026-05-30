@@ -494,4 +494,4 @@ textureManager.disposeAll();
 - `threejs-material-systems` - Material setup and optimization
 - `mobile-performance` - Mobile-specific optimization
 - `threejs-model-loading` - Loading models with textures
-- `asset-bundling` - Asset loading strategies
+- `web3d-asset-pipeline` - Asset loading strategies

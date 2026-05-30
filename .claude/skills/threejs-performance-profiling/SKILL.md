@@ -724,3 +724,4 @@ setInterval(() => {
 - `mobile-performance` - Mobile optimization
 - `r3f-performance` - React optimization
 - `threejs-geometry-management` - Geometry optimization
+- `threejs-best-practices` - General optimization and production patterns

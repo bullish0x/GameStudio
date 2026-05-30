@@ -244,6 +244,6 @@ window.addEventListener('beforeunload', () => {
 
 ## Related Skills
 
-- `threejs-optimization` - Advanced performance optimization
+- `threejs-performance-profiling` - Advanced performance optimization
 - `threejs-lighting` - Advanced lighting setups
 - `typescript-game-types` - Type-safe patterns for game objects

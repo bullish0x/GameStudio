@@ -822,7 +822,7 @@ document.addEventListener('visibilitychange', () => {
 ## Related Skills
 
 - `mobile-performance` - General mobile optimization
-- `mobile-memory-management` - Memory efficiency
+- `memory-management` - Memory efficiency
 - `threejs-performance-profiling` - Performance monitoring
 - `threejs-best-practices` - Rendering optimization
 - `ecs-performance` - System optimization

@@ -631,6 +631,6 @@ function animate() {
 ## Related Skills
 
 - `threejs-scene-setup` - Scene initialization
-- `r3f-setup` - React Three Fiber camera setup
+- `react-three-fiber-setup` - React Three Fiber camera setup
 - `input-system` - Input handling
 - `touch-input-handling` - Touch controls

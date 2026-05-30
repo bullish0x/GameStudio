@@ -802,7 +802,7 @@ class DisposableScene {
 
 ## Related Skills
 
-- `mobile-battery-optimization` - Power management
+- `battery-optimization` - Power management
 - `mobile-performance` - General optimization
 - `threejs-texture-management` - Texture optimization
 - `threejs-geometry-management` - Geometry sharing

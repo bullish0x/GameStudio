@@ -570,7 +570,7 @@ function gameLoop() {
 
 ## Related Skills
 
-- `raycasting` - Touch object picking
+- `threejs-raycasting` - Touch object picking
 - `input-system` - ECS input component
-- `camera-controls` - Touch camera controls
+- `threejs-camera-controls` - Touch camera controls
 - `mobile-performance` - Touch input optimization

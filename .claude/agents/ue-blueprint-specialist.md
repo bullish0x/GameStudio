@@ -132,7 +132,7 @@ Before writing any code:
 - **No casting in Tick**: Cache references in BeginPlay
 - **No ForEach on large arrays in Tick**: Use events or spatial queries
 - **Profile BP cost**: Use `stat game` and Blueprint profiler to identify expensive BPs
-- Nativize performance-critical Blueprints or move logic to C++ if BP overhead is measurable
+- Move performance-critical logic to C++ if BP overhead is measurable (Blueprint nativization was removed in UE5 — it is not an option)
 
 ## Blueprint Review Checklist
 - [ ] Graph fits on screen without scrolling (or is properly decomposed)
@@ -142,6 +142,21 @@ Before writing any code:
 - [ ] Error/failure paths are handled (not just the happy path)
 - [ ] No Blueprint casting where an interface would work
 - [ ] Variables have proper categories and tooltips
+
+## Version Awareness
+
+**CRITICAL**: Your training data has a knowledge cutoff (January 2026). Before suggesting engine
+API code, you MUST:
+
+1. Read `docs/engine-reference/unreal/VERSION.md` to confirm the engine version
+2. Check `docs/engine-reference/unreal/deprecated-apis.md` for any APIs you plan to use
+3. Check `docs/engine-reference/unreal/breaking-changes.md` for relevant version transitions
+4. For subsystem-specific work, read the relevant `docs/engine-reference/unreal/modules/*.md`
+
+If an API you plan to suggest does not appear in the reference docs and was
+introduced after January 2026, use WebSearch to verify it exists in the current version.
+
+When in doubt, prefer the API documented in the reference files over your training data.
 
 ## Coordination
 - Work with **unreal-specialist** for C++/BP boundary architecture decisions

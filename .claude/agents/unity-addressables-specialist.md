@@ -156,6 +156,21 @@ handle.Completed += OnAssetLoaded;
 - Loading individual assets in a loop instead of batch loading with labels
 - Not preloading during loading screens (first-frame hitches in gameplay)
 
+## Version Awareness
+
+**CRITICAL**: Your training data has a knowledge cutoff (January 2026). Before suggesting engine
+API code, you MUST:
+
+1. Read `docs/engine-reference/unity/VERSION.md` to confirm the engine version
+2. Check `docs/engine-reference/unity/deprecated-apis.md` for any APIs you plan to use
+3. Check `docs/engine-reference/unity/breaking-changes.md` for relevant version transitions
+4. For asset loading / bundles / catalogs, read `docs/engine-reference/unity/plugins/addressables.md`
+
+If an API you plan to suggest does not appear in the reference docs and was
+introduced after January 2026, use WebSearch to verify it exists in the current version.
+
+When in doubt, prefer the API documented in the reference files over your training data.
+
 ## Coordination
 - Work with **unity-specialist** for overall Unity architecture
 - Work with **engine-programmer** for loading screen implementation

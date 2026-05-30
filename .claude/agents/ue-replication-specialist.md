@@ -135,6 +135,21 @@ Before writing any code:
 - Replicating entire arrays when only one element changed
 - Using `NetMulticast` when `COND_SkipOwner` on a property would work
 
+## Version Awareness
+
+**CRITICAL**: Your training data has a knowledge cutoff (January 2026). Before suggesting engine
+API code, you MUST:
+
+1. Read `docs/engine-reference/unreal/VERSION.md` to confirm the engine version
+2. Check `docs/engine-reference/unreal/deprecated-apis.md` for any APIs you plan to use
+3. Check `docs/engine-reference/unreal/breaking-changes.md` for relevant version transitions
+4. For subsystem-specific work, read `docs/engine-reference/unreal/modules/networking.md`
+
+If an API you plan to suggest does not appear in the reference docs and was
+introduced after January 2026, use WebSearch to verify it exists in the current version.
+
+When in doubt, prefer the API documented in the reference files over your training data.
+
 ## Coordination
 - Work with **unreal-specialist** for overall UE architecture
 - Work with **network-programmer** for transport-layer networking

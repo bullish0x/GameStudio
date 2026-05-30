@@ -39,7 +39,7 @@ Phaser 4 is a complete overhaul of the WebGL rendering engine. The v3 renderer l
 
 ## Filters System (Replacing FX and BitmapMask)
 
-> Full reference: `filters-and-postfx.md`
+> Full reference: `../phaser-filters-and-postfx/SKILL.md`
 
 Filters unify the v3 FX and Mask systems. Every filter takes an input image and produces an output image via a shader pass. Filters can be applied to any game object or camera -- v3 had restrictions on which objects supported FX.
 
@@ -121,7 +121,7 @@ gameObject.setRenderNodeRole('Submitter', null);
 **Texturers** (manage texture binding):
 - `TexturerImage`, `TexturerTileSprite`
 
-**Filters** (post-processing -- see `filters-and-postfx.md`):
+**Filters** (post-processing -- see `../phaser-filters-and-postfx/SKILL.md`):
 - `BaseFilter`, `BaseFilterShader`
 - `FilterBarrel`, `FilterBlend`, `FilterBlocky`, `FilterBlur` (Low/Med/High variants)
 - `FilterBokeh`, `FilterColorMatrix`, `FilterCombineColorMatrix`
@@ -291,7 +291,7 @@ layer.setLighting(true);
 
 ## New Components
 
-> Full component reference: `game-object-components.md`
+> Full component reference: `../phaser-game-object-components/SKILL.md`
 
 ### Lighting Component
 
@@ -351,7 +351,7 @@ Provides `defaultRenderNodes`, `customRenderNodes`, and `renderNodeData` maps on
 
 ## TilemapGPULayer
 
-> Full tilemap reference: `tilemaps.md`
+> Full tilemap reference: `../phaser-tilemaps/SKILL.md`
 
 High-performance GPU-based tilemap rendering. Renders the entire layer as a single quad via a specialized shader. WebGL only.
 

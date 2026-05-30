@@ -184,7 +184,7 @@ For plugins NOT listed above, use the following approach when users ask:
 
 1. **WebSearch** for latest documentation: `"Unreal Engine 5.7 [plugin name]"`
 2. Verify if plugin is:
-   - Post-cutoff (beyond May 2025 training data)
+   - Post-cutoff (beyond January 2026 training data)
    - Experimental vs Production-Ready
    - Still supported in UE 5.7
 3. Optionally cache findings in `plugins/[plugin-name].md` for future reference
@@ -207,4 +207,4 @@ For plugins NOT listed above, use the following approach when users ask:
 
 **Last Updated:** 2026-02-13
 **Engine Version:** Unreal Engine 5.7
-**LLM Knowledge Cutoff:** May 2025
+**LLM Knowledge Cutoff:** January 2026

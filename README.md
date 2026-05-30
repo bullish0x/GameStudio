@@ -232,7 +232,6 @@ Type `/` in Claude Code to access all 183 skills:
 | `/threejs-camera-controls` | Camera systems for Three.js including orbit controls, first-person, third-person, and cinematic cameras |
 | `/threejs-lighting` | Comprehensive lighting systems for Three.js including ambient, directional, point, spot, and hemisphere lights with optimization strategies |
 | `/threejs-shadows` | Shadow configuration and optimization for Three.js including shadow maps, CSM, PCFSS, and mobile shadow strategies |
-| `/threejs-post-processing` | Post-processing effects for Three.js including bloom, SSAO, DOF, tone mapping, and custom shader passes |
 | `/threejs-particles` | Particle systems for Three.js including GPU particles, instanced particles, particle emitters, and effects |
 | `/threejs-performance-profiling` | Performance profiling and optimization for Three.js including FPS monitoring, draw call analysis, memory profiling, and bottleneck identification |
 | `/threejs-pbr-materials` | Physically-Based Rendering materials in Three.js including metalness-roughness workflow, clear coat, transmission, and material optimization |

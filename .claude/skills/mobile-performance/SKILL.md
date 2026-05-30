@@ -34,7 +34,7 @@ Use this skill when:
 export interface DeviceCapabilities {
   tier: 'low' | 'medium' | 'high';
   gpu: string;
-  maxTexture Size: number;
+  maxTextureSize: number;
   supportsWebGL2: boolean;
   isMobile: boolean;
   isIOS: boolean;
@@ -519,7 +519,7 @@ if (batteryManager.shouldReduceQuality()) {
 ## Related Skills
 
 - `threejs-scene-setup` - Renderer configuration
-- `threejs-optimization` - General optimization techniques
+- `threejs-performance-profiling` - General optimization techniques
 - `touch-input-handling` - Mobile input
-- `texture-management` - Texture optimization
+- `threejs-texture-management` - Texture optimization
 - `battery-optimization` - Advanced battery management

@@ -520,5 +520,5 @@ inputSystem.dispose();
 
 - `touch-input-handling` - Mobile touch controls
 - `ecs-component-patterns` - Component design
-- `player-controller` - Player movement logic
-- `combat-system` - Action handling
+- `camera-system` - Camera input handling
+- `health-combat-system` - Action handling

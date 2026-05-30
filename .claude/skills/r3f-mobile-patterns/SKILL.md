@@ -782,7 +782,7 @@ function ResponsiveUI() {
 
 ## Related Skills
 
-- `r3f-setup` - Basic R3F setup
+- `react-three-fiber-setup` - Basic R3F setup
 - `r3f-performance` - General performance optimization
 - `mobile-performance` - Mobile optimization strategies
 - `touch-input-handling` - Touch input implementation

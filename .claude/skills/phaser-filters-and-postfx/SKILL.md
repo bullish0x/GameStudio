@@ -446,4 +446,4 @@ cm.colorMatrix.shiftToBGR();
 
 ---
 
-Related: sprites-and-images.md, cameras.md, v4-new-features.md
+Related: ../phaser-sprites-and-images/SKILL.md, ../phaser-cameras/SKILL.md, ../phaser-v4-new-features/SKILL.md

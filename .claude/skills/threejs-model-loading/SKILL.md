@@ -540,5 +540,5 @@ MobileModelOptimizer.optimize(model, tier);
 
 - `threejs-animation-systems` - Animating loaded models
 - `threejs-texture-management` - Texture optimization
-- `asset-bundling` - Asset loading strategies
+- `web3d-asset-pipeline` - Asset loading strategies
 - `mobile-performance` - Mobile optimization

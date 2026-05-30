@@ -563,7 +563,7 @@ function animate() {
 
 - `threejs-scene-setup` - Scene and background setup
 - `threejs-lighting` - Lighting integration with fog
-- `threejs-post-processing` - Advanced atmospheric effects
+- `threejs-postprocessing` - Advanced atmospheric effects
 - `mobile-performance` - Mobile optimization
 
 ## References

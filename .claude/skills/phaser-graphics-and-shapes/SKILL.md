@@ -7,7 +7,7 @@ description: "Use this skill when drawing shapes and graphics in Phaser 4. Cover
 
 > Drawing primitives with the Graphics game object, and using Shape game objects (Arc, Curve, Ellipse, Grid, IsoBox, IsoTriangle, Line, Polygon, Rectangle, Star, Triangle).
 
-Related skills: sprites-and-images.md, game-object-components.md
+Related skills: ../phaser-sprites-and-images/SKILL.md, ../phaser-game-object-components/SKILL.md
 
 ---
 

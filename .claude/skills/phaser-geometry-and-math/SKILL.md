@@ -7,7 +7,7 @@ description: "Use this skill when using Phaser 4 math and geometry utilities. Co
 
 > Geom classes (Circle, Ellipse, Line, Polygon, Rectangle, Triangle), intersection tests, and Math utilities (Vector2, Vector3, Matrix4, angles, distances, interpolation, easing, random, snap, clamp).
 
-Related skills: graphics-and-shapes.md, physics-arcade.md
+Related skills: ../phaser-graphics-and-shapes/SKILL.md, ../phaser-physics-arcade/SKILL.md
 
 ---
 
@@ -40,7 +40,7 @@ const clamped = Phaser.Math.Clamp(150, 0, 100); // 100
 
 ## Core Concepts
 
-Geometry objects are pure data containers holding coordinates and dimensions. They are NOT game objects and cannot be added to the display list. To render geometry, use the Graphics game object or Shape game objects (see graphics-and-shapes.md).
+Geometry objects are pure data containers holding coordinates and dimensions. They are NOT game objects and cannot be added to the display list. To render geometry, use the Graphics game object or Shape game objects (see ../phaser-graphics-and-shapes/SKILL.md).
 
 Every geom class has a `type` property set to a `Phaser.Geom` constant for fast type checks.
 

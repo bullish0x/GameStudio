@@ -431,23 +431,23 @@ Each separate texture consumes its own GPU memory slot and breaks batching when 
 
 ### [HIGH] Updating Text or HTMLText every frame
 
-Each update re-renders the full string to a canvas and uploads to the GPU. At 60fps this creates massive overhead. Use BitmapText for dynamic content (scores, timers, counters). If canvas Text is required, only update when the value actually changes. Source: src/**docs**/concepts/performance-tips.md
+Each update re-renders the full string to a canvas and uploads to the GPU. At 60fps this creates massive overhead. Use BitmapText for dynamic content (scores, timers, counters). If canvas Text is required, only update when the value actually changes.
 
 ### [HIGH] Using complex Graphics instead of textures
 
-Hundreds of complex Graphics objects are slow to render. Small Graphics (under ~100 points) batch efficiently like Sprites, but complex ones do not. Render complex static shapes to a texture with `renderer.generateTexture()` and display as a Sprite. Source: src/**docs**/concepts/performance-tips.md
+Hundreds of complex Graphics objects are slow to render. Small Graphics (under ~100 points) batch efficiently like Sprites, but complex ones do not. Render complex static shapes to a texture with `renderer.generateTexture()` and display as a Sprite.
 
 ### [MEDIUM] Not staggering bulk texture destruction
 
-Destroying dozens of textures in a single frame causes a visible freeze. Spread destruction across multiple frames (e.g., 5 per frame via a ticker callback). Source: src/**docs**/concepts/garbage-collection.md
+Destroying dozens of textures in a single frame causes a visible freeze. Spread destruction across multiple frames (e.g., 5 per frame via a ticker callback).
 
 ### [MEDIUM] Not using PrepareSystem for large scenes
 
-Without `renderer.prepare.upload()`, textures upload to the GPU on first render, causing frame hitches. For loading screens or scene transitions, upload before displaying. Requires `import 'pixi.js/prepare'` (not included even in the default bundle; always import it explicitly). Source: src/prepare/PrepareSystem.ts
+Without `renderer.prepare.upload()`, textures upload to the GPU on first render, causing frame hitches. For loading screens or scene transitions, upload before displaying. Requires `import 'pixi.js/prepare'` (not included even in the default bundle; always import it explicitly).
 
 ### [MEDIUM] Using high resolution or antialias without profiling
 
-`resolution: 2` quadruples the pixel count. `antialias: true` adds GPU cost. Both degrade performance on mobile devices. Always profile on target hardware before enabling. Source: performance-tips.md
+`resolution: 2` quadruples the pixel count. `antialias: true` adds GPU cost. Both degrade performance on mobile devices. Always profile on target hardware before enabling.
 
 ## API Reference
 

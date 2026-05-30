@@ -414,4 +414,4 @@ const video = this.add.video(400, 300, 'intro');
 video.play();
 ```
 
-For detailed configuration options, API reference tables, and source file maps, see [the reference guide](references/REFERENCE..//SKILL.md).
+For detailed configuration options, API reference tables, and source file maps, see [the reference guide](references/REFERENCE.md).

@@ -319,12 +319,12 @@ export class PBRTextureLoader {
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
 
-        // Special handling for normal maps
-        if (key === 'normal') {
-          texture.encoding = THREE.LinearEncoding;
-        } else if (key === 'albedo' || key === 'emissive') {
-          texture.encoding = THREE.sRGBEncoding;
+        // Color space: sRGB for color maps, linear (default) for data maps
+        if (key === 'albedo' || key === 'emissive') {
+          texture.colorSpace = THREE.SRGBColorSpace;
         }
+        // normal/roughness/metalness/ao/height are data maps:
+        // leave colorSpace at its default (NoColorSpace / linear)
 
         textureSet[key] = texture;
       }

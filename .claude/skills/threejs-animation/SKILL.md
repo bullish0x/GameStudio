@@ -551,5 +551,5 @@ function getClip(name) {
 ## See Also
 
 - `threejs-loaders` - Loading animated GLTF models
-- `threejs-fundamentals` - Clock and animation loop
+- `threejs-scene-setup` - Clock and animation loop
 - `threejs-shaders` - Vertex animation in shaders

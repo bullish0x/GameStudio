@@ -406,6 +406,6 @@ requestAnimationFrame(gameLoop);
 
 ## Related Skills
 
-- `ecs-component-design` - Advanced component patterns
+- `ecs-component-patterns` - Advanced component patterns
 - `ecs-system-patterns` - System optimization techniques
 - `typescript-ecs-types` - Type-safe ECS patterns

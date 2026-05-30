@@ -494,4 +494,4 @@ cam.on(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
 });
 ```
 
-For detailed configuration options, API reference tables, and source file maps, see [the reference guide](references/REFERENCE..//SKILL.md).
+For detailed configuration options, API reference tables, and source file maps, see [the reference guide](references/REFERENCE.md).

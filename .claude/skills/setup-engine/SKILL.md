@@ -405,10 +405,10 @@ Wait for approval before writing the file.
 Check whether the engine version is likely beyond the LLM's training data.
 
 **Known approximate coverage** (update this as models change):
-- LLM knowledge cutoff: **May 2025**
-- Godot: training data likely covers up to ~4.3
-- Unity: training data likely covers up to ~2023.x / early 6000.x
-- Unreal: training data likely covers up to ~5.3 / early 5.4
+- LLM knowledge cutoff: **January 2026**
+- Godot: training data likely covers through ~4.5 (4.6 sits at the cutoff boundary)
+- Unity: training data likely covers the Unity 6 series through ~6.2 (6.3 LTS at the boundary)
+- Unreal: training data likely covers through ~5.6 (5.7 at the boundary)
 
 Compare the user's chosen version against these baselines:
 
@@ -433,7 +433,7 @@ Create a minimal `docs/engine-reference/<engine>/VERSION.md`:
 |-------|-------|
 | **Engine Version** | [version] |
 | **Project Pinned** | [today's date] |
-| **LLM Knowledge Cutoff** | May 2025 |
+| **LLM Knowledge Cutoff** | January 2026 |
 | **Risk Level** | LOW — version is within LLM training data |
 
 ## Note

@@ -532,7 +532,7 @@ geometryPool.dispose();
 
 ## Related Skills
 
-- `threejs-mesh-operations` - Mesh creation and manipulation
-- `threejs-optimization` - General performance optimization
-- `ecs-component-design` - Geometry component patterns
+- `threejs-instancing-advanced` - Instanced mesh creation and manipulation
+- `threejs-performance-profiling` - General performance optimization
+- `ecs-component-patterns` - Geometry component patterns
 - `mobile-performance` - Mobile-specific optimizations

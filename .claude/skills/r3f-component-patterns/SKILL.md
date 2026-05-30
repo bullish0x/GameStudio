@@ -558,7 +558,7 @@ export default function App() {
 
 ## Related Skills
 
-- `r3f-setup` - R3F project setup
+- `react-three-fiber-setup` - R3F project setup
 - `r3f-performance` - Performance optimization
 - `r3f-state-management` - State management patterns
 - `r3f-ecs-integration` - ECS integration

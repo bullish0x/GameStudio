@@ -621,6 +621,6 @@ loadModel("model.glb").then((gltf) => {
 
 ## See Also
 
-- `threejs-textures` - Texture configuration
+- `threejs-texture-management` - Texture configuration
 - `threejs-animation` - Playing loaded animations
-- `threejs-materials` - Material from loaded models
+- `threejs-material-systems` - Material from loaded models

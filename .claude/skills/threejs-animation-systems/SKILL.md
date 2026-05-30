@@ -562,6 +562,6 @@ animManager.update(deltaTime);
 ## Related Skills
 
 - `threejs-model-loading` - Loading animated models
-- `threejs-skeletal-animation` - Advanced bone animation
+- `threejs-animation` - Keyframe, skeletal, and morph-target animation
 - `ecs-component-patterns` - Animation components
 - `camera-system` - Syncing camera with animations

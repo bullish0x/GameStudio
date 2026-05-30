@@ -123,6 +123,21 @@ Before writing any code:
 - Garbage collection stalls from too many UObject allocations
 - Not using Unreal's async loading (LoadAsync, StreamableManager)
 
+## Version Awareness
+
+**CRITICAL**: Your training data has a knowledge cutoff (January 2026). Before suggesting engine
+API code, you MUST:
+
+1. Read `docs/engine-reference/unreal/VERSION.md` to confirm the engine version
+2. Check `docs/engine-reference/unreal/deprecated-apis.md` for any APIs you plan to use
+3. Check `docs/engine-reference/unreal/breaking-changes.md` for relevant version transitions
+4. For subsystem-specific work, read the relevant `docs/engine-reference/unreal/modules/*.md`
+
+If an API you plan to suggest does not appear in the reference docs and was
+introduced after January 2026, use WebSearch to verify it exists in the current version.
+
+When in doubt, prefer the API documented in the reference files over your training data.
+
 ## Delegation Map
 
 **Reports to**: `technical-director` (via `lead-programmer`)

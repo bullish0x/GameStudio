@@ -516,5 +516,5 @@ export default function Game() {
 
 - `r3f-component-patterns` - Component design
 - `mobile-performance` - Mobile optimization
-- `threejs-optimization` - Three.js specific optimization
+- `threejs-performance-profiling` - Three.js specific optimization
 - `r3f-state-management` - State optimization

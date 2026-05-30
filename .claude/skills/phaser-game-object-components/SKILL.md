@@ -475,4 +475,4 @@ When both `depth` and display list position are used, `depth` takes priority aft
 
 ---
 
-**Related skills**: `sprites-and-images.md`, `custom-game-objects.md`
+**Related skills**: `../phaser-sprites-and-images/SKILL.md`
