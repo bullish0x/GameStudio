@@ -11,6 +11,9 @@ GameStudio is harness-neutral:
 
 - Use `.agents/skills/` as the canonical skill source.
 - Use `.agents/agents/` as the canonical role source.
+- Use `.agents/hooks/` as the canonical lifecycle hook source for any external
+  automation Cursor delegates to.
+- Use `.agents/hooks.json` as the event-to-script registry for that automation.
 - Use `.agents/rules/` as the canonical path-scoped standards source.
 - Use `.claude/` and `.codex/` only as adapter examples for Claude Code and
   Codex-style harnesses.

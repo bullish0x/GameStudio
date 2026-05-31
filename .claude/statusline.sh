@@ -41,7 +41,10 @@ fi
 if [ -z "$stage" ]; then
   concept_file="$cwd/design/gdd/game-concept.md"
   systems_file="$cwd/design/gdd/systems-index.md"
-  tech_prefs="$cwd/.claude/docs/technical-preferences.md"
+  tech_prefs="$cwd/.agents/docs/technical-preferences.md"
+  if [ ! -f "$tech_prefs" ]; then
+    tech_prefs="$cwd/.claude/docs/technical-preferences.md"
+  fi
 
   has_concept=false
   has_systems=false

@@ -40,6 +40,8 @@ These are the things that will get your PR rejected if you miss them.
 - Include fallbacks for systems without `jq` or `python` installed
 - Hooks run on every session start — they must exit quickly and gracefully
   (`exit 0`) when not applicable
+- If you change hooks, harness adapters, gateway examples, or provider-neutral
+  docs, run `python .agents/scripts/validate-compatibility.py`
 
 **Agents**
 - New agents must include a **Collaboration Protocol** section that describes
@@ -69,6 +71,12 @@ Run it in at least one supported coding-agent harness and confirm it works
 end-to-end. For skills, invoke the skill and verify the output matches what the
 skill claims to do. For hooks, trigger the relevant event and confirm the hook
 fires correctly and exits cleanly.
+
+For provider-neutral compatibility changes, run:
+
+```bash
+python .agents/scripts/validate-compatibility.py
+```
 
 Include a brief note in your PR description describing what you tested and
 what the output looked like.

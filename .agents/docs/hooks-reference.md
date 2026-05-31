@@ -1,6 +1,10 @@
 # Active Hooks
 
-Hooks are adapter-registered lifecycle scripts. Claude Code uses `.claude/settings.json`; Codex-style harnesses use `.codex/hooks.json`; other harnesses should map equivalent events to the same scripts.
+Hooks are adapter-registered lifecycle scripts. The canonical scripts live in `.agents/hooks/`, and `.agents/hooks.json` is the provider-neutral event registry. Claude Code uses `.claude/settings.json`; Codex-style harnesses use `.codex/hooks.json`; other harnesses should map equivalent events to `.agents/hooks/[name].sh`.
+
+`notify.sh` is included in the canonical registry for harnesses that expose a
+notification event. Adapters without that lifecycle event can omit it without
+changing the rest of the hook behavior.
 
 | Hook | Event | Trigger | Action |
 | ---- | ----- | ------- | ------ |

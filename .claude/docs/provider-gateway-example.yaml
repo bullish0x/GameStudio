@@ -1,0 +1,76 @@
+# GameStudio provider gateway example for LiteLLM Proxy.
+# Copy this file to an ignored local path such as config/litellm.local.yaml,
+# replace model IDs with the models you have access to, and set secrets in the
+# environment. Do not commit real API keys.
+#
+# Run shape:
+#   litellm --config config/litellm.local.yaml --port 4000
+#
+# Harness shape:
+#   OPENAI_BASE_URL=http://localhost:4000/v1
+#   OPENAI_API_KEY=$LITELLM_MASTER_KEY
+#   OPENAI_MODEL=studio-primary
+#
+# Claude Code can use the same gateway through its Anthropic-compatible
+# settings when the gateway and selected model support that path; otherwise use
+# Claude Code's native provider/model configuration.
+
+model_list:
+  - model_name: studio-primary
+    litellm_params:
+      model: openai/<primary-model>
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: studio-anthropic
+    litellm_params:
+      model: anthropic/<claude-model>
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  - model_name: studio-gemini
+    litellm_params:
+      model: gemini/<gemini-model>
+      api_key: os.environ/GEMINI_API_KEY
+
+  - model_name: studio-deepseek
+    litellm_params:
+      model: openai/<deepseek-model>
+      api_base: os.environ/DEEPSEEK_API_BASE
+      api_key: os.environ/DEEPSEEK_API_KEY
+
+  - model_name: studio-glm
+    litellm_params:
+      model: openai/<glm-model>
+      api_base: os.environ/GLM_API_BASE
+      api_key: os.environ/GLM_API_KEY
+
+  - model_name: studio-qwen
+    litellm_params:
+      model: openai/<qwen-model>
+      api_base: os.environ/QWEN_API_BASE
+      api_key: os.environ/QWEN_API_KEY
+
+  - model_name: studio-openrouter
+    litellm_params:
+      model: openai/<provider>/<model>
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: studio-local
+    litellm_params:
+      model: openai/<local-model>
+      api_base: http://localhost:11434/v1
+      api_key: os.environ/LOCAL_MODEL_API_KEY
+
+  - model_name: studio-vllm
+    litellm_params:
+      model: openai/<served-model-name>
+      api_base: os.environ/VLLM_API_BASE
+      api_key: os.environ/VLLM_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+litellm_settings:
+  # Drops unsupported provider-specific parameters instead of failing when
+  # switching between heterogeneous model providers.
+  drop_params: true

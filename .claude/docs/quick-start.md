@@ -270,13 +270,20 @@ If you have design docs, prototypes, or code already:
 ## File Structure Reference
 
 ```
-CLAUDE.md                          -- Master config (read this first, ~60 lines)
+AGENTS.md                          -- Provider-neutral instructions
+CLAUDE.md                          -- Claude Code adapter instructions
+.agents/
+  agents/                          -- Provider-neutral role source
+  docs/                            -- Provider-neutral coordination docs
+  hooks/                           -- Provider-neutral lifecycle hook scripts
+  rules/                           -- 14 path-specific rule files
+  skills/                          -- Provider-neutral skill source
 .claude/
   settings.json                    -- Claude Code hooks and project settings
   agents/                          -- 55 agent definitions (YAML frontmatter)
   skills/                          -- 182 slash command definitions (YAML frontmatter)
   hooks/                           -- 13 hook scripts (.sh) wired by settings.json
-  rules/                           -- 11 path-specific rule files
+  rules/                           -- 14 path-specific rule files
   docs/
     quick-start.md                 -- This file
     technical-preferences.md       -- Project-specific standards (populated by /setup-engine)
@@ -284,6 +291,7 @@ CLAUDE.md                          -- Master config (read this first, ~60 lines)
     coordination-rules.md          -- Agent coordination rules
     context-management.md          -- Context budgets and compaction instructions
     directory-structure.md         -- Project directory layout
+    provider-gateway-example.yaml  -- LiteLLM/OpenRouter provider gateway starter
     workflow-catalog.yaml          -- 7-phase pipeline definition (read by /help)
     setup-requirements.md          -- System prerequisites (Git Bash, jq, Python)
     settings-local-template.md     -- Personal settings.local.json guide

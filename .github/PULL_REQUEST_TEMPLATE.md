@@ -24,4 +24,5 @@ Brief description of what this PR does.
 - [ ] New skills use the subdirectory format (`.agents/skills/<name>/SKILL.md`)
 - [ ] Provider-neutral reference docs are updated in `.agents/docs/` (agent-roster, skills-reference, hooks-reference, rules-reference)
 - [ ] Hooks use `grep -E` (POSIX) and fail gracefully without jq/python
+- [ ] If this changes hooks, harness adapters, gateway examples, or provider-neutral docs, `python .agents/scripts/validate-compatibility.py` passes
 - [ ] No hardcoded paths or platform-specific assumptions

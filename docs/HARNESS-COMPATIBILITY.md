@@ -4,14 +4,17 @@
 
 GameStudio is a studio workflow, not a model provider. Agents, skills, hooks,
 rules, and templates must stay provider-neutral so the same project can run from
-Claude Code, Codex/OpenAI-based harnesses, Cursor, Antigravity, Gemini-style
-tools, or another AGENTS.md-aware coding harness.
+Claude Code, Codex/OpenAI-based harnesses, Cursor, Antigravity,
+OpenCode-style tools, Gemini-style tools, or another AGENTS.md-aware coding
+harness.
 
 ## Compatibility Contract
 
 - `AGENTS.md` is the common repository instruction entrypoint.
 - `.agents/skills/` is the canonical provider-neutral skill source.
 - `.agents/agents/` is the canonical provider-neutral role source.
+- `.agents/hooks/` is the canonical provider-neutral lifecycle hook source.
+- `.agents/hooks.json` is the canonical provider-neutral hook registry.
 - `.agents/rules/` is the canonical provider-neutral path-scoped rules source.
 - `.agents/docs/` is the canonical provider-neutral coordination doc source.
 - `.agents/docs/templates/` is the canonical provider-neutral template source.
@@ -31,9 +34,10 @@ the harness or gateway.
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | Claude Code | `CLAUDE.md`, `AGENTS.md` | `.claude/skills/` or `.agents/skills/` | `.claude/agents/` or `.agents/agents/` | `.claude/settings.json` -> `.claude/hooks/` | Claude Code model/API config or compatible gateway |
 | Codex/OpenAI harness | `AGENTS.md` | `.agents/skills/` | `.codex/agents/` or `.agents/agents/` | `.codex/hooks.json` -> `.codex/hooks/` | Harness model/API config or compatible gateway |
-| Cursor | `AGENTS.md`, `.cursor/rules/gamestudio.mdc` | `.agents/skills/` | `.agents/agents/` via prompt or tool-native subagents | Cursor rules mapped from `.agents/rules/` plus external automation | Cursor model/provider settings or compatible gateway |
-| Antigravity-style harness | `AGENTS.md` | Harness-native skills mapped to `.agents/skills/` | Harness-native subagents mapped to `.agents/agents/` | Harness-native lifecycle hooks mapped to scripts | Harness model/provider settings or compatible gateway |
-| Generic AGENTS.md-aware agent | `AGENTS.md` | `.agents/skills/` | `.agents/agents/` where supported | Manual or harness-native hook registration | Agent model/provider settings or compatible gateway |
+| Cursor | `AGENTS.md`, `.cursor/rules/gamestudio.mdc` | `.agents/skills/` | `.agents/agents/` via prompt or tool-native subagents | Cursor/external automation mapped from `.agents/hooks.json` to `.agents/hooks/` | Cursor model/provider settings or compatible gateway |
+| Antigravity-style harness | `AGENTS.md` | Harness-native skills mapped to `.agents/skills/` | Harness-native subagents mapped to `.agents/agents/` | Harness-native lifecycle hooks mapped from `.agents/hooks.json` to `.agents/hooks/` | Harness model/provider settings or compatible gateway |
+| OpenCode-style tool | `AGENTS.md` | Tool-native commands mapped to `.agents/skills/` | Tool-native agents or inline `.agents/agents/` roles | Tool-native lifecycle automation mapped from `.agents/hooks.json` to `.agents/hooks/` | Tool provider registry, custom base URL, or compatible gateway |
+| Generic AGENTS.md-aware agent | `AGENTS.md` | `.agents/skills/` | `.agents/agents/` where supported | Manual or harness-native registration from `.agents/hooks.json` | Agent model/provider settings or compatible gateway |
 
 ## Provider And Gateway Guidance
 
@@ -86,14 +90,20 @@ model_list:
       api_key: os.environ/DEEPSEEK_API_KEY
 ```
 
+For a fuller installed starter config covering Anthropic, OpenAI, Gemini,
+DeepSeek, GLM/Z.ai, Qwen, OpenRouter, Ollama, and vLLM-style routes, copy
+`.agents/docs/provider-gateway-example.yaml` to an ignored local config file and
+replace the placeholder model IDs/base URLs with the providers you actually use.
+
 Point the harness at the gateway base URL and select `studio-primary`,
 `studio-balanced`, or another alias there. Do not edit GameStudio skill files to
 switch models.
 
-Example OpenAI-compatible harness variables:
+Example OpenAI-compatible harness variables. Use the names your harness
+documents; common variants include `OPENAI_BASE_URL` and `OPENAI_API_BASE`.
 
 ```bash
-OPENAI_API_BASE=http://localhost:4000/v1
+OPENAI_BASE_URL=http://localhost:4000/v1
 OPENAI_API_KEY=<gateway-virtual-key>
 OPENAI_MODEL=studio-primary
 ```
@@ -101,7 +111,7 @@ OPENAI_MODEL=studio-primary
 Example OpenRouter-style variables:
 
 ```bash
-OPENAI_API_BASE=https://openrouter.ai/api/v1
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
 OPENAI_API_KEY=<openrouter-key>
 OPENAI_MODEL=<provider>/<model>
 ```
@@ -120,13 +130,14 @@ ignored local settings:
 ```bash
 ANTHROPIC_BASE_URL=https://your-gateway.example.com
 ANTHROPIC_AUTH_TOKEN=<gateway-token>
-ANTHROPIC_MODEL=<gateway-model-alias>
+ANTHROPIC_CUSTOM_MODEL_OPTION=<gateway-model-alias>
+ANTHROPIC_CUSTOM_MODEL_OPTION_NAME=Studio Primary
 ```
 
-Claude Code also supports custom model entries for the model picker through its
-environment variables, including `ANTHROPIC_CUSTOM_MODEL_OPTION`. Use those when
-the gateway exposes a model name that is not part of Claude Code's default
-picker. The repo should not hardcode those values.
+Use the Claude Code model picker to select the custom model entry, or use the
+documented `ANTHROPIC_DEFAULT_*_MODEL` variables when you intentionally want to
+remap Claude Code's default model roles through a gateway. The repo should not
+hardcode those values.
 
 ### Codex And OpenAI-Compatible Harnesses
 
@@ -134,7 +145,7 @@ Use the harness's provider configuration. For Codex-style OpenAI-compatible
 harnesses, that usually means a model provider entry or equivalent environment:
 
 ```bash
-OPENAI_API_BASE=https://your-gateway.example.com/v1
+OPENAI_BASE_URL=https://your-gateway.example.com/v1
 OPENAI_API_KEY=<gateway-token>
 OPENAI_MODEL=<gateway-model-alias>
 ```
@@ -149,8 +160,9 @@ Use the tool's native provider settings first. Cursor and Antigravity-style
 tools should read `AGENTS.md` plus their rule files and select models in their
 own settings. OpenCode-style tools support provider configuration and custom
 base URLs in their own config. Point those settings at a direct provider or at
-LiteLLM/OpenRouter, then use `.agents/skills/` and `.agents/agents/` as the
-portable behavior source.
+LiteLLM/OpenRouter, then use `.agents/skills/`, `.agents/agents/`,
+`.agents/hooks/`, `.agents/rules/`, and `.agents/docs/` as the portable
+behavior source.
 
 ### What Hooks Can And Cannot Do
 
@@ -166,14 +178,14 @@ Hook scripts must:
 - Exit `0` when a harness does not provide the expected event payload.
 - Avoid provider-specific API calls.
 - Use repo-relative paths when possible.
-- Keep validation behavior identical across `.claude/hooks/` and
-  `.codex/hooks/`.
+- Keep validation behavior identical across `.agents/hooks/`, `.claude/hooks/`,
+  and `.codex/hooks/`.
 - Treat missing optional tools (`jq`, Python) as a degraded validation mode, not
   a failed session.
 
 Harness event names differ. Map them to the closest GameStudio lifecycle event:
 
-| GameStudio Event | Claude/Codex Adapter | Generic Meaning |
+| GameStudio Event | Script Name | Generic Meaning |
 | ---- | ---- | ---- |
 | `SessionStart` | `session-start.sh`, `detect-gaps.sh`, `model-advisory.sh` | Load project state and warn about obvious setup gaps |
 | `PreToolUse` | `validate-commit.sh`, `validate-push.sh` | Validate dangerous or consequential shell commands |
@@ -241,3 +253,9 @@ Before adding or changing a skill, agent, hook, or rule:
 - [ ] It can run with direct provider APIs or through a gateway.
 - [ ] Hook logic has no provider-specific network dependency.
 - [ ] Any harness-specific adapter points back to the provider-neutral source.
+
+After changing compatibility assets, run:
+
+```bash
+python .agents/scripts/validate-compatibility.py
+```

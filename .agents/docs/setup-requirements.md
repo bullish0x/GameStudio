@@ -9,14 +9,14 @@ you'll lose validation features.
 | Tool | Purpose | Install |
 | ---- | ---- | ---- |
 | **Git** | Version control, branch management | [git-scm.com](https://git-scm.com/) |
-| **A supported coding-agent harness** | Runs GameStudio agents, skills, and hooks | Claude Code, Codex/OpenAI-based harnesses, Cursor, Antigravity, Gemini-style tools, or another AGENTS.md-aware agent |
+| **A supported coding-agent harness** | Runs GameStudio agents, skills, and hooks | Claude Code, Codex/OpenAI-based harnesses, Cursor, Antigravity, OpenCode-style tools, Gemini-style tools, or another AGENTS.md-aware agent |
 
 ## Recommended
 
 | Tool | Used By | Purpose | Install |
 | ---- | ---- | ---- | ---- |
-| **jq** | Hooks (7 of 12) | JSON parsing in commit/push/asset/agent hooks | See below |
-| **Python 3** | Hooks (2 of 12) | JSON validation for data files | [python.org](https://www.python.org/) |
+| **jq** | Hooks (7 of 13) | JSON parsing in commit/push/asset/agent hooks | See below |
+| **Python 3** | Hooks (2 of 13) | JSON validation for data files | [python.org](https://www.python.org/) |
 | **Bash** | All hooks | Shell script execution | Included with Git for Windows |
 | **LiteLLM Proxy or OpenRouter** | Optional model gateway | Use when your harness needs one OpenAI-compatible or Anthropic-compatible endpoint for multiple providers |
 
@@ -47,8 +47,8 @@ sudo pacman -S jq       # Arch
 - Git for Windows includes **Git Bash**, which provides the `bash` command
   used by all hooks in `settings.json`
 - Ensure Git Bash is on your PATH (default if installed via the Git installer)
-- Hooks use `bash .codex/hooks/[name].sh`, `bash .claude/hooks/[name].sh`, or
-  the matching adapter path. This
+- Hooks use `bash .agents/hooks/[name].sh`, `bash .codex/hooks/[name].sh`,
+  `bash .claude/hooks/[name].sh`, or the matching adapter path. This
   works on Windows when the active harness invokes commands through a shell
   that can find `bash.exe`
 
@@ -81,6 +81,10 @@ When a bridge is needed, prefer a gateway instead of editing skills:
 | **OpenRouter** | You want hosted multi-model routing with one API key | Good for quick access to many hosted models |
 | **Direct provider API** | Your harness already supports the provider | Best when the harness natively supports the target model and tools |
 
+Use `.agents/docs/provider-gateway-example.yaml` as a starting point when you
+want one local LiteLLM Proxy config for OpenAI, Anthropic, Gemini, DeepSeek,
+GLM/Z.ai, Qwen, OpenRouter, Ollama, and vLLM-style routes.
+
 Keep provider credentials, base URLs, model aliases, budgets, and fallbacks in
 the harness or gateway configuration. Do not hardcode them in GameStudio skills,
 agents, hooks, or project docs.
@@ -97,6 +101,8 @@ agents, hooks, or project docs.
 
 GameStudio is harness-neutral, with adapters for:
 
+- **Canonical harness-neutral files** via `.agents/skills/`, `.agents/agents/`,
+  `.agents/hooks/`, `.agents/rules/`, and `.agents/docs/`
 - **Claude Code** via `.claude/settings.json`, `.claude/agents/`,
   `.claude/skills/`, and `.claude/hooks/`
 - **Codex/OpenAI-based harnesses** via `AGENTS.md`, `.codex/agents/`, and
@@ -104,5 +110,5 @@ GameStudio is harness-neutral, with adapters for:
 - **Cursor** via `AGENTS.md` and `.cursor/rules/gamestudio.mdc`, which maps
   Cursor behavior back to `.agents/skills/`, `.agents/agents/`, and
   `.agents/rules/`
-- **Antigravity-style harnesses** via AGENTS.md plus harness-native skills,
+- **Antigravity/OpenCode-style harnesses** via AGENTS.md plus harness-native skills,
   hooks, and subagent registration mapped back to `.agents/`

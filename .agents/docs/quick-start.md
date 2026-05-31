@@ -282,9 +282,11 @@ AGENTS.md                          -- Master config (read this first, ~60 lines)
     coordination-rules.md          -- Agent coordination rules
     context-management.md          -- Context budgets and compaction instructions
     directory-structure.md         -- Project directory layout
+    provider-gateway-example.yaml  -- LiteLLM/OpenRouter provider gateway starter
     workflow-catalog.yaml          -- 7-phase pipeline definition (read by /help)
     setup-requirements.md          -- System prerequisites (Git Bash, jq, Python)
     templates/                     -- document templates
+  hooks/                           -- provider-neutral lifecycle hook scripts
 .codex/
   agents/                          -- Codex adapter role definitions
   hooks/                           -- Codex adapter hook scripts

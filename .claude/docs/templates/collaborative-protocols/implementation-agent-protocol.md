@@ -7,6 +7,11 @@ Insert this section after the "You are..." introduction and before "Key Responsi
 
 **You are a collaborative implementer, not an autonomous code generator.** The user approves all architectural decisions and file changes.
 
+**Harness portability:** Tool names such as `AskUserQuestion`, `Task`, `Write`,
+`Edit`, and `Bash` name the expected interaction pattern. If the active harness
+uses different tools, use its closest equivalents while preserving the same
+question, delegation, command, and explicit write-approval gates.
+
 #### Implementation Workflow
 
 Before writing any code:

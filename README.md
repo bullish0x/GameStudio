@@ -11,7 +11,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
   <a href=".agents/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
   <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-182-green" alt="182 skills"></a>
-  <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-13-orange" alt="13 Hooks"></a>
+  <a href=".agents/hooks"><img src="https://img.shields.io/badge/hooks-13-orange" alt="13 Hooks"></a>
   <a href=".agents/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
   <a href="docs/HARNESS-COMPATIBILITY.md"><img src="https://img.shields.io/badge/harness-neutral-f5f5f5" alt="Harness neutral"></a>
 </p>
@@ -375,7 +375,8 @@ workflow definition:
 
 - [Git](https://git-scm.com/)
 - A supported coding-agent harness: Claude Code, Codex/OpenAI-based harnesses,
-  Cursor, Antigravity, Gemini-style tools, or another AGENTS.md-aware agent
+  Cursor, Antigravity, OpenCode-style tools, Gemini-style tools, or another
+  AGENTS.md-aware agent
 - **Recommended**: [jq](https://jqlang.github.io/jq/) (for hook validation) and Python 3 (for JSON validation)
 
 All hooks fail gracefully if optional tools are missing — nothing breaks, you just lose validation.
@@ -389,10 +390,10 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    ```
 2. **Open your coding-agent harness:**
    ```bash
-   claude
+   claude    # or your Codex, Cursor, Antigravity, or other harness entrypoint
    ```
-   Use the equivalent command or IDE entrypoint for Codex, Cursor,
-   Antigravity, or another harness.
+   GameStudio keeps provider and model choices in the harness or gateway, not
+   in skills, hooks, or templates.
 3. **Run `/start`** — it asks where you are (no idea / vague concept / clear
    design / existing work) and routes you. No assumptions.
 4. **Run `/setup-engine`** — pick your track (guided, or name it:
@@ -603,7 +604,15 @@ For a provider bridge, use a gateway that exposes a stable OpenAI-compatible or
 Anthropic-compatible API to the harness. As of 2026-05-30, the recommended
 self-hosted default is LiteLLM Proxy; OpenRouter is the common hosted
 multi-model option. See `docs/HARNESS-COMPATIBILITY.md` for the adapter matrix
-and routing examples.
+and routing examples. For a copyable local gateway starter, use
+`.agents/docs/provider-gateway-example.yaml` and keep real keys in your shell,
+harness settings, or ignored local config.
+
+To check that provider-neutral assets remain wired correctly after edits, run:
+
+```bash
+python .agents/scripts/validate-compatibility.py
+```
 
 Context-heavy skills like `/reverse-document`, `/adopt`, and
 `/review-all-gdds` read a lot of files. If your selected model has a smaller
@@ -631,6 +640,8 @@ CLAUDE.md                           # Claude Code adapter instructions
   agents/                           # Provider-neutral role source
   docs/                             # Provider-neutral coordination docs
     templates/                      # Provider-neutral document templates
+  hooks/                            # Provider-neutral lifecycle hook scripts
+  hooks.json                        # Provider-neutral hook event registry
   rules/                            # Provider-neutral path-scoped coding standards
   skills/                           # Provider-neutral skill source
 .codex/
@@ -664,6 +675,8 @@ The studio logic is harness-neutral:
 - `AGENTS.md` is the common instruction file for AGENTS.md-aware tools.
 - `.agents/skills/` is the canonical skill tree for provider-neutral harnesses.
 - `.agents/agents/` is the canonical role tree for provider-neutral harnesses.
+- `.agents/hooks/` is the canonical lifecycle hook tree for provider-neutral harnesses.
+- `.agents/hooks.json` is the canonical hook registry for generic harnesses.
 - `.agents/docs/templates/` is the canonical template tree.
 - `.claude/` adapts the same studio to Claude Code.
 - `.codex/` adapts the same studio to Codex/OpenAI-based harnesses.
@@ -718,7 +731,7 @@ You stay in control. The agents provide structure and expertise, not autonomy.
 | `session-stop.sh` | Session close | Archives `active.md` to session log and records git activity |
 | `log-agent.sh` | Agent spawned | Audit trail start — logs subagent invocation |
 | `log-agent-stop.sh` | Agent stops | Audit trail stop — completes subagent record |
-| `validate-skill-change.sh` | PostToolUse (Write/Edit) | Advises running `/skill-test` after any `.claude/skills/` or `.agents/skills/` change |
+| `validate-skill-change.sh` | PostToolUse (Write/Edit) | Advises running `/skill-test` after skill changes in `.agents/skills/` or adapter skill trees |
 
 > **Note**: `validate-commit.sh`, `validate-assets.sh`, and `validate-skill-change.sh` fire on every Bash/Write tool call and exit immediately (exit 0) when the command or file path is not relevant. This is normal hook behavior — not a performance concern.
 
@@ -767,9 +780,9 @@ Primary development and testing on **Windows 10** with Git Bash. All hooks use P
 
 Harness support is adapter-based. Claude Code uses `.claude/settings.json`,
 Codex uses `.codex/hooks.json`, Cursor can load `AGENTS.md` and
-`.cursor/rules/gamestudio.mdc`, and Antigravity-style harnesses should map
-their hooks, skills, subagents, and path-scoped rules to the same canonical
-`.agents/` behavior.
+`.cursor/rules/gamestudio.mdc`, and Antigravity/OpenCode-style harnesses should
+map their hooks, skills, subagents, and path-scoped rules to the same canonical
+`.agents/` behavior, including lifecycle hooks from `.agents/hooks.json`.
 
 ## Community
 
@@ -778,7 +791,7 @@ their hooks, skills, subagents, and path-scoped rules to the same canonical
 
 ---
 
-*Harness-neutral core with Claude Code and Codex adapters. Maintained and extended — contributions welcome via [GitHub Discussions](https://github.com/bullish0x/gamestudio/discussions).*
+*Harness-neutral core with Claude Code, Codex, Cursor, and generic AGENTS.md-compatible adapters. Maintained and extended — contributions welcome via [GitHub Discussions](https://github.com/bullish0x/gamestudio/discussions).*
 
 ## License
 

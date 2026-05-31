@@ -248,6 +248,9 @@ Question → Options → Decision → Draft → Approval
 > present structured option pickers (with labels, descriptions, and multi-select).
 > The pattern is **Explain → Capture**: agents explain their analysis in
 > conversation first, then present a structured UI picker for the user's decision.
+> In harnesses without a structured question UI, preserve the same pattern in
+> plain text: explain the options, ask for one explicit decision, and wait before
+> drafting or writing files.
 
 ### ✅ **Collaborative Behaviors Shown:**
 

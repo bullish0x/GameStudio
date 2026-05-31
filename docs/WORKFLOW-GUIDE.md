@@ -37,8 +37,8 @@
 Before you start, make sure you have:
 
 - A supported coding-agent harness installed and working: Claude Code,
-  Codex/OpenAI-based harnesses, Cursor, Antigravity, Gemini-style tools, or
-  another AGENTS.md-aware agent
+  Codex/OpenAI-based harnesses, Cursor, Antigravity, OpenCode-style tools,
+  Gemini-style tools, or another AGENTS.md-aware agent
 - **Git** with Git Bash (Windows) or standard terminal (Mac/Linux)
 - **jq** (optional but recommended -- hooks fall back to `grep` if missing)
 - **Python 3** (optional -- some hooks use it for JSON validation)
@@ -87,8 +87,9 @@ Recent commits:
 ```
 
 If you see this, hooks are working. If not, check the active adapter:
-`.claude/settings.json` for Claude Code, `.codex/hooks.json` for Codex, or the
-equivalent hook registration in Cursor, Antigravity, or your selected harness.
+`.claude/settings.json` for Claude Code, `.codex/hooks.json` for Codex, or
+equivalent hook registration mapped to `.agents/hooks/` in Cursor,
+Antigravity, OpenCode-style tools, or your selected harness.
 
 ### Step 4: Ask for Help Anytime
 
@@ -1213,6 +1214,10 @@ then a clean UI picker for the decision. Use it for design choices,
 architecture decisions, and strategic questions. Do not use it for open-ended
 discovery questions or simple yes/no confirmations.
 
+In harnesses without an `AskUserQuestion` equivalent, preserve the pattern in
+plain text: explain the options, ask for one explicit decision, and wait before
+drafting or writing files.
+
 ### Agent Coordination (3-Tier Hierarchy)
 
 ```
@@ -1270,8 +1275,8 @@ The system has 13 Hooks that run automatically:
 
 Hook registration is harness-specific. Claude Code reads `.claude/settings.json`,
 Codex reads `.codex/hooks.json`, Cursor can use project rules plus external
-automation, and Antigravity-style harnesses should map their lifecycle hooks to
-the same scripts under the active adapter. The scripts should remain
+automation, and Antigravity/OpenCode-style harnesses should map their lifecycle
+hooks to the canonical scripts under `.agents/hooks/`. The scripts should remain
 provider-neutral and must not assume a specific model API.
 
 ### Context Resilience
