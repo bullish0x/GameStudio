@@ -99,7 +99,7 @@ Note: in `solo` mode, director spawns (CD-PHASE-GATE, TD-PHASE-GATE, PR-PHASE-GA
 
 **Required Artifacts:**
 - [ ] Engine chosen (AGENTS.md Technology Stack is not `[CHOOSE]`)
-- [ ] Technical preferences configured (`.Codex/docs/technical-preferences.md` populated)
+- [ ] Technical preferences configured (`.agents/docs/technical-preferences.md` populated)
 - [ ] Art bible exists at `design/art/art-bible.md` with at least Sections 1–4 (Visual Identity Foundation)
 - [ ] At least 3 Architecture Decision Records in `docs/architecture/` covering
       Foundation-layer systems (scene management, event architecture, save/load)
@@ -312,14 +312,14 @@ For items that can't be automatically verified, **ask the user**:
 
 (Review mode was resolved in Phase 1. Use that stored value here.)
 
-Before generating the final verdict, spawn all four directors as **parallel subagents** via Task using the parallel gate protocol from `.Codex/docs/director-gates.md`. Issue all four Task calls simultaneously — do not wait for one before starting the next.
+Before generating the final verdict, spawn all four directors as **parallel subagents** via Task using the parallel gate protocol from `.agents/docs/director-gates.md`. Issue all four Task calls simultaneously — do not wait for one before starting the next.
 
 **Spawn in parallel:**
 
-1. **`creative-director`** — gate **CD-PHASE-GATE** (`.Codex/docs/director-gates.md`)
-2. **`technical-director`** — gate **TD-PHASE-GATE** (`.Codex/docs/director-gates.md`)
-3. **`producer`** — gate **PR-PHASE-GATE** (`.Codex/docs/director-gates.md`)
-4. **`art-director`** — gate **AD-PHASE-GATE** (`.Codex/docs/director-gates.md`)
+1. **`creative-director`** — gate **CD-PHASE-GATE** (`.agents/docs/director-gates.md`)
+2. **`technical-director`** — gate **TD-PHASE-GATE** (`.agents/docs/director-gates.md`)
+3. **`producer`** — gate **PR-PHASE-GATE** (`.agents/docs/director-gates.md`)
+4. **`art-director`** — gate **AD-PHASE-GATE** (`.agents/docs/director-gates.md`)
 
 Pass to each: target phase name, list of artifacts present, and the context fields listed in that gate's definition.
 
@@ -514,8 +514,8 @@ Based on the verdict, suggest specific next steps:
 - **Tests failing?** → delegate to `lead-programmer` or `qa-tester`
 - **No playtest data?** → `/playtest-report`
 - **No playtest sessions beyond the minimum?** → Additional sessions give more reliable signal. 3+ total is recommended before committing the full team. Use `/playtest-report` to structure findings.
-- **No Difficulty Curve doc?** → Create `design/difficulty-curve.md` from the template at `.Codex/docs/templates/difficulty-curve.md` — or use `/quick-design "difficulty curve"` for a guided session.
-- **No player journey map?** → Create `design/player-journey.md` from the template at `.Codex/docs/templates/player-journey.md` — or author it collaboratively using `/ux-design` Phase 2b.
+- **No Difficulty Curve doc?** → Create `design/difficulty-curve.md` from the template at `.agents/docs/templates/difficulty-curve.md` — or use `/quick-design "difficulty curve"` for a guided session.
+- **No player journey map?** → Create `design/player-journey.md` from the template at `.agents/docs/templates/player-journey.md` — or author it collaboratively using `/ux-design` Phase 2b.
 - **Need a quick sprint check?** → `/sprint-status` for current sprint progress snapshot
 - **Performance unknown?** → `/perf-profile`
 - **Not localized?** → `/localize`

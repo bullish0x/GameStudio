@@ -116,7 +116,7 @@ If a dependency file cannot be found: warn "Dependency story not found: [path]. 
 ---
 
 ### Engine reference
-Read `.Codex/docs/technical-preferences.md`:
+Read `.agents/docs/technical-preferences.md`:
 - `Engine:` value — determines which programmer agents to use
 - Naming conventions (class names, file names, signal/event names)
 - Performance budgets (frame budget, memory ceiling)
@@ -154,7 +154,7 @@ If the story's Type is `Config/Data`, no programmer agent or engine specialist i
 
 ### Engine specialist — always spawn as secondary for code stories
 
-Read the `Engine Specialists` section of `.Codex/docs/technical-preferences.md`
+Read the `Engine Specialists` section of `.agents/docs/technical-preferences.md`
 to get the configured primary specialist. Spawn them alongside the primary agent
 when the story involves engine-specific APIs, patterns, or the ADR has HIGH
 engine risk.
@@ -181,7 +181,7 @@ Brief the agent with file paths and targeted reading instructions — do not ser
 2. **GDD requirement**: look up TR-ID `[TR-XXX-NNN]` in `docs/architecture/tr-registry.yaml` — use the `requirement` field as source of truth
 3. **ADR**: `docs/architecture/[adr-file].md` — read the **Decision** and **Implementation Guidelines** sections only
 4. **Control manifest**: `docs/architecture/control-manifest.md` — read rules for the **[layer]** layer only
-5. **Engine preferences**: `.Codex/docs/technical-preferences.md` — read naming conventions and performance budgets
+5. **Engine preferences**: `.agents/docs/technical-preferences.md` — read naming conventions and performance budgets
 6. **Test file path**: `[path from story's Test Evidence section]` — this file must be created as part of implementation
 7. **Test requirement** (Logic and Integration stories only): The test file MUST be created at `[path from the story's Test Evidence section]`. Write the test alongside the implementation — do not defer it. The story cannot be closed via `/story-done` without this file present. Each acceptance criterion must have at least one test function covering it. Test file naming: `[system]_[feature]_test.[ext]`. Function naming: `test_[scenario]_[expected_outcome]`. No random seeds, no time-dependent assertions, no external I/O.
 8. **Explicit instruction**: implement this story following the ADR guidelines, respect the manifest rules, stay within the story's Out of Scope boundaries. Write clean, doc-commented public APIs.

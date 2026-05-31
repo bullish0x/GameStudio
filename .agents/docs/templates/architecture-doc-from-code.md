@@ -224,7 +224,7 @@
 
 | Date | Author | Changes |
 |------|--------|---------|
-| [Date] | Claude (reverse-doc) | Initial reverse-documentation from `[source path]` |
+| [Date] | active harness (reverse-doc) | Initial reverse-documentation from `[source path]` |
 | [Date] | [User] | Clarified rationale for [X] |
 
 ---

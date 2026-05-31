@@ -206,7 +206,7 @@ Update the Technology Stack section, replacing the `[CHOOSE]` placeholders with 
 
 ## 5. Populate Technical Preferences
 
-After updating AGENTS.md, create or update `.Codex/docs/technical-preferences.md` with
+After updating AGENTS.md, create or update `.agents/docs/technical-preferences.md` with
 engine-appropriate defaults. Read the existing template first, then fill in:
 
 ### Engine & Language Section

@@ -90,7 +90,7 @@ Read the GDD and identify every domain present. A GDD can touch multiple domains
 | Multiplayer, sync, replication | `network-programmer` |
 | Audio cues, music triggers | `audio-director` |
 | Performance, draw calls, memory | `performance-analyst` |
-| Engine-specific patterns or APIs | Primary engine specialist (from `.Codex/docs/technical-preferences.md`) |
+| Engine-specific patterns or APIs | Primary engine specialist (from `.agents/docs/technical-preferences.md`) |
 | Acceptance criteria, test coverage | `qa-lead` |
 | Data schema, resource structure | `systems-designer` |
 | Any gameplay system | `game-designer` (always) |
@@ -101,7 +101,7 @@ These are the most common baselines — but not required for pure UI specs, audi
 
 ### Step 2 — Spawn all relevant specialists in parallel
 
-**CRITICAL: Task in this skill spawns a SUBAGENT — a separate independent Codex session
+**CRITICAL: Task in this skill spawns a SUBAGENT — a separate independent active harness session
 with its own context window. It is NOT task tracking. Do NOT simulate specialist
 perspectives internally. Do NOT reason through domain views yourself. You MUST issue
 actual Task calls. A simulated review is not a specialist review.**

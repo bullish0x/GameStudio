@@ -80,7 +80,7 @@ Select one via `/setup-engine`; the per-project routing below is filled from the
 
 ### Web Engine Skill Routing
 
-Web engine agents draw on the `.claude/skills/` web game-dev skill library:
+Web engine agents draw on the `.agents/skills/` web game-dev skill library:
 
 | Agent | Skills it uses |
 |-------|----------------|

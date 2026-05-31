@@ -93,7 +93,7 @@ Read `design/gdd/game-concept.md` if it exists. Extract:
 - Core fantasy (what the player is supposed to feel)
 - Core loop (the moment-to-moment action being tested)
 
-Read `AGENTS.md` and `.Codex/docs/technical-preferences.md` for the engine and
+Read `AGENTS.md` and `.agents/docs/technical-preferences.md` for the engine and
 language in use.
 
 ---
@@ -395,7 +395,7 @@ Vague ones make it useless.
 
 ## Phase 7: Generate Prototype Report
 
-Read `.Codex/docs/templates/prototype-report.md` to get the report structure.
+Read `.agents/docs/templates/prototype-report.md` to get the report structure.
 Fill in every section based on what was observed during this session. Replace all
 placeholder text with real observations — no generic filler.
 

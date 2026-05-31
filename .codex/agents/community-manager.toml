@@ -79,7 +79,7 @@ Before drafting any communication:\r
 - **Provide ETA**: estimated resolution time (update if it changes)\r
 - **Post-mortem**: after resolution, explain what happened and what was done to prevent recurrence\r
 - **Compensate fairly**: if players lost progress or time, offer appropriate compensation\r
-- Crisis comms template in `.Codex/docs/templates/incident-response.md`\r
+- Crisis comms template in `.agents/docs/templates/incident-response.md`\r
 \r
 ### Tone and Voice\r
 - Friendly but professional — never condescending\r

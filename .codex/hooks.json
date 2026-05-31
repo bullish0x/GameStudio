@@ -6,12 +6,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-commit.sh'",
+            "command": "bash .codex/hooks/validate-commit.sh",
             "timeout": 15
           },
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-push.sh'",
+            "command": "bash .codex/hooks/validate-push.sh",
             "timeout": 10
           }
         ]
@@ -23,12 +23,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-assets.sh'",
+            "command": "bash .codex/hooks/validate-assets.sh",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-skill-change.sh'",
+            "command": "bash .codex/hooks/validate-skill-change.sh",
             "timeout": 5
           }
         ]
@@ -40,7 +40,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\pre-compact.sh'",
+            "command": "bash .codex/hooks/pre-compact.sh",
             "timeout": 10
           }
         ]
@@ -52,7 +52,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\post-compact.sh'",
+            "command": "bash .codex/hooks/post-compact.sh",
             "timeout": 10
           }
         ]
@@ -64,17 +64,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\session-start.sh'",
+            "command": "bash .codex/hooks/session-start.sh",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\detect-gaps.sh'",
+            "command": "bash .codex/hooks/detect-gaps.sh",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\model-advisory.sh'",
+            "command": "bash .codex/hooks/model-advisory.sh",
             "timeout": 10
           }
         ]
@@ -86,7 +86,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\log-agent.sh'",
+            "command": "bash .codex/hooks/log-agent.sh",
             "timeout": 5
           }
         ]
@@ -98,7 +98,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\log-agent-stop.sh'",
+            "command": "bash .codex/hooks/log-agent-stop.sh",
             "timeout": 5
           }
         ]
@@ -109,7 +109,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\session-stop.sh'",
+            "command": "bash .codex/hooks/session-stop.sh",
             "timeout": 10
           }
         ]

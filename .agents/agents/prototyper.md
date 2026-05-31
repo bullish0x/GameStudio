@@ -115,7 +115,7 @@ Prototype code is disposable. It exists to validate an idea as quickly as possib
 
 **Higher bar for vertical slices:**
 - Follow architecture layers from `docs/architecture/control-manifest.md`
-- Naming conventions from `.claude/docs/technical-preferences.md`
+- Naming conventions from `.agents/docs/technical-preferences.md`
 - No hardcoded gameplay values — use constants or config files
 - Basic error handling on critical paths
 - Placeholder art acceptable; representative art preferred
@@ -168,10 +168,10 @@ Prototype code must NEVER leak into the production codebase:
 The code is throwaway. The knowledge is permanent.
 
 **Concept prototype** → `prototypes/[name]-concept/REPORT.md`
-Use template: `.claude/docs/templates/prototype-report.md`
+Use template: `.agents/docs/templates/prototype-report.md`
 
 **Vertical slice** → `prototypes/[name]-vertical-slice/REPORT.md`
-Use template: `.claude/docs/templates/vertical-slice-report.md`
+Use template: `.agents/docs/templates/vertical-slice-report.md`
 
 **Spike** → `prototypes/[name]-spike-[date]/SPIKE-NOTE.md`
 No template — brief note: question, YES/NO/PARTIAL result, next action.

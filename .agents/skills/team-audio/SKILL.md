@@ -82,7 +82,7 @@ Spawn the `technical-artist` agent to:
 - Plan streaming vs preloaded asset strategy
 - Design any audio-reactive visual effects
 
-Spawn the **primary engine specialist** in parallel (from `.Codex/docs/technical-preferences.md` Engine Specialists) to validate the integration approach:
+Spawn the **primary engine specialist** in parallel (from `.agents/docs/technical-preferences.md` Engine Specialists) to validate the integration approach:
 - Is the proposed audio middleware integration idiomatic for the engine? (e.g., Godot's built-in AudioStreamPlayer vs FMOD, Unity's Audio Mixer vs Wwise, Unreal's MetaSounds vs FMOD)
 - Any engine-specific audio node/component patterns that should be used?
 - Known audio system changes in the pinned engine version that affect the integration plan?

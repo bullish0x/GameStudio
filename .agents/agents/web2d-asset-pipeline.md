@@ -74,7 +74,7 @@ and budgeting before assets land in `src/`.
 ## Skills
 
 Draw on `pixi-assets` and `phaser-loading-assets` (loading/manifest patterns)
-under `.claude/skills/`. (PixiJS ecosystem skills such as a dedicated Spine skill
+under `.agents/skills/`. (PixiJS ecosystem skills such as a dedicated Spine skill
 are not present in this repo's imported set — handle Spine/DragonBones from
 tooling knowledge and the runtime's own docs.)
 

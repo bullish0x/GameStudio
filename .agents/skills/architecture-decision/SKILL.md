@@ -15,7 +15,7 @@ Resolve the review mode (once, store for all gate spawns this run):
 2. Else read `production/review-mode.txt` → use that value
 3. Else → default to `lean`
 
-See `.Codex/docs/director-gates.md` for the full check pattern.
+See `.agents/docs/director-gates.md` for the full check pattern.
 
 **If the argument starts with `retrofit` followed by a file path**
 (e.g., `/architecture-decision retrofit docs/architecture/adr-0001-event-system.md`):
@@ -335,7 +335,7 @@ to implement it.]
 ```
 
 5.5. **Engine Specialist Validation** — Before saving, spawn the **primary engine specialist** via Task to validate the drafted ADR:
-   - Read `.Codex/docs/technical-preferences.md` `Engine Specialists` section to get the primary specialist
+   - Read `.agents/docs/technical-preferences.md` `Engine Specialists` section to get the primary specialist
    - If no engine is configured (`[TO BE CONFIGURED]`), skip this step
    - Spawn `subagent_type: [primary specialist]` with: the ADR's Engine Compatibility section, Decision section, Key Interfaces, and the engine reference docs path. Ask them to:
      1. Confirm the proposed approach is idiomatic for the pinned engine version
@@ -349,7 +349,7 @@ to implement it.]
 - `lean` → skip (not a PHASE-GATE). Note: "TD-ADR skipped — Lean mode." Proceed to Step 5.7 (GDD sync check).
 - `full` → spawn as normal.
 
-5.6. **Technical Director Strategic Review** — After the engine specialist validation, spawn `technical-director` via Task using gate **TD-ADR** (`.Codex/docs/director-gates.md`):
+5.6. **Technical Director Strategic Review** — After the engine specialist validation, spawn `technical-director` via Task using gate **TD-ADR** (`.agents/docs/director-gates.md`):
    - Pass: the ADR file path (or draft content), engine version, domain, any existing ADRs in the same domain
    - The TD validates architectural coherence (is this decision consistent with the whole system?) — distinct from the engine specialist's API-level check
    - If CONCERNS or REJECT: revise the Decision or Alternatives sections accordingly before proceeding
@@ -445,7 +445,7 @@ If there are no remaining priority ADRs and no undesigned GDD systems, offer onl
 
 **Always include this fixed notice in the closing output (do NOT omit it):**
 
-> To validate ADR coverage against your GDDs, open a **fresh Codex session**
+> To validate ADR coverage against your GDDs, open a **fresh active harness session**
 > and run `/architecture-review`.
 >
 > **Never run `/architecture-review` in the same session as `/architecture-decision`.**

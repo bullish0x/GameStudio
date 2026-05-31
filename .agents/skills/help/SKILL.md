@@ -20,7 +20,7 @@ gap analysis, use `/project-stage-detect`.
 
 ## Step 1: Read the Catalog
 
-Read `.Codex/docs/workflow-catalog.yaml`. This is the authoritative list of all
+Read `.agents/docs/workflow-catalog.yaml`. This is the authoritative list of all
 phases, their steps (in order), whether each step is required or optional, and
 the artifact globs that indicate completion.
 
@@ -28,7 +28,7 @@ the artifact globs that indicate completion.
 
 ## Step 1b: Find Skills Not in the Catalog
 
-After reading the catalog, Glob `.Codex/skills/*/SKILL.md` to get the full list
+After reading the catalog, Glob `.agents/skills/*/SKILL.md` to get the full list
 of installed skills. For each file, extract the `name:` field from its frontmatter.
 
 Compare against the `command:` values in the catalog. Any skill whose name does

@@ -3,15 +3,15 @@
   <p align="center">
     Turn one coding-agent harness into a full game development studio.
     <br />
-    55 agents. 183 skills. One coordinated AI team.
+    55 agents. 182 skills. One coordinated AI team.
   </p>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
   <a href=".agents/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
-  <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-183-green" alt="183 Skills"></a>
-  <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-12-orange" alt="12 Hooks"></a>
+  <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-182-green" alt="182 skills"></a>
+  <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-13-orange" alt="13 Hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
   <a href="docs/HARNESS-COMPATIBILITY.md"><img src="https://img.shields.io/badge/harness-neutral-f5f5f5" alt="Harness neutral"></a>
 </p>
@@ -52,7 +52,7 @@ The result: you still make every decision, but now you have a team that asks the
 | Category | Count | Description |
 |----------|-------|-------------|
 | **Agents** | 55 | Specialized subagents across design, programming, art, audio, narrative, QA, production, and web engines (Three.js / PixiJS / Phaser) |
-| **Skills** | 183 | Studio workflow commands plus web game-dev skills (Three.js, R3F, ECS, PixiJS, Phaser) |
+| **Skills** | 182 | Studio workflow commands plus web game-dev skills (Three.js, R3F, ECS, PixiJS, Phaser) |
 | **Hooks** | 12 | Automated validation on commits, pushes, asset changes, session lifecycle, agent audit trail, and gap detection |
 | **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, web scenes/shaders/3D assets, and more |
 | **Templates** | 41 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |
@@ -97,7 +97,7 @@ web engines. Use the set that matches your project:
 
 ## Slash Commands
 
-Type `/` in a supported harness to access all 183 skills. In harnesses that do
+Type `/` in a supported harness to access all 182 skills. In harnesses that do
 not expose slash commands directly, open the matching `SKILL.md` under
 `.agents/skills/` or the harness-specific adapter directory and follow it as the
 workflow definition:
@@ -636,12 +636,12 @@ CLAUDE.md                           # Claude Code adapter instructions
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # Claude adapter agent definitions
   skills/                           # Claude adapter slash commands
-  hooks/                            # 12 hook scripts (bash, cross-platform)
+  hooks/                            # 13 hook scripts (bash, cross-platform)
   rules/                            # 14 path-scoped coding standards
   statusline.sh                     # Status line script (context%, model, stage, epic breadcrumb)
   docs/
     workflow-catalog.yaml           # 7-phase pipeline definition (read by /help)
-    templates/                      # 41 document templates
+    templates/                      # document templates
 src/                                # Game source code
 assets/                             # Art, audio, VFX, shaders, data files
 design/                             # GDDs, narrative docs, level designs
@@ -713,7 +713,7 @@ You stay in control. The agents provide structure and expertise, not autonomy.
 | `session-stop.sh` | Session close | Archives `active.md` to session log and records git activity |
 | `log-agent.sh` | Agent spawned | Audit trail start — logs subagent invocation |
 | `log-agent-stop.sh` | Agent stops | Audit trail stop — completes subagent record |
-| `validate-skill-change.sh` | PostToolUse (Write/Edit) | Advises running `/skill-test` after any `.claude/skills/` change |
+| `validate-skill-change.sh` | PostToolUse (Write/Edit) | Advises running `/skill-test` after any `.claude/skills/` or `.agents/skills/` change |
 
 > **Note**: `validate-commit.sh`, `validate-assets.sh`, and `validate-skill-change.sh` fire on every Bash/Write tool call and exit immediately (exit 0) when the command or file path is not relevant. This is normal hook behavior — not a performance concern.
 

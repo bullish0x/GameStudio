@@ -3,7 +3,7 @@
 > **How to go from zero to a shipped game using the Agent Architecture.**
 >
 > This guide walks you through every phase of game development using the
-> 55-agent system, 183 skills, and 12 automated hooks. It assumes you have a
+> 55-agent system, 182 skills, and 13 automated hooks. It assumes you have a
 > supported coding-agent harness and are working from the project root.
 >
 > The pipeline has 7 phases. Each phase has a formal gate (`/gate-check`)
@@ -1251,7 +1251,7 @@ Tier 3 (Specialists):  gameplay-programmer, engine-programmer,
 
 ### Automated Hooks (Safety Net)
 
-The system has 12 hooks that run automatically:
+The system has 13 Hooks that run automatically:
 
 | Hook | Trigger | What It Does |
 |------|---------|-------------|
@@ -1441,7 +1441,7 @@ conflicts go to `producer`.
 > Covers the **73 studio workflow commands** below, organized by production
 > phase. The web game-dev skill library (110 more — Three.js, React Three Fiber,
 > ECS, PixiJS, Phaser) is reference knowledge the web engine agents draw on; see
-> `.claude/docs/skills-reference.md` for a per-skill description of all 183.
+> `.claude/docs/skills-reference.md` for a per-skill description of all 182.
 
 ### Studio Workflow Commands by Category (73)
 

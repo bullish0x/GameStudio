@@ -10,7 +10,7 @@ allowed-tools: Read, Glob, Grep, Write
 
 Read AGENTS.md for project overview and standards.
 
-Read the relevant agent definition from `.Codex/agents/` if a specific role is specified.
+Read the relevant agent definition from `.agents/agents/` if a specific role is specified.
 
 ---
 

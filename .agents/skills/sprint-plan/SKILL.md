@@ -15,7 +15,7 @@ Extract the mode argument (`new`, `update`, or `status`) and resolve the review 
 2. Else read `production/review-mode.txt` → use that value
 3. Else → default to `lean`
 
-See `.Codex/docs/director-gates.md` for the full check pattern.
+See `.agents/docs/director-gates.md` for the full check pattern.
 
 **Review mode check** (before gates run):
 - Read `production/review-mode.txt` if it exists. Use that mode.
@@ -204,7 +204,7 @@ stories that haven't changed, add new stories, remove dropped ones.
 - `lean` → skip (not a PHASE-GATE). Note: "PR-SPRINT skipped — Lean mode." Proceed to Phase 5 (QA plan gate).
 - `full` → spawn as normal.
 
-Before finalising the sprint plan, spawn `producer` via Task using gate **PR-SPRINT** (`.Codex/docs/director-gates.md`).
+Before finalising the sprint plan, spawn `producer` via Task using gate **PR-SPRINT** (`.agents/docs/director-gates.md`).
 
 Pass: proposed story list (titles, estimates, dependencies), total team capacity in hours/days, any carryover from the previous sprint, milestone constraints and deadline.
 

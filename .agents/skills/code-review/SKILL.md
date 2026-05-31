@@ -15,7 +15,7 @@ Read the target file(s) in full. Read AGENTS.md for project coding standards.
 
 ## Phase 2: Identify Engine Specialists
 
-Read `.Codex/docs/technical-preferences.md`, section `## Engine Specialists`. Note:
+Read `.agents/docs/technical-preferences.md`, section `## Engine Specialists`. Note:
 
 - The **Primary** specialist (used for architecture and broad engine concerns)
 - The **Language/Code Specialist** (used when reviewing the project's primary language files)

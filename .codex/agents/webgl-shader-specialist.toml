@@ -63,7 +63,7 @@ The same GLSL discipline applies to 2D effects; the wiring differs per engine:\r
 - Coordinate texture channel/layout (mask, displacement, ramp maps) with\r
   `web2d-asset-pipeline`, and hand finished filters back to `pixijs-specialist`\r
   or `phaser-specialist`, who own the scene/loop.\r
-- Skills: `pixi-filters` and `phaser-filters-and-postfx` under `.Codex/skills/`.\r
+- Skills: `pixi-filters` and `phaser-filters-and-postfx` under `.agents/skills/`.\r
 \r
 ## Performance Stance\r
 \r

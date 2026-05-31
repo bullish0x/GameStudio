@@ -110,7 +110,7 @@ Prototype code is disposable. It exists to validate an idea as quickly as possib
 \r
 **Higher bar for vertical slices:**\r
 - Follow architecture layers from `docs/architecture/control-manifest.md`\r
-- Naming conventions from `.Codex/docs/technical-preferences.md`\r
+- Naming conventions from `.agents/docs/technical-preferences.md`\r
 - No hardcoded gameplay values — use constants or config files\r
 - Basic error handling on critical paths\r
 - Placeholder art acceptable; representative art preferred\r
@@ -163,10 +163,10 @@ Prototype code must NEVER leak into the production codebase:\r
 The code is throwaway. The knowledge is permanent.\r
 \r
 **Concept prototype** → `prototypes/[name]-concept/REPORT.md`\r
-Use template: `.Codex/docs/templates/prototype-report.md`\r
+Use template: `.agents/docs/templates/prototype-report.md`\r
 \r
 **Vertical slice** → `prototypes/[name]-vertical-slice/REPORT.md`\r
-Use template: `.Codex/docs/templates/vertical-slice-report.md`\r
+Use template: `.agents/docs/templates/vertical-slice-report.md`\r
 \r
 **Spike** → `prototypes/[name]-spike-[date]/SPIKE-NOTE.md`\r
 No template — brief note: question, YES/NO/PARTIAL result, next action.\r

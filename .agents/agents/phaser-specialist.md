@@ -89,7 +89,7 @@ in systems outside Phaser (see Domain Boundaries).
 
 ## Skills
 
-Draw on the imported Phaser skills under `.claude/skills/` — `phaser-scenes`,
+Draw on the imported Phaser skills under `.agents/skills/` — `phaser-scenes`,
 `phaser-game-setup-and-config`, `phaser-loading-assets`, `phaser-tilemaps`,
 `phaser-physics-arcade`, `phaser-physics-matter`, `phaser-input-keyboard-mouse-touch`,
 `phaser-animations`, `phaser-tweens`, `phaser-audio-and-sound`, `phaser-cameras`,
