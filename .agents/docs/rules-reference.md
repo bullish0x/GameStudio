@@ -1,0 +1,22 @@
+# Path-Specific Rules
+
+Path-specific rules live in `.agents/rules/` as provider-neutral standards.
+Adapters should map these files into their native rule system; Claude Code also
+ships a `.claude/rules/` adapter copy.
+
+| Rule File | Path Pattern | Enforces |
+| ---- | ---- | ---- |
+| `gameplay-code.md` | `src/gameplay/**` | Data-driven values, delta time, no UI references |
+| `engine-code.md` | `src/core/**` | Zero allocs in hot paths, thread safety, API stability |
+| `ai-code.md` | `src/ai/**` | Performance budgets, debuggability, data-driven params |
+| `network-code.md` | `src/networking/**` | Server-authoritative, versioned messages, security |
+| `ui-code.md` | `src/ui/**` | No game state ownership, localization-ready, accessibility |
+| `design-docs.md` | `design/gdd/**` | Required 8 sections, formula format, edge cases |
+| `narrative.md` | `design/narrative/**` | Lore consistency, character voice, canon levels |
+| `data-files.md` | `assets/data/**` | JSON validity, naming conventions, schema rules |
+| `test-standards.md` | `tests/**` | Test naming, coverage requirements, fixture patterns |
+| `prototype-code.md` | `prototypes/**` | Relaxed standards, README required, hypothesis documented |
+| `shader-code.md` | `assets/shaders/**` | Naming conventions, performance targets, cross-platform rules |
+| `assets-3d.md` | `assets/3d/**` | glTF/GLB delivery, compression, texture budgets, validation |
+| `scenes.md` | `src/scenes/**` | Three.js/R3F scene resource lifecycle, render-loop, color-space standards |
+| `shaders.md` | `src/shaders/**` | GLSL/WebGL precision, branching, color-space, post-processing standards |

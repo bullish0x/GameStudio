@@ -5,7 +5,8 @@ Tests the skills and agents themselves — not any game built with them.
 
 > **This folder is self-contained and optional.**
 > Game developers using GS don't need it. To remove it entirely:
-> `rm -rf "GameStudio Skill Testing Framework"` — nothing in `.claude/` depends on it.
+> `rm -rf "GameStudio Skill Testing Framework"` — nothing in `.agents/`,
+> `.claude/`, or `.codex/` depends on it.
 
 ---
 
@@ -14,8 +15,9 @@ Tests the skills and agents themselves — not any game built with them.
 ```
 GameStudio Skill Testing Framework/
 ├── README.md              ← you are here
-├── CLAUDE.md              <- tells any supported harness how to use this framework
-├── catalog.yaml           ← master registry: all 183 skills + 55 agents, coverage tracking
+├── AGENTS.md              <- provider-neutral harness instructions
+├── CLAUDE.md              <- Claude Code adapter instructions for this framework
+├── catalog.yaml           ← master registry: all 182 skills + 55 agents, coverage tracking
 ├── quality-rubric.md      ← category-specific pass/fail metrics for /skill-test category
 │
 ├── skills/                ← behavioral spec files for skills (one per skill)
@@ -56,7 +58,7 @@ All testing is driven by two skills already in the framework:
 
 ```
 /skill-test static [skill-name]     # Check one skill (7 checks)
-/skill-test static all              # Check all 183 skills
+/skill-test static all              # Check all 182 skills
 ```
 
 ### Run a behavioral spec test

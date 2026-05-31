@@ -31,11 +31,11 @@ AI agents that run directly on your machine. Security issues are primarily about
 contributed code that executes in users' environments without their awareness.
 
 ### High Severity
-- Hooks (`.claude/hooks/*.sh`) that execute malicious or undisclosed shell
-  commands on user machines
+- Hooks (`.claude/hooks/*.sh`, `.codex/hooks/*.sh`, or another adapter hook
+  path) that execute malicious or undisclosed shell commands on user machines
 - Skills or agents that exfiltrate environment variables, API keys, or secrets
-- Prompt injection via skill or agent definitions that causes Claude to bypass
-  safety measures or take unauthorized destructive actions
+- Prompt injection via skill or agent definitions that causes the active harness
+  to bypass safety measures or take unauthorized destructive actions
 - Contributions that silently alter behavior in ways users cannot audit
 
 ### Medium Severity
@@ -46,9 +46,9 @@ contributed code that executes in users' environments without their awareness.
   approval step
 
 ### Out of Scope
-- The behavior of Claude or the Claude Code CLI itself
-  (report to [Anthropic](https://www.anthropic.com/security))
-- Bugs in the user's Claude Code installation or editor extension
+- The behavior of a model provider, gateway, or coding-agent harness itself
+  (report to that provider or tool vendor)
+- Bugs in the user's local harness installation or editor extension
 - Theoretical vulnerabilities with no realistic attack path
 - Issues requiring physical access to the user's machine
 

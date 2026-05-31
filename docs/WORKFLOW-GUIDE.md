@@ -8,7 +8,7 @@
 >
 > The pipeline has 7 phases. Each phase has a formal gate (`/gate-check`)
 > that must pass before you advance. The authoritative phase sequence is
-> defined in `.claude/docs/workflow-catalog.yaml` and read by `/help`.
+> defined in `.agents/docs/workflow-catalog.yaml` and read by `/help`.
 > Harness-neutral setup notes live in `docs/HARNESS-COMPATIBILITY.md`.
 
 ---
@@ -240,7 +240,7 @@ Or with a specific engine:
 
 **What /setup-engine does:**
 
-- Populates `.claude/docs/technical-preferences.md` with naming conventions,
+- Populates `.agents/docs/technical-preferences.md` with naming conventions,
   performance budgets, and engine-specific defaults
 - Detects knowledge gaps (engine version newer than LLM training data) and
   advises cross-referencing `docs/engine-reference/`
@@ -1152,7 +1152,7 @@ Bypasses normal sprint processes with a full audit trail:
 
 ```
 Ask the active harness to create a post-mortem using the template at
-.claude/docs/templates/post-mortem.md
+.agents/docs/templates/post-mortem.md
 ```
 
 ---
@@ -1184,7 +1184,7 @@ By default they run at every checkpoint. You can control how much review you get
 The `--review` flag works on all gate-using skills. Change the global mode at any
 time by editing `production/review-mode.txt` directly or re-running `/start`.
 
-Full gate definitions and check pattern: `.claude/docs/director-gates.md`
+Full gate definitions and check pattern: `.agents/docs/director-gates.md`
 
 ---
 
@@ -1263,7 +1263,7 @@ The system has 13 Hooks that run automatically:
 | `validate-commit.sh` | Before commit | Checks for design doc references, valid JSON, no hardcoded values |
 | `validate-push.sh` | Before push | Warns on pushes to main/develop |
 | `validate-assets.sh` | Before commit | Checks asset naming and size |
-| `validate-skill-change.sh` | Skill file written | Advises running `/skill-test` after `.claude/skills/` changes |
+| `validate-skill-change.sh` | Skill file written | Advises running `/skill-test` after `.agents/skills/` or adapter skill changes |
 | `log-agent.sh` | Agent start | Logs agent invocations for audit trail |
 | `log-agent-stop.sh` | Agent stop | Completes agent audit trail (start + stop) |
 | `session-stop.sh` | Session end | Final session logging |
@@ -1441,7 +1441,7 @@ conflicts go to `producer`.
 > Covers the **73 studio workflow commands** below, organized by production
 > phase. The web game-dev skill library (110 more — Three.js, React Three Fiber,
 > ECS, PixiJS, Phaser) is reference knowledge the web engine agents draw on; see
-> `.claude/docs/skills-reference.md` for a per-skill description of all 182.
+> `.agents/docs/skills-reference.md` for a per-skill description of all 182.
 
 ### Studio Workflow Commands by Category (73)
 

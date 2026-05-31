@@ -1,6 +1,7 @@
 # Contributing to GameStudio
 
-GS is a coordination framework for indie game development using Claude Code.
+GS is a provider-neutral coordination framework for indie game development in
+supported coding-agent harnesses.
 Contributions are welcome — bug fixes, new skills that fill a real gap, agent
 improvements, and hook fixes. PRs that don't fit the framework's direction will
 be closed without lengthy explanation.
@@ -25,12 +26,14 @@ merged here — keep those in your own repo.
 These are the things that will get your PR rejected if you miss them.
 
 **Skill files**
-- Skills live in `.claude/skills/<name>/SKILL.md` — the subdirectory format is
-  required. Flat `.md` files are silently ignored by Claude Code.
+- Canonical skills live in `.agents/skills/<name>/SKILL.md`; adapter copies may
+  live under `.claude/skills/` or another harness-specific directory. The
+  subdirectory format is required.
 - SKILL.md must include YAML frontmatter: `name`, `description`,
-  `argument-hint`, `allowed-tools`, and `model`
-- Model tier: `haiku` for read-only status checks, `opus` for multi-document
-  synthesis and phase gates, `sonnet` for everything else
+  `argument-hint`, and `allowed-tools`
+- Do not hardcode provider or model names in canonical skills. If an adapter
+  needs a reasoning tier hint, keep it advisory and let the active harness or
+  gateway choose the actual model.
 
 **Hooks**
 - Use `grep -E` — never `grep -P` (Perl regex breaks on Windows Git Bash)
@@ -46,8 +49,9 @@ These are the things that will get your PR rejected if you miss them.
 
 **Reference docs**
 - If your PR adds or changes a skill, agent, or hook, update the matching
-  reference doc (agent-roster, skills-reference, hooks-reference, or
-  rules-reference). PRs that add things without updating the index will be
+  provider-neutral reference doc in `.agents/docs/` (`agent-roster`,
+  `skills-reference`, `hooks-reference`, or `rules-reference`). PRs that add
+  things without updating the index will be
   sent back.
 
 ## The Collaborative Principle
@@ -61,10 +65,10 @@ or writing files unilaterally, it won't be merged.
 
 ## Testing Your Changes
 
-Run it in a Claude Code session and confirm it works end-to-end. For skills,
-invoke the skill and verify the output matches what the skill claims to do.
-For hooks, trigger the relevant event and confirm the hook fires correctly
-and exits cleanly.
+Run it in at least one supported coding-agent harness and confirm it works
+end-to-end. For skills, invoke the skill and verify the output matches what the
+skill claims to do. For hooks, trigger the relevant event and confirm the hook
+fires correctly and exits cleanly.
 
 Include a brief note in your PR description describing what you tested and
 what the output looked like.

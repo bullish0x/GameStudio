@@ -16,6 +16,7 @@ can read repository instructions and expose file/shell tools.
 - Treat `AGENTS.md` as the common instruction entrypoint.
 - Treat `.agents/skills/` as the provider-neutral skill source.
 - Treat `.agents/agents/` as the provider-neutral role source.
+- Treat `.agents/rules/` as the provider-neutral path-scoped standards source.
 - Treat `.agents/docs/templates/` as the provider-neutral template source.
 - Treat `.claude/` as the Claude Code adapter and `.codex/` as the Codex
   adapter. Other harnesses should map their own agent/rule/hook formats back to

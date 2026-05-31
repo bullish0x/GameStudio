@@ -12,7 +12,7 @@
   <a href=".agents/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
   <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-182-green" alt="182 skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-13-orange" alt="13 Hooks"></a>
-  <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
+  <a href=".agents/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
   <a href="docs/HARNESS-COMPATIBILITY.md"><img src="https://img.shields.io/badge/harness-neutral-f5f5f5" alt="Harness neutral"></a>
 </p>
 
@@ -53,7 +53,7 @@ The result: you still make every decision, but now you have a team that asks the
 |----------|-------|-------------|
 | **Agents** | 55 | Specialized subagents across design, programming, art, audio, narrative, QA, production, and web engines (Three.js / PixiJS / Phaser) |
 | **Skills** | 182 | Studio workflow commands plus web game-dev skills (Three.js, R3F, ECS, PixiJS, Phaser) |
-| **Hooks** | 12 | Automated validation on commits, pushes, asset changes, session lifecycle, agent audit trail, and gap detection |
+| **Hooks** | 13 | Automated validation on commits, pushes, asset changes, session lifecycle, notifications, agent audit trail, and gap detection |
 | **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, web scenes/shaders/3D assets, and more |
 | **Templates** | 41 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |
 
@@ -397,7 +397,8 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    design / existing work) and routes you. No assumptions.
 4. **Run `/setup-engine`** — pick your track (guided, or name it:
    `/setup-engine godot 4.6`, `/setup-engine phaser`, `/setup-engine threejs`).
-   It pins the version in `CLAUDE.md` and fills version-aware reference docs.
+   It pins the version in the active harness instruction file and fills
+   version-aware reference docs.
 5. Follow the pipeline (see [How to Use](#how-to-use)) — `/help` always tells
    you the next step.
 
@@ -423,7 +424,8 @@ side-files and merge the studio's `hooks`/`permissions` blocks in when you're
 ready. On Windows, run it from **Git Bash**.
 
 **Update / uninstall / status** — safe by design: these only ever touch files the
-installer owns (tracked in `.claude/.gamestudio/manifest.tsv`). Files you've
+installer owns (tracked in `.agents/.gamestudio/manifest.tsv`; legacy installs
+using `.claude/.gamestudio/manifest.tsv` are still recognized). Files you've
 edited are kept and the new version is offered as `*.gamestudio-new`:
 
 ```bash
@@ -477,8 +479,9 @@ Run `/setup-engine` (guided) or name it: `/setup-engine godot 4.6`,
 | Web 2D interactive | PixiJS v8 | `pixijs-specialist` |
 | Web 2D games | Phaser 4 | `phaser-specialist` |
 
-`/setup-engine` pins the version in `CLAUDE.md` and fills version-aware reference
-docs so agents verify APIs against your installed release.
+`/setup-engine` pins the version in the active harness instruction file and
+fills version-aware reference docs so agents verify APIs against your installed
+release.
 
 ### 2. Follow the pipeline
 
@@ -525,7 +528,8 @@ hands-on work.
 
 **You have an existing Three.js game and want to extend it properly**
 
-1. Install the studio brain (see [Existing project](#existing-project)), then `claude`.
+1. Install the studio brain (see [Existing project](#existing-project)), then
+   open your supported harness.
 2. **`/project-stage-detect`** — finds source but no design/architecture docs and
    tells you where you actually stand.
 3. **`/setup-engine threejs`** — pins your installed `three` version so
@@ -543,7 +547,7 @@ hands-on work.
 
 **You want to refactor a PixiJS game "the proper way"**
 
-1. Install + `claude`, then **`/setup-engine pixijs`** (PixiJS v8 pinned).
+1. Install, open your supported harness, then **`/setup-engine pixijs`** (PixiJS v8 pinned).
 2. **`/reverse-document`** per subsystem — capture the *as-is* architecture so the
    refactor starts from a written baseline, not memory.
 3. **`/create-architecture` + `/architecture-decision`** — define the *target*:
@@ -563,7 +567,7 @@ hands-on work.
 
 Same flow — only the engine specialist changes:
 
-1. Install + `claude`, then **`/setup-engine godot 4.6`** (or `unity` / `unreal`).
+1. Install, open your supported harness, then **`/setup-engine godot 4.6`** (or `unity` / `unreal`).
    This matters most for native engines: it pins your version and pulls
    version-aware reference docs, so the specialist won't suggest APIs from a
    different engine release (e.g. Godot 4.4→4.6 changed a lot post-training-cutoff).
@@ -627,6 +631,7 @@ CLAUDE.md                           # Claude Code adapter instructions
   agents/                           # Provider-neutral role source
   docs/                             # Provider-neutral coordination docs
     templates/                      # Provider-neutral document templates
+  rules/                            # Provider-neutral path-scoped coding standards
   skills/                           # Provider-neutral skill source
 .codex/
   agents/                           # Codex adapter agent definitions
@@ -762,8 +767,9 @@ Primary development and testing on **Windows 10** with Git Bash. All hooks use P
 
 Harness support is adapter-based. Claude Code uses `.claude/settings.json`,
 Codex uses `.codex/hooks.json`, Cursor can load `AGENTS.md` and
-`.cursor/rules/*.mdc`, and Antigravity-style harnesses should map their hooks,
-skills, and subagents to the same canonical `.agents/` behavior.
+`.cursor/rules/gamestudio.mdc`, and Antigravity-style harnesses should map
+their hooks, skills, subagents, and path-scoped rules to the same canonical
+`.agents/` behavior.
 
 ## Community
 

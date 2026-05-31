@@ -11,6 +11,7 @@ GameStudio is harness-neutral:
 
 - Use `.agents/skills/` as the canonical skill source.
 - Use `.agents/agents/` as the canonical role source.
+- Use `.agents/rules/` as the canonical path-scoped standards source.
 - Use `.claude/` and `.codex/` only as adapter examples for Claude Code and
   Codex-style harnesses.
 - Keep model/provider selection in Cursor settings or an external gateway.
@@ -20,6 +21,23 @@ GameStudio is harness-neutral:
 When the user invokes a slash-style skill such as `/start`, `/dev-story`, or
 `/design-review`, open the matching `.agents/skills/<skill>/SKILL.md` and follow
 that workflow.
+
+When editing files, apply the matching standards from `.agents/rules/`:
+
+- `src/gameplay/**` -> `gameplay-code.md`
+- `src/core/**` -> `engine-code.md`
+- `src/ai/**` -> `ai-code.md`
+- `src/networking/**` -> `network-code.md`
+- `src/ui/**` -> `ui-code.md`
+- `src/scenes/**` -> `scenes.md`
+- `src/shaders/**` -> `shaders.md`
+- `assets/data/**` -> `data-files.md`
+- `assets/shaders/**` -> `shader-code.md`
+- `assets/3d/**` -> `assets-3d.md`
+- `design/gdd/**` -> `design-docs.md`
+- `design/narrative/**` -> `narrative.md`
+- `tests/**` -> `test-standards.md`
+- `prototypes/**` -> `prototype-code.md`
 
 Maintain the GameStudio collaboration protocol:
 

@@ -53,7 +53,7 @@ In `solo` mode: LP-CODE-REVIEW is skipped with equivalent notes.
   - A test evidence path
 - Referenced ADR has `Status: Accepted`
 - `docs/architecture/control-manifest.md` exists
-- `.claude/docs/technical-preferences.md` has engine and language configured
+- `.agents/docs/technical-preferences.md` has engine and language configured
 - `production/session-state/review-mode.txt` contains `full`
 
 **Input:** `/dev-story production/epics/[layer]/story-[name].md`

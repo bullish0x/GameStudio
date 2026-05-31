@@ -6,11 +6,21 @@
 *                           @bullish0x
 
 # Core configuration — owner review required
+AGENTS.md                    @bullish0x
 CLAUDE.md                   @bullish0x
+.agents/                    @bullish0x
 .claude/                    @bullish0x
+.codex/                     @bullish0x
+.cursor/                    @bullish0x
 settings.json               @bullish0x
 
 # Skills and agents — high-impact, review carefully
+.agents/skills/             @bullish0x
+.agents/agents/             @bullish0x
+.agents/docs/               @bullish0x
+.agents/docs/templates/     @bullish0x
 .claude/skills/             @bullish0x
 .claude/agents/             @bullish0x
 .claude/hooks/              @bullish0x
+.codex/agents/              @bullish0x
+.codex/hooks/               @bullish0x

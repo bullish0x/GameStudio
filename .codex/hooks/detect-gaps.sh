@@ -12,9 +12,17 @@ echo "=== Checking for Documentation Gaps ==="
 # --- Check 0: Fresh project detection (suggests /start) ---
 FRESH_PROJECT=true
 
-# Check if engine is configured
-if [ -f ".claude/docs/technical-preferences.md" ]; then
-  ENGINE_LINE=$(grep -E "^\- \*\*Engine\*\*:" .claude/docs/technical-preferences.md 2>/dev/null)
+# Check if engine is configured. Prefer the provider-neutral source, but keep
+# the Claude adapter path as a fallback for older installs.
+TECH_PREFS=""
+if [ -f ".agents/docs/technical-preferences.md" ]; then
+  TECH_PREFS=".agents/docs/technical-preferences.md"
+elif [ -f ".claude/docs/technical-preferences.md" ]; then
+  TECH_PREFS=".claude/docs/technical-preferences.md"
+fi
+
+if [ -n "$TECH_PREFS" ]; then
+  ENGINE_LINE=$(grep -E "^\- \*\*Engine\*\*:" "$TECH_PREFS" 2>/dev/null)
   if [ -n "$ENGINE_LINE" ] && ! echo "$ENGINE_LINE" | grep -q "TO BE CONFIGURED" 2>/dev/null; then
     FRESH_PROJECT=false
   fi

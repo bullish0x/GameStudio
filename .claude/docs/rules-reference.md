@@ -15,3 +15,6 @@ Rules in `.claude/rules/` are automatically enforced when editing files in match
 | `test-standards.md` | `tests/**` | Test naming, coverage requirements, fixture patterns |
 | `prototype-code.md` | `prototypes/**` | Relaxed standards, README required, hypothesis documented |
 | `shader-code.md` | `assets/shaders/**` | Naming conventions, performance targets, cross-platform rules |
+| `assets-3d.md` | `assets/3d/**` | glTF/GLB delivery, compression, texture budgets, validation |
+| `scenes.md` | `src/scenes/**` | Three.js/R3F scene resource lifecycle, render-loop, color-space standards |
+| `shaders.md` | `src/shaders/**` | GLSL/WebGL precision, branching, color-space, post-processing standards |

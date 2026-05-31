@@ -31,7 +31,7 @@ A multi-phase Pre-Production validation workflow that builds a near-production-q
 - [ ] Important Constraints section states slice code must NEVER be refactored into production
 
 ## Version Awareness
-- [ ] The skill is a studio workflow with no library dependencies. Verify that `production/review-mode.txt`, `.claude/docs/director-gates.md`, and `.claude/docs/templates/vertical-slice-report.md` all exist in the project before running the skill; the skill falls back gracefully when the template is missing.
+- [ ] The skill is a studio workflow with no library dependencies. Verify that `production/review-mode.txt`, `.agents/docs/director-gates.md`, and `.agents/docs/templates/vertical-slice-report.md` all exist in the project before running the skill; the skill falls back gracefully when the template is missing.
 
 ## Known Gaps / Notes
 - The skill explicitly notes that networked/multiplayer games cannot validate network feel locally — the slice can only validate the game loop; network feel requires real peers or simulated latency.

@@ -12,6 +12,7 @@ tools, or another AGENTS.md-aware coding harness.
 - `AGENTS.md` is the common repository instruction entrypoint.
 - `.agents/skills/` is the canonical provider-neutral skill source.
 - `.agents/agents/` is the canonical provider-neutral role source.
+- `.agents/rules/` is the canonical provider-neutral path-scoped rules source.
 - `.agents/docs/` is the canonical provider-neutral coordination doc source.
 - `.agents/docs/templates/` is the canonical provider-neutral template source.
 - `.claude/` is the Claude Code adapter.
@@ -30,7 +31,7 @@ the harness or gateway.
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | Claude Code | `CLAUDE.md`, `AGENTS.md` | `.claude/skills/` or `.agents/skills/` | `.claude/agents/` or `.agents/agents/` | `.claude/settings.json` -> `.claude/hooks/` | Claude Code model/API config or compatible gateway |
 | Codex/OpenAI harness | `AGENTS.md` | `.agents/skills/` | `.codex/agents/` or `.agents/agents/` | `.codex/hooks.json` -> `.codex/hooks/` | Harness model/API config or compatible gateway |
-| Cursor | `AGENTS.md`, `.cursor/rules/*.mdc` | `.agents/skills/` | `.agents/agents/` via prompt or tool-native subagents | Cursor rules plus external automation | Cursor model/provider settings or compatible gateway |
+| Cursor | `AGENTS.md`, `.cursor/rules/gamestudio.mdc` | `.agents/skills/` | `.agents/agents/` via prompt or tool-native subagents | Cursor rules mapped from `.agents/rules/` plus external automation | Cursor model/provider settings or compatible gateway |
 | Antigravity-style harness | `AGENTS.md` | Harness-native skills mapped to `.agents/skills/` | Harness-native subagents mapped to `.agents/agents/` | Harness-native lifecycle hooks mapped to scripts | Harness model/provider settings or compatible gateway |
 | Generic AGENTS.md-aware agent | `AGENTS.md` | `.agents/skills/` | `.agents/agents/` where supported | Manual or harness-native hook registration | Agent model/provider settings or compatible gateway |
 

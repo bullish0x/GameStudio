@@ -19,9 +19,19 @@ CMD="${1:-help}"
 SRC="$(cd "$(dirname "$0")" && pwd)"
 TARGET="${2:-$PWD}"
 TARGET="$(cd "$TARGET" && pwd)"
-GS_DIR="$TARGET/.claude/.gamestudio"
+GS_DIR="$TARGET/.agents/.gamestudio"
+LEGACY_GS_DIR="$TARGET/.claude/.gamestudio"
 MANIFEST="$GS_DIR/manifest.tsv"          # relpath<TAB>sha256
 VERSION_FILE="$GS_DIR/version.txt"
+
+use_existing_manifest(){
+  if [ -f "$MANIFEST" ]; then return; fi
+  if [ -f "$LEGACY_GS_DIR/manifest.tsv" ]; then
+    GS_DIR="$LEGACY_GS_DIR"
+    MANIFEST="$GS_DIR/manifest.tsv"
+    VERSION_FILE="$GS_DIR/version.txt"
+  fi
+}
 
 # Tooling the installer OWNS (tracked: installed, updated, removed).
 TOOLING_PATHS=(
@@ -65,6 +75,7 @@ guard(){
 do_install(){ # also used by update (mode=update)
   local mode="${1:-install}"
   guard
+  if [ "$mode" = "update" ]; then use_existing_manifest; fi
   mkdir -p "$GS_DIR"; : > "$MANIFEST.new"
   local added=0 updated=0 skipped=0 usermod=0
   while IFS= read -r -d '' f; do
@@ -119,6 +130,7 @@ do_install(){ # also used by update (mode=update)
 
 do_uninstall(){
   guard
+  use_existing_manifest
   [ -f "$MANIFEST" ] || { err "No manifest at $MANIFEST — nothing tracked to uninstall."; exit 1; }
   local removed=0 kept=0
   while IFS=$'\t' read -r rel recsha; do
@@ -138,6 +150,7 @@ do_uninstall(){
 }
 
 do_status(){
+  use_existing_manifest
   if [ -f "$MANIFEST" ]; then
     ok "GameStudio installed in $TARGET"
     info "  source version: $(cat "$VERSION_FILE" 2>/dev/null || echo unknown)"
