@@ -4,7 +4,6 @@ description: "Validate skill files for structural compliance and behavioral corr
 argument-hint: "static [skill-name | all] | spec [skill-name] | category [skill-name | all] | audit"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write
-model: sonnet
 ---
 
 # Skill Test

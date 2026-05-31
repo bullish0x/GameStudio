@@ -3,6 +3,19 @@
 Indie game development managed through 55 coordinated Claude Code subagents.
 Each agent owns a specific domain, enforcing separation of concerns and quality.
 
+## Harness Compatibility
+
+This file is the Claude Code adapter. The provider-neutral entrypoint is
+`AGENTS.md`, the canonical skill source is `.agents/skills/`, and the canonical
+role source is `.agents/agents/`.
+
+- Model/provider choice belongs in Claude Code or a configured gateway, not in
+  GameStudio skills, agents, or hooks.
+- Claude Code may use Anthropic directly or route through a compatible gateway
+  when the user wants OpenAI, Gemini, DeepSeek, GLM/Z.ai, Qwen, local models, or
+  another provider.
+- Keep behavior aligned with `docs/HARNESS-COMPATIBILITY.md`.
+
 ## Technology Stack
 
 - **Engine**: [CHOOSE: Godot 4 / Unity / Unreal Engine 5 / Three.js (Web 3D) / PixiJS (Web 2D interactive) / Phaser (Web 2D games)]

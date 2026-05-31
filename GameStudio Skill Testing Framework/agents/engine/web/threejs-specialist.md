@@ -4,7 +4,7 @@
 
 Domain: Three.js and React Three Fiber implementation — scene graph construction, cameras, lights, geometries, materials, meshes, the render loop, animation, raycasting/interaction, loading 3D models (glTF), Spline exports, and 3D product configurators. Covers both vanilla Three.js (JS/TS) and R3F + drei. Stack-selection (vanilla vs R3F, JS vs TS, continuous vs on-demand rendering) is surfaced before code is written.
 Does NOT own: raw GLSL authoring (delegates to webgl-shader-specialist), model/texture compression (delegates to web3d-asset-pipeline), game/application state or UI ownership (coordinates with gameplay-programmer and ui-programmer).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and references Three.js, React Three Fiber, scene graph, glTF, and delegates shader/asset work
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Agent definition names `webgl-shader-specialist` as the delegate for GLSL
 - [ ] Agent definition names `web3d-asset-pipeline` as the delegate for compression/assets

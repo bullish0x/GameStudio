@@ -3,12 +3,13 @@
 > **How to go from zero to a shipped game using the Agent Architecture.**
 >
 > This guide walks you through every phase of game development using the
-> 55-agent system, 183 slash commands, and 12 automated hooks. It assumes you
-> have Claude Code installed and are working from the project root.
+> 55-agent system, 183 skills, and 12 automated hooks. It assumes you have a
+> supported coding-agent harness and are working from the project root.
 >
 > The pipeline has 7 phases. Each phase has a formal gate (`/gate-check`)
 > that must pass before you advance. The authoritative phase sequence is
 > defined in `.claude/docs/workflow-catalog.yaml` and read by `/help`.
+> Harness-neutral setup notes live in `docs/HARNESS-COMPATIBILITY.md`.
 
 ---
 
@@ -35,10 +36,18 @@
 
 Before you start, make sure you have:
 
-- **Claude Code** installed and working
+- A supported coding-agent harness installed and working: Claude Code,
+  Codex/OpenAI-based harnesses, Cursor, Antigravity, Gemini-style tools, or
+  another AGENTS.md-aware agent
 - **Git** with Git Bash (Windows) or standard terminal (Mac/Linux)
 - **jq** (optional but recommended -- hooks fall back to `grep` if missing)
 - **Python 3** (optional -- some hooks use it for JSON validation)
+
+Provider and model selection happens in the harness, not inside GameStudio
+skills. Use the provider your harness supports directly, or put a gateway such
+as LiteLLM Proxy or OpenRouter between the harness and upstream models. The
+studio workflow should stay the same whether the active model is Claude, GPT,
+Gemini, DeepSeek, GLM/Z.ai, Qwen, or a local Ollama/vLLM model.
 
 ### Step 1: Clone and Open
 
@@ -66,8 +75,8 @@ This guided onboarding asks where you are and routes you to the right phase:
 
 ### Step 3: Verify Hooks Are Working
 
-Start a new Claude Code session. You should see output from the
-`session-start.sh` hook:
+Start a new harness session. In Claude Code or Codex adapter mode, you should
+see output from the `session-start.sh` hook:
 
 ```
 === GameStudio -- Session Context ===
@@ -77,8 +86,9 @@ Recent commits:
 ===================================
 ```
 
-If you see this, hooks are working. If not, check `.claude/settings.json` to
-make sure the hook paths are correct for your OS.
+If you see this, hooks are working. If not, check the active adapter:
+`.claude/settings.json` for Claude Code, `.codex/hooks.json` for Codex, or the
+equivalent hook registration in Cursor, Antigravity, or your selected harness.
 
 ### Step 4: Ask for Help Anytime
 
@@ -1141,7 +1151,7 @@ Bypasses normal sprint processes with a full audit trail:
 **Post-mortem** after launch stabilizes:
 
 ```
-Ask Claude to create a post-mortem using the template at
+Ask the active harness to create a post-mortem using the template at
 .claude/docs/templates/post-mortem.md
 ```
 
@@ -1248,7 +1258,7 @@ The system has 12 hooks that run automatically:
 | `session-start.sh` | Session start | Shows branch, recent commits, detects active.md for recovery |
 | `detect-gaps.sh` | Session start | Detects fresh projects (no engine, no concept) and suggests `/start` |
 | `pre-compact.sh` | Before compaction | Dumps session state into conversation for auto-recovery |
-| `post-compact.sh` | After compaction | Reminds Claude to restore session state from `active.md` |
+| `post-compact.sh` | After compaction | Reminds the active harness to restore session state from `active.md` |
 | `notify.sh` | Notification event | Shows Windows toast notification via PowerShell |
 | `validate-commit.sh` | Before commit | Checks for design doc references, valid JSON, no hardcoded values |
 | `validate-push.sh` | Before push | Warns on pushes to main/develop |
@@ -1257,6 +1267,12 @@ The system has 12 hooks that run automatically:
 | `log-agent.sh` | Agent start | Logs agent invocations for audit trail |
 | `log-agent-stop.sh` | Agent stop | Completes agent audit trail (start + stop) |
 | `session-stop.sh` | Session end | Final session logging |
+
+Hook registration is harness-specific. Claude Code reads `.claude/settings.json`,
+Codex reads `.codex/hooks.json`, Cursor can use project rules plus external
+automation, and Antigravity-style harnesses should map their lifecycle hooks to
+the same scripts under the active adapter. The scripts should remain
+provider-neutral and must not assume a specific model API.
 
 ### Context Resilience
 

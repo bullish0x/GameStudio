@@ -2,9 +2,10 @@
 #
 # GameStudio installer — safe install / update / uninstall for new OR existing
 # projects. It only ever touches the GameStudio "studio brain" (agents, skills,
-# hooks, rules, studio docs, engine-reference, the testing framework) and tracks
-# every file it writes in a manifest. Your source code, your design docs, your
-# settings.json, and your CLAUDE.md are never clobbered.
+# hooks, rules, harness adapters, studio docs, engine-reference, the testing
+# framework) and tracks every file it writes in a manifest. Your source code,
+# your design docs, your settings.json, CLAUDE.md, and AGENTS.md are never
+# clobbered.
 #
 # Usage (run from the cloned gamestudio repo):
 #   bash install.sh install   [target-dir]   # default target: current dir
@@ -26,10 +27,12 @@ VERSION_FILE="$GS_DIR/version.txt"
 TOOLING_PATHS=(
   ".claude/agents" ".claude/skills" ".claude/hooks" ".claude/rules"
   ".claude/docs" ".claude/agent-memory" ".claude/statusline.sh"
-  "docs/engine-reference" "GameStudio Skill Testing Framework"
+  ".agents" ".codex" ".cursor"
+  "docs/engine-reference" "docs/HARNESS-COMPATIBILITY.md"
+  "GameStudio Skill Testing Framework"
 )
 # Handled specially — never overwritten (a side-file is written for you to merge).
-SPECIAL_PATHS=( ".claude/settings.json" "CLAUDE.md" )
+SPECIAL_PATHS=( ".claude/settings.json" "CLAUDE.md" "AGENTS.md" )
 
 c_red=$'\033[31m'; c_grn=$'\033[32m'; c_yel=$'\033[33m'; c_dim=$'\033[2m'; c_off=$'\033[0m'
 info(){ printf '%s\n' "$*"; }
@@ -131,7 +134,7 @@ do_uninstall(){
   done
   rm -rf "$GS_DIR"
   ok "uninstalled: removed $removed studio files, kept $kept you had edited."
-  warn "Left untouched: your settings.json, CLAUDE.md, and all project content (design/ docs/ production/ src/). Remove *.gamestudio side-files manually if you don't want them."
+  warn "Left untouched: your settings.json, CLAUDE.md, AGENTS.md, and all project content (design/ docs/ production/ src/). Remove *.gamestudio side-files manually if you don't want them."
 }
 
 do_status(){
@@ -157,7 +160,7 @@ GameStudio installer — safe, manifest-tracked.
   bash install.sh uninstall [target]   Remove only what we installed (keeps your edits + all project content)
   bash install.sh status    [target]   Show install state
 
-Never overwrites your settings.json, CLAUDE.md, source, or design docs. Run from the cloned gamestudio repo.
+Never overwrites your settings.json, CLAUDE.md, AGENTS.md, source, or design docs. Run from the cloned gamestudio repo.
 EOF
   ;;
 esac

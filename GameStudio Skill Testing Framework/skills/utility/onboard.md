@@ -5,7 +5,7 @@
 `/onboard` generates a contextual project onboarding summary tailored for a new
 team member. It reads CLAUDE.md, `technical-preferences.md`, the active sprint
 file, recent git commits, and `production/stage.txt` to produce a structured
-orientation document. The skill runs on the Haiku model (read-only, formatting
+orientation document. The skill runs on the fast-reasoning tier (read-only, formatting
 task) and produces no file writes — all output is conversational.
 
 The skill optionally accepts a role argument (e.g., `/onboard artist`) to tailor

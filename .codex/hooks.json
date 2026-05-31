@@ -1,0 +1,119 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-commit.sh'",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-push.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-assets.sh'",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\validate-skill-change.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\pre-compact.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\post-compact.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\session-start.sh'",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\detect-gaps.sh'",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\model-advisory.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\log-agent.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\log-agent-stop.sh'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'F:\\Docker Projects\\GameStudio\\.codex\\hooks\\session-stop.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

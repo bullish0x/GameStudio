@@ -4,7 +4,7 @@
 
 Domain: 2D asset preparation and the web 2D pipeline — spritesheet/texture atlas packing and trimming, POT and mipmap decisions, KTX2/Basis compression for 2D textures, Spine/DragonBones skeletal export and runtime integration, particle textures, GIF sources (convert to atlas frames or documented runtime path), and manifest-keyed assets (stable keys, not raw file paths). Produces optimized assets that `pixijs-specialist` and `phaser-specialist` load. The 2D analogue to `web3d-asset-pipeline`.
 Does NOT own: scene, sprite, or loader code (specifies what the runtime must load to pixijs-specialist/phaser-specialist); shader authoring (coordinates texture channel layout and color space with webgl-shader-specialist but does not write GLSL); gameplay state (ships the art, keyed).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and references spritesheet/atlas packing, KTX2/Basis, Spine/DragonBones, manifest-keyed assets, and that it produces assets for pixijs-specialist and phaser-specialist
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Agent definition names `pixijs-specialist` and `phaser-specialist` as consumers
 - [ ] Agent definition states it does NOT write scene or loader code

@@ -5,7 +5,6 @@ argument-hint: "[scan|extract|validate|status|brief|cultural-review|vo-pipeline|
 user-invocable: true
 agent: localization-lead
 allowed-tools: Read, Glob, Grep, Write, Bash, Task, AskUserQuestion
-model: sonnet
 ---
 
 # Localization Pipeline

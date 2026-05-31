@@ -4,7 +4,7 @@
 
 Domain: 2D browser games built on Phaser 4 — scene lifecycle (`init`/`preload`/`create`/`update`), `GameConfig` and renderer selection, tilemaps (Tiled import, `TilemapGPULayer`), physics (Arcade vs Matter), input (keyboard/pointer/touch/gamepad), sprite animation and tweens, audio, cameras, the unified v4 Filter system, scale/responsive, and save/persistence triggering. Gameplay rules and state live OUTSIDE Phaser scenes; scenes are thin view adapters.
 Does NOT own: game rules, balance numbers, or save-state schemas (coordinates with gameplay-programmer, systems-designer); non-trivial GLSL (delegates to webgl-shader-specialist); asset preparation (delegates to web2d-asset-pipeline); 3D work (redirects to threejs-specialist); 2D interactive rendering without game mechanics (redirects to pixijs-specialist).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and references Phaser 4, scene lifecycle, GameConfig, tilemaps, Arcade/Matter physics, input, Filter system, and delegates GLSL/assets
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Agent definition names `webgl-shader-specialist` as the delegate for GLSL
 - [ ] Agent definition names `web2d-asset-pipeline` as the delegate for asset prep

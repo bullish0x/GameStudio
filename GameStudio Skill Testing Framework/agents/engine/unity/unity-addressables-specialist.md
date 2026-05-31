@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Addressable Asset System — groups, async loading/unloading, handle lifecycle management, memory budgeting, content catalogs, and remote content delivery.
 Does NOT own: rendering systems (engine-programmer), game logic that uses the loaded assets (gameplay-programmer).
-Model tier: Sonnet (default).
+Reasoning tier: balanced reasoning (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references Addressables / asset loading / content catalogs / remote delivery)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over rendering systems or gameplay using the loaded assets
 
 ---

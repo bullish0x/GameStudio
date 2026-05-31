@@ -4,7 +4,6 @@ description: "Reviews a game design document for completeness, internal consiste
 argument-hint: "[path-to-design-doc] [--depth full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
-model: sonnet
 ---
 
 ## Phase 0: Parse Arguments

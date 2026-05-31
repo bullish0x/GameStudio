@@ -4,7 +4,7 @@
 
 Domain: 3D model and texture preparation for the web — glTF/GLB authoring and validation, Draco/Meshopt geometry compression, KTX2/Basis texture compression, texture channel packing (ORM), texture resizing, LOD generation, draw-call budgeting at the asset level, and Spline export workflows. Produces optimized assets that `threejs-specialist` loads and `webgl-shader-specialist` samples.
 Does NOT own: scene or loader code (specifies loader requirements to threejs-specialist), shader authoring (coordinates texture channel layouts with webgl-shader-specialist but does not write GLSL).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and references glTF/GLB, Draco, Meshopt, KTX2/Basis, LOD generation, draw-call budgeting, and Spline export
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Agent definition names `threejs-specialist` as the consumer of its output
 - [ ] Agent definition states it does NOT write scene or loader code

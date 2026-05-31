@@ -3,7 +3,7 @@
 ## Agent Summary
 **Domain owned:** Level layouts, encounter design, pacing and tension arc, environmental storytelling, spatial puzzles.
 **Does NOT own:** Narrative dialogue (writer / narrative-director), visual art style (art-director), code implementation (lead-programmer / ai-programmer), enemy AI behavior logic (ai-programmer / gameplay-programmer).
-**Model tier:** Sonnet (individual system analysis — level design review and encounter assessment).
+**Reasoning tier:** balanced reasoning (individual system analysis — level design review and encounter assessment).
 **Gate IDs handled:** Level design review verdicts (uses APPROVED / REVISION NEEDED vocabulary).
 
 ---
@@ -14,7 +14,7 @@ Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
 
 - [ ] `description:` field is present and domain-specific (references level layout, encounter design, pacing, environmental storytelling — not generic)
 - [ ] `allowed-tools:` list is read-focused; includes Read for level design documents and GDDs; no Bash unless level tooling requires it
-- [ ] Model tier is `claude-sonnet-4-6` per coordination-rules.md
+- [ ] Reasoning tier is balanced-reasoning tier per coordination-rules.md
 - [ ] Agent definition does not claim authority over narrative dialogue, AI behavior code, or visual art style
 
 ---

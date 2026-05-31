@@ -4,7 +4,6 @@ description: "Read all open bugs in production/qa/bugs/, re-evaluate priority vs
 argument-hint: "[sprint | full | trend]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit
-model: sonnet
 ---
 
 # Bug Triage

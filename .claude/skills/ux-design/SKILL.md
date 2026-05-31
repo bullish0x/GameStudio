@@ -4,7 +4,6 @@ description: "Guided, section-by-section UX spec authoring for a screen, flow, o
 argument-hint: "[screen/flow name] or 'hud' or 'patterns'"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, Task
-model: sonnet
 agent: ux-designer
 ---
 

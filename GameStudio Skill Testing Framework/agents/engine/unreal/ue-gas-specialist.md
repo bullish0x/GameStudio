@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Gameplay Ability System (GAS) — abilities (UGameplayAbility), gameplay effects (UGameplayEffect), attribute sets (UAttributeSet), gameplay tags, ability tasks (UAbilityTask), ability specs (FGameplayAbilitySpec), GAS prediction and latency compensation
 - **Does NOT own**: UI display of ability state (ue-umg-specialist), net replication of GAS data beyond built-in GAS prediction (ue-replication-specialist), art or VFX for ability feedback (vfx-artist)
-- **Model tier**: Sonnet
+- **Reasoning tier**: balanced reasoning
 - **Gate IDs**: None; defers cross-domain calls to the appropriate specialist
 
 ---
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
 - [ ] `allowed-tools:` list matches the agent's role (Read/Write for GAS source files; no deployment or server tools)
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over UI implementation or low-level net serialization
 
 ---

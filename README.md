@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">GameStudio</h1>
   <p align="center">
-    Turn a single Claude Code session into a full game development studio.
+    Turn one coding-agent harness into a full game development studio.
     <br />
     55 agents. 183 skills. One coordinated AI team.
   </p>
@@ -9,11 +9,11 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-  <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
-  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-183-green" alt="183 Skills"></a>
+  <a href=".agents/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
+  <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-183-green" alt="183 Skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-12-orange" alt="12 Hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-14-red" alt="14 Rules"></a>
-  <a href="https://docs.anthropic.com/en/docs/claude-code"><img src="https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5?logo=anthropic" alt="Built for Claude Code"></a>
+  <a href="docs/HARNESS-COMPATIBILITY.md"><img src="https://img.shields.io/badge/harness-neutral-f5f5f5" alt="Harness neutral"></a>
 </p>
 
 ---
@@ -37,6 +37,7 @@ The result: you still make every decision, but now you have a team that asks the
 - [How to Use](#how-to-use)
 - [Upgrading](#upgrading)
 - [Project Structure](#project-structure)
+- [Harness Compatibility](#harness-compatibility)
 - [How It Works](#how-it-works)
 - [Design Philosophy](#design-philosophy)
 - [Customization](#customization)
@@ -61,15 +62,15 @@ The result: you still make every decision, but now you have a team that asks the
 Agents are organized into three tiers, matching how real studios operate:
 
 ```
-Tier 1 — Directors (Opus)
+Tier 1 — Directors (highest reasoning)
   creative-director    technical-director    producer
 
-Tier 2 — Department Leads (Sonnet)
+Tier 2 — Department Leads (balanced reasoning)
   game-designer        lead-programmer       art-director
   audio-director       narrative-director    qa-lead
   release-manager      localization-lead
 
-Tier 3 — Specialists (Sonnet/Haiku)
+Tier 3 — Specialists (balanced or fast reasoning)
   gameplay-programmer  engine-programmer     ai-programmer
   network-programmer   tools-programmer      ui-programmer
   systems-designer     level-designer        economy-designer
@@ -96,7 +97,10 @@ web engines. Use the set that matches your project:
 
 ## Slash Commands
 
-Type `/` in Claude Code to access all 183 skills:
+Type `/` in a supported harness to access all 183 skills. In harnesses that do
+not expose slash commands directly, open the matching `SKILL.md` under
+`.agents/skills/` or the harness-specific adapter directory and follow it as the
+workflow definition:
 
 **Onboarding & Navigation**
 | Command | What it does |
@@ -370,7 +374,8 @@ Type `/` in Claude Code to access all 183 skills:
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`npm install -g @anthropic-ai/claude-code`)
+- A supported coding-agent harness: Claude Code, Codex/OpenAI-based harnesses,
+  Cursor, Antigravity, Gemini-style tools, or another AGENTS.md-aware agent
 - **Recommended**: [jq](https://jqlang.github.io/jq/) (for hook validation) and Python 3 (for JSON validation)
 
 All hooks fail gracefully if optional tools are missing — nothing breaks, you just lose validation.
@@ -382,10 +387,12 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    git clone https://github.com/bullish0x/gamestudio.git my-game
    cd my-game
    ```
-2. **Open Claude Code:**
+2. **Open your coding-agent harness:**
    ```bash
    claude
    ```
+   Use the equivalent command or IDE entrypoint for Codex, Cursor,
+   Antigravity, or another harness.
 3. **Run `/start`** — it asks where you are (no idea / vague concept / clear
    design / existing work) and routes you. No assumptions.
 4. **Run `/setup-engine`** — pick your track (guided, or name it:
@@ -399,9 +406,10 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
 ### Existing project
 
 Use the **installer**. It copies only the GameStudio "studio brain" (agents,
-skills, hooks, rules, studio docs, engine reference, the testing framework),
-**never overwrites your `settings.json`, `CLAUDE.md`, source, or design docs**,
-and records every file it writes so it can update or cleanly uninstall later.
+skills, hooks, rules, harness adapters, studio docs, engine reference, the
+testing framework), **never overwrites your `settings.json`, `CLAUDE.md`,
+`AGENTS.md`, source, or design docs**, and records every file it writes so it can
+update or cleanly uninstall later.
 
 ```bash
 git clone --depth 1 https://github.com/bullish0x/gamestudio.git /tmp/gamestudio
@@ -410,9 +418,9 @@ bash /tmp/gamestudio/install.sh install /path/to/your/project   # omit the path 
 
 If a file already exists and differs from yours, the installer **skips it and
 writes a `*.gamestudio` side-file** instead — so your `settings.json` (hooks/
-permissions) and `CLAUDE.md` are preserved untouched. Diff the side-files and
-merge the studio's `hooks`/`permissions` blocks in when you're ready. On Windows,
-run it from **Git Bash**.
+permissions), `CLAUDE.md`, and `AGENTS.md` are preserved untouched. Diff the
+side-files and merge the studio's `hooks`/`permissions` blocks in when you're
+ready. On Windows, run it from **Git Bash**.
 
 **Update / uninstall / status** — safe by design: these only ever touch files the
 installer owns (tracked in `.claude/.gamestudio/manifest.tsv`). Files you've
@@ -440,7 +448,7 @@ Then in the session:
 
 ## How to Use
 
-GameStudio turns one Claude Code session into a directed studio: **you make the
+GameStudio turns one coding-agent session into a directed studio: **you make the
 decisions**, specialized agents do the domain work, and quality gates catch
 problems before they compound. You drive it with slash commands (see
 [Slash Commands](#slash-commands) for what each does).
@@ -579,21 +587,24 @@ Set review intensity with `--review` on any skill, or in `production/review-mode
 - **`lean`** — phase gates only (default for most solo work).
 - **`solo`** — no gates (fast prototyping).
 
-### Model & context
+### Model, Provider, And Context
 
-**GameStudio works on any Claude model** — Opus, Sonnet, standard or 1M context.
-The one gotcha is billing, not compatibility: the **1M-context variants (`[1m]`)
-need usage credits**. Context-heavy skills like `/reverse-document`, `/adopt`,
-and `/review-all-gdds` read a lot of files, so on a 1M model without credits
-you'll hit a *"1M context usage credits required"* error.
+GameStudio does not require a specific model provider. Choose Anthropic,
+OpenAI, Gemini, DeepSeek, GLM/Z.ai, Qwen, local Ollama/vLLM, or a routed model
+in the active harness. Skills, agents, rules, and hooks should describe studio
+behavior only; provider credentials, base URLs, model names, context limits,
+and billing choices belong in the harness or in a model gateway.
 
-Two ways through it:
-- **`/model`** → pick a standard-context Opus/Sonnet (no `[1m]`) — works with no credits. Recommended default.
-- **`/usage-credits`** → enable 1M and it works fine, big window and all.
+For a provider bridge, use a gateway that exposes a stable OpenAI-compatible or
+Anthropic-compatible API to the harness. As of 2026-05-30, the recommended
+self-hosted default is LiteLLM Proxy; OpenRouter is the common hosted
+multi-model option. See `docs/HARNESS-COMPATIBILITY.md` for the adapter matrix
+and routing examples.
 
-A SessionStart hook flags this automatically if you start on a 1M model. For very
-large existing codebases, scope heavy skills to one system/module at a time
-rather than the whole repo at once.
+Context-heavy skills like `/reverse-document`, `/adopt`, and
+`/review-all-gdds` read a lot of files. If your selected model has a smaller
+context window, scope those skills to one system or module at a time rather
+than the whole repo.
 
 ### Resuming later
 
@@ -610,11 +621,21 @@ versions, and which files are safe to overwrite vs. which need a manual merge.
 ## Project Structure
 
 ```
-CLAUDE.md                           # Master configuration
+AGENTS.md                           # Provider-neutral agent instructions
+CLAUDE.md                           # Claude Code adapter instructions
+.agents/
+  agents/                           # Provider-neutral role source
+  docs/                             # Provider-neutral coordination docs
+    templates/                      # Provider-neutral document templates
+  skills/                           # Provider-neutral skill source
+.codex/
+  agents/                           # Codex adapter agent definitions
+  hooks/                            # Codex adapter hook scripts
+  hooks.json                        # Codex adapter hook wiring
 .claude/
   settings.json                     # Hooks, permissions, safety rules
-  agents/                           # 55 agent definitions (markdown + YAML frontmatter)
-  skills/                           # 183 slash commands (subdirectory per skill)
+  agents/                           # Claude adapter agent definitions
+  skills/                           # Claude adapter slash commands
   hooks/                            # 12 hook scripts (bash, cross-platform)
   rules/                            # 14 path-scoped coding standards
   statusline.sh                     # Status line script (context%, model, stage, epic breadcrumb)
@@ -630,6 +651,26 @@ tools/                              # Build and pipeline tools
 prototypes/                         # Throwaway prototypes (isolated from src/)
 production/                         # Sprint plans, milestones, release tracking
 ```
+
+## Harness Compatibility
+
+The studio logic is harness-neutral:
+
+- `AGENTS.md` is the common instruction file for AGENTS.md-aware tools.
+- `.agents/skills/` is the canonical skill tree for provider-neutral harnesses.
+- `.agents/agents/` is the canonical role tree for provider-neutral harnesses.
+- `.agents/docs/templates/` is the canonical template tree.
+- `.claude/` adapts the same studio to Claude Code.
+- `.codex/` adapts the same studio to Codex/OpenAI-based harnesses.
+- `.cursor/rules/` can point Cursor Agent at the same collaboration protocol.
+
+Do not fork agent behavior by model. A skill should behave the same whether the
+harness is using Claude, GPT, Gemini, DeepSeek, GLM/Z.ai, Qwen, or a local
+model. Differences in model name, API key, base URL, routing, fallback, budget,
+and rate limits belong in the harness configuration or an optional gateway such
+as LiteLLM Proxy or OpenRouter.
+
+Detailed setup notes: `docs/HARNESS-COMPATIBILITY.md`.
 
 ## How It Works
 
@@ -667,7 +708,7 @@ You stay in control. The agents provide structure and expertise, not autonomy.
 | `session-start.sh` | Session open | Shows current branch and recent commits for orientation |
 | `detect-gaps.sh` | Session open | Detects fresh projects (suggests `/start`) and missing design docs when code or prototypes exist |
 | `pre-compact.sh` | Before compaction | Preserves session progress notes |
-| `post-compact.sh` | After compaction | Reminds Claude to restore session state from `active.md` |
+| `post-compact.sh` | After compaction | Reminds the active harness to restore session state from `active.md` |
 | `notify.sh` | Notification event | Shows Windows toast notification via PowerShell |
 | `session-stop.sh` | Session close | Archives `active.md` to session log and records git activity |
 | `log-agent.sh` | Agent spawned | Audit trail start — logs subagent invocation |
@@ -719,6 +760,11 @@ This is a **template**, not a locked framework. Everything is meant to be custom
 
 Primary development and testing on **Windows 10** with Git Bash. All hooks use POSIX-compatible patterns (`grep -E`, not `grep -P`) and include fallbacks for missing tools, so they should run on macOS and Linux. The `notify.sh` hook uses PowerShell for Windows toast notifications and is a no-op elsewhere — desktop notifications on macOS/Linux are not yet wired. Cross-platform testing is ongoing; please file issues for any platform-specific breakage.
 
+Harness support is adapter-based. Claude Code uses `.claude/settings.json`,
+Codex uses `.codex/hooks.json`, Cursor can load `AGENTS.md` and
+`.cursor/rules/*.mdc`, and Antigravity-style harnesses should map their hooks,
+skills, and subagents to the same canonical `.agents/` behavior.
+
 ## Community
 
 - **Discussions** — [GitHub Discussions](https://github.com/bullish0x/gamestudio/discussions) for questions, ideas, and showcasing what you've built
@@ -726,7 +772,7 @@ Primary development and testing on **Windows 10** with Git Bash. All hooks use P
 
 ---
 
-*Built for Claude Code. Maintained and extended — contributions welcome via [GitHub Discussions](https://github.com/bullish0x/gamestudio/discussions).*
+*Harness-neutral core with Claude Code and Codex adapters. Maintained and extended — contributions welcome via [GitHub Discussions](https://github.com/bullish0x/gamestudio/discussions).*
 
 ## License
 

@@ -4,7 +4,7 @@
 
 Domain: 2D browser rendering with PixiJS — stage/container graph, sprites, textures, spritesheets/atlases, the Ticker/render loop, 2D filters, text rendering, interaction/hit-testing, and 2D rendering performance (batching, texture atlasing, WebGL vs WebGPU renderer). Distinct from the Three.js 3D track and from the Phaser game-engine track.
 Does NOT own: 3D work (Three.js / threejs-specialist), game-engine features (physics, scene lifecycle — Phaser's domain), complex custom GLSL (co-developed with webgl-shader-specialist), application/game state or UI ownership (coordinates with gameplay-programmer and ui-programmer).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and references PixiJS, stage/container graph, sprites, spritesheets/atlases, ticker, filters, and batching
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Agent definition explicitly distinguishes this 2D track from Three.js 3D
 - [ ] Post-cutoff API risk guidance is present (v7 → v8 API changes; verify against pinned version)

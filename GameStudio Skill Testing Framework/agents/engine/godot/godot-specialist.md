@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: Godot-specific patterns, node/scene architecture, signals, resources, and GDScript vs C# vs GDExtension decisions.
 Does NOT own: actual code authoring in a specific language (delegates to language sub-specialists).
-Model tier: Sonnet (default).
+Reasoning tier: balanced reasoning (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references Godot architecture / node patterns / engine decisions)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition references `docs/engine-reference/godot/VERSION.md` as the authoritative API source
 
 ---

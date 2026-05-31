@@ -9,7 +9,7 @@ you'll lose validation features.
 | Tool | Purpose | Install |
 | ---- | ---- | ---- |
 | **Git** | Version control, branch management | [git-scm.com](https://git-scm.com/) |
-| **Claude Code** | AI agent CLI | `npm install -g @anthropic-ai/claude-code` |
+| **A supported coding-agent harness** | Runs GameStudio agents, skills, and hooks | Claude Code, Codex/OpenAI-based harnesses, Cursor, Antigravity, Gemini-style tools, or another AGENTS.md-aware agent |
 
 ## Recommended
 
@@ -18,6 +18,7 @@ you'll lose validation features.
 | **jq** | Hooks (7 of 12) | JSON parsing in commit/push/asset/agent hooks | See below |
 | **Python 3** | Hooks (2 of 12) | JSON validation for data files | [python.org](https://www.python.org/) |
 | **Bash** | All hooks | Shell script execution | Included with Git for Windows |
+| **LiteLLM Proxy or OpenRouter** | Optional model gateway | Use when your harness needs one OpenAI-compatible or Anthropic-compatible endpoint for multiple providers |
 
 ### Installing jq
 
@@ -46,8 +47,9 @@ sudo pacman -S jq       # Arch
 - Git for Windows includes **Git Bash**, which provides the `bash` command
   used by all hooks in `settings.json`
 - Ensure Git Bash is on your PATH (default if installed via the Git installer)
-- Hooks use `bash .claude/hooks/[name].sh` — this works on Windows because
-  Claude Code invokes commands through a shell that can find `bash.exe`
+- Hooks use `bash .claude/hooks/[name].sh` or the matching adapter path. This
+  works on Windows when the active harness invokes commands through a shell
+  that can find `bash.exe`
 
 ### macOS / Linux
 - Bash is available natively
@@ -64,6 +66,24 @@ jq --version           # Should show jq version (optional)
 python3 --version      # Should show python version (optional)
 ```
 
+## Provider And Router Setup
+
+GameStudio does not require a specific LLM provider. Configure the active
+harness to use Anthropic, OpenAI, Gemini, DeepSeek, GLM/Z.ai, Qwen, a local
+Ollama/vLLM endpoint, or a routed model.
+
+When a bridge is needed, prefer a gateway instead of editing skills:
+
+| Gateway | Use When | Notes |
+| ---- | ---- | ---- |
+| **LiteLLM Proxy** | You want a trusted open-source, self-hosted gateway | Presents a unified OpenAI-style API for many providers and can run locally or on a small server |
+| **OpenRouter** | You want hosted multi-model routing with one API key | Good for quick access to many hosted models |
+| **Direct provider API** | Your harness already supports the provider | Best when the harness natively supports the target model and tools |
+
+Keep provider credentials, base URLs, model aliases, budgets, and fallbacks in
+the harness or gateway configuration. Do not hardcode them in GameStudio skills,
+agents, hooks, or project docs.
+
 ## What Happens Without Optional Tools
 
 | Missing Tool | Effect |
@@ -72,9 +92,14 @@ python3 --version      # Should show python version (optional)
 | **Python 3** | JSON data file validation in commit and asset hooks is skipped. Invalid JSON can be committed without warning. |
 | **Both** | All hooks still execute without error (exit 0) but provide no validation. You're flying without safety nets. |
 
-## Recommended IDE
+## Recommended Harnesses And IDEs
 
-Claude Code works with any editor, but the template is optimized for:
-- **VS Code** with the Claude Code extension
-- **Cursor** (Claude Code compatible)
-- Terminal-based Claude Code CLI
+GameStudio is harness-neutral, with adapters for:
+
+- **Claude Code** via `.claude/settings.json`, `.claude/agents/`,
+  `.claude/skills/`, and `.claude/hooks/`
+- **Codex/OpenAI-based harnesses** via `AGENTS.md`, `.codex/agents/`, and
+  `.codex/hooks.json`
+- **Cursor** via `AGENTS.md` and `.cursor/rules/*.mdc`
+- **Antigravity-style harnesses** via AGENTS.md plus harness-native skills,
+  hooks, and subagent registration mapped back to `.agents/`

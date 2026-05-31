@@ -4,7 +4,6 @@ description: "Decompose a game concept into individual systems, map dependencies
 argument-hint: "[next | system-name] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, AskUserQuestion, TodoWrite, Task
-model: sonnet
 ---
 
 When this skill is invoked:

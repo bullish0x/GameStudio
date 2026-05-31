@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: NPC behavior, state machines, pathfinding, perception systems, and AI decision-making.
 Does NOT own: player mechanics (gameplay-programmer), rendering or engine internals (engine-programmer).
-Model tier: Sonnet (default).
+Reasoning tier: balanced reasoning (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references NPC behavior / AI systems)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over player mechanics or engine rendering
 
 ---

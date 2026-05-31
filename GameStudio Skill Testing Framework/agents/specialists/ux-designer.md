@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: User experience flows, interaction design, information architecture, input handling design, and onboarding UX.
 Does NOT own: visual art style (art-director), UI implementation code (ui-programmer).
-Model tier: Sonnet (default).
+Reasoning tier: balanced reasoning (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references UX flows / interaction design / information architecture)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over visual art direction or UI implementation code
 
 ---

@@ -1,4 +1,4 @@
-# GameStudio Skill Testing Framework — Claude Instructions
+# GameStudio Skill Testing Framework -- Harness Instructions
 
 This folder is the quality assurance layer for the GameStudio skill/agent
 framework. It is self-contained and separate from any game project.
@@ -80,7 +80,7 @@ creative    → writer, world-builder, game-designer, economy-designer,
 ## Workflow for testing a skill
 
 1. Read `catalog.yaml` to get the skill's `spec:` path and `category:`
-2. Read the skill at `.claude/skills/[name]/SKILL.md`
+2. Read the skill at `.agents/skills/[name]/SKILL.md` (or the active adapter copy such as `.claude/skills/[name]/SKILL.md`)
 3. Read the spec at the `spec:` path
 4. Evaluate assertions case by case
 5. Offer to write results to `results/` and update `catalog.yaml`
@@ -99,6 +99,6 @@ Treat spec failures as "this needs investigation," not "the skill is definitivel
 
 ## This folder is deletable
 
-Nothing in `.claude/` imports from here. Deleting this folder has no effect on the
+No runtime adapter imports from here. Deleting this folder has no effect on the
 GS skills or agents themselves. `/skill-test` and `/skill-improve` will report that
 `catalog.yaml` is missing and guide the user to initialize it.

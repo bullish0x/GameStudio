@@ -3,7 +3,7 @@
 ## Agent Summary
 Domain: GDExtension API, godot-cpp C++ bindings, godot-rust bindings, native library integration, and native performance optimization.
 Does NOT own: GDScript code (gdscript-specialist), shader code (godot-shader-specialist).
-Model tier: Sonnet (default).
+Reasoning tier: balanced reasoning (default).
 No gate IDs assigned.
 
 ---
@@ -12,7 +12,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and domain-specific (references GDExtension / godot-cpp / native bindings)
 - [ ] `allowed-tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over GDScript or shader authoring
 
 ---

@@ -4,7 +4,7 @@
 
 Domain: GLSL shader authoring and optimization for the browser — vertex/fragment shaders, `ShaderMaterial` / `RawShaderMaterial`, custom material extensions via `onBeforeCompile`, GPGPU/FBO techniques, post-processing passes (`EffectComposer`), and shader-level performance work (precision, branching, texture fetches, overdraw). Also covers 2D filters: PixiJS `Filter` lifecycle (`filterArea`, `padding`, batch-breaking cost) and Phaser 4 custom filters via the `RenderNode` architecture and config-based Shader API with `#pragma` directives.
 Does NOT own: Three.js scene graph or render loop (hands finished materials to threejs-specialist), asset/texture preparation (requests channel-packed maps from web3d-asset-pipeline or web2d-asset-pipeline), PixiJS or Phaser scene code (hands finished filters to pixijs-specialist or phaser-specialist).
-Model tier: Sonnet (default for specialists).
+Reasoning tier: balanced reasoning (default for specialists).
 No gate IDs assigned.
 
 ---
@@ -13,7 +13,7 @@ No gate IDs assigned.
 
 - [ ] `description:` field is present and covers GLSL/WebGL, ShaderMaterial, onBeforeCompile, GPGPU, post-processing, PixiJS Filter, and Phaser 4 RenderNode/Shader API
 - [ ] `tools:` list includes Read, Glob, Grep, Write, Edit, Bash, Task
-- [ ] `model: sonnet` is set
+- [ ] Balanced reasoning tier is recommended
 - [ ] `maxTurns: 20` is set
 - [ ] Description notes this agent is consumed by threejs-specialist, pixijs-specialist, and phaser-specialist
 - [ ] Agent definition states it does NOT own the surrounding scene/loop code

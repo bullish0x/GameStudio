@@ -7,8 +7,8 @@ This file is gitignored and will not be committed.
 # Personal Preferences
 
 ## Model Preferences
-- Prefer Opus for complex design tasks
-- Use Haiku for quick lookups and simple edits
+- Prefer highest-reasoning models for complex design tasks
+- Use fast-reasoning models for quick lookups and simple edits
 
 ## Workflow Preferences
 - Always run tests after code changes
@@ -18,7 +18,7 @@ This file is gitignored and will not be committed.
 ## Local Environment
 - Python command: python (or py / python3)
 - Shell: Git Bash on Windows
-- IDE: VS Code with Claude Code extension
+- IDE: VS Code, Cursor, or another supported coding-agent harness
 
 ## Communication Style
 - Keep responses concise
@@ -34,4 +34,4 @@ This file is gitignored and will not be committed.
 
 1. Copy this template to your project root: `cp .claude/docs/CLAUDE-local-template.md CLAUDE.local.md`
 2. Edit to match your preferences
-3. Verify `CLAUDE.local.md` is in `.gitignore` (Claude Code reads it from the project root)
+3. Verify `CLAUDE.local.md` is in `.gitignore` (Claude Code and compatible harnesses can read it from the project root)

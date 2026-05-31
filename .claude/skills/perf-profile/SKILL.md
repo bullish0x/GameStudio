@@ -5,7 +5,6 @@ argument-hint: "[system-name or 'full']"
 user-invocable: true
 agent: performance-analyst
 allowed-tools: Read, Glob, Grep, Bash
-model: sonnet
 ---
 
 ## Phase 1: Determine Scope

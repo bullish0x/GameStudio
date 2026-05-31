@@ -3,7 +3,7 @@
 ## Agent Summary
 - **Domain**: Blueprint architecture, the Blueprint/C++ boundary, Blueprint graph quality, Blueprint performance optimization, Blueprint Function Library design
 - **Does NOT own**: C++ implementation (engine-programmer or gameplay-programmer), art assets or shaders, UI/UX flow design (ux-designer)
-- **Model tier**: Sonnet
+- **Reasoning tier**: balanced reasoning
 - **Gate IDs**: None; defers to unreal-specialist or lead-programmer for cross-domain rulings
 
 ---
@@ -12,7 +12,7 @@
 
 - [ ] `description:` field is present and domain-specific (references Blueprint architecture and optimization)
 - [ ] `allowed-tools:` list matches the agent's role (Read for Blueprint project files; no server or deployment tools)
-- [ ] Model tier is Sonnet (default for specialists)
+- [ ] Reasoning tier is balanced reasoning (default for specialists)
 - [ ] Agent definition does not claim authority over C++ implementation decisions
 
 ---
