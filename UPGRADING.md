@@ -665,8 +665,9 @@ future sessions without requiring manual file edits.
    rm -rf .claude/skills/design-systems/
    ```
 
-2. **Test the status line** by starting a Claude Code session — you should see
-   the stage breadcrumb in the terminal footer.
+2. **Test the status line** by starting a harness session with status-line
+   support, such as Claude Code — you should see the stage breadcrumb in the
+   terminal footer.
 
 3. **Verify hook execution** still works:
    ```bash
