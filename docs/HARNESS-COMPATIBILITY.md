@@ -141,6 +141,7 @@ Then create and run a profile:
 ```bash
 gamestudio-launch init-defaults --workspace "$PWD"
 gamestudio-launch doctor openrouter-codex
+gamestudio-launch web
 gamestudio-launch run <profile-name>
 ```
 

@@ -97,6 +97,7 @@ optional launcher companion from a GameStudio checkout:
 bash .agents/scripts/install-launcher.sh
 gamestudio-launch init-defaults --workspace "$PWD"
 gamestudio-launch doctor openrouter-codex
+gamestudio-launch web
 ```
 
 The launcher is separate from GameStudio because it owns executable bridge and

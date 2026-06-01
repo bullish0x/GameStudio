@@ -630,6 +630,7 @@ it from a GameStudio checkout with:
 bash .agents/scripts/install-launcher.sh
 gamestudio-launch init-defaults --workspace "$PWD"
 gamestudio-launch doctor openrouter-codex
+gamestudio-launch web
 ```
 
 To check that provider-neutral assets remain wired correctly after edits, run:
