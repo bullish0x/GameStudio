@@ -139,7 +139,8 @@ bash .agents/scripts/install-launcher.sh
 Then create and run a profile:
 
 ```bash
-gamestudio-launch wizard
+gamestudio-launch init-defaults --workspace "$PWD"
+gamestudio-launch doctor openrouter-codex
 gamestudio-launch run <profile-name>
 ```
 

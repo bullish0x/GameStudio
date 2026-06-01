@@ -13,8 +13,15 @@ if ! command -v git >/dev/null 2>&1; then
   exit 1
 fi
 
+if command -v pipx >/dev/null 2>&1; then
+  echo "Installing GameStudio Launcher with pipx from $REPO_URL"
+  pipx install --force "git+$REPO_URL"
+  echo "Installed. Run: gamestudio-launch init-defaults --workspace \"$PWD\""
+  exit 0
+fi
+
 if ! command -v python >/dev/null 2>&1; then
-  echo "python is required to install GameStudio Launcher" >&2
+  echo "python is required when pipx is unavailable" >&2
   exit 1
 fi
 
@@ -29,5 +36,4 @@ fi
 
 python -m pip install -e "$INSTALL_DIR"
 
-echo "Installed. Run: gamestudio-launch wizard"
-
+echo "Installed. Run: gamestudio-launch init-defaults --workspace \"$PWD\""
