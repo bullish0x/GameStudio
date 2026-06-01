@@ -619,6 +619,17 @@ and routing examples. For a copyable local gateway starter, use
 `.agents/docs/provider-gateway-example.yaml` and keep real keys in your shell,
 harness settings, or ignored local config.
 
+For a guided local launcher, use the optional companion repo
+`bullish0x/gamestudio-launcher`. It provides `gamestudio-launch wizard` and
+`gamestudio-launch run <profile>` for selecting a harness, provider, model, and
+workspace without editing GameStudio skills or hooks. Traditional harness setup
+remains fully supported. If you have access to the private launcher repo, install
+it from a GameStudio checkout with:
+
+```bash
+bash .agents/scripts/install-launcher.sh
+```
+
 To check that provider-neutral assets remain wired correctly after edits, run:
 
 ```bash
@@ -656,7 +667,7 @@ CLAUDE.md                           # Claude Code adapter instructions
   hooks.json                        # Provider-neutral hook event registry
   rules/                            # Provider-neutral path-scoped coding standards
   skills/                           # Provider-neutral skill source
-  scripts/                          # Provider-neutral validation scripts
+  scripts/                          # Provider-neutral validation and helper scripts
 .codex/
   agents/                           # Codex adapter agent definitions
   hooks/                            # Codex adapter hook scripts
@@ -705,6 +716,13 @@ harness is using Claude, GPT, Gemini, DeepSeek, GLM/Z.ai, Qwen, or a local
 model. Differences in model name, API key, base URL, routing, fallback, budget,
 and rate limits belong in the harness configuration or an optional gateway such
 as LiteLLM Proxy or OpenRouter.
+
+`bullish0x/gamestudio-launcher` is the optional companion for users who want a
+single CLI to choose harness, provider, model, and workspace. It is separate
+from this repo because it owns executable launch and bridge behavior; GameStudio
+keeps the provider-neutral studio instructions. You can always bypass the
+launcher and use Claude Code, Codex, Cursor, OpenCode-style tools, or another
+AGENTS.md-aware harness directly.
 
 Detailed setup notes: `docs/HARNESS-COMPATIBILITY.md`. Repository contribution,
 security, and review rules follow the same principle: canonical behavior goes
