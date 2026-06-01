@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">GameStudio</h1>
   <p align="center">
-    Turn one coding-agent harness into a full game development studio.
+    Turn any supported coding-agent harness into a full game development studio.
     <br />
     55 agents. 182 skills. One coordinated AI team.
   </p>
@@ -23,6 +23,13 @@
 Building a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking "does this actually fit the game's vision?"
 
 **GameStudio** solves this by giving your AI session the structure of a real studio. Instead of one general-purpose assistant, you get 55 specialized agents organized into a studio hierarchy — directors who guard the vision, department leads who own their domains, and specialists who do the hands-on work. Each agent has defined responsibilities, escalation paths, and quality gates.
+
+GameStudio is not a Claude-only template. The canonical studio brain lives under
+`.agents/`: skills, agents, hooks, rules, docs, and templates. Claude Code,
+Codex/OpenAI-based harnesses, Cursor, Antigravity-style tools, OpenCode-style
+tools, Gemini-style tools, and other AGENTS.md-aware agents should all map back
+to that same provider-neutral source. Harness-specific folders such as
+`.claude/`, `.codex/`, and `.cursor/` are adapters, not separate products.
 
 The result: you still make every decision, but now you have a team that asks the right questions, catches mistakes early, and keeps your project organized from first brainstorm to launch.
 
@@ -55,7 +62,11 @@ The result: you still make every decision, but now you have a team that asks the
 | **Skills** | 182 | Studio workflow commands plus web game-dev skills (Three.js, R3F, ECS, PixiJS, Phaser) |
 | **Hooks** | 13 | Automated validation on commits, pushes, asset changes, session lifecycle, notifications, agent audit trail, and gap detection |
 | **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, web scenes/shaders/3D assets, and more |
-| **Templates** | 41 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |
+| **Templates** | 41 | 38 game-production templates plus 3 collaborative protocol templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |
+
+Counts are generated from the canonical `.agents/` tree: `.agents/agents/`,
+`.agents/skills/`, `.agents/hooks/`, `.agents/rules/`, and
+`.agents/docs/templates/` including `collaborative-protocols/`.
 
 ## Studio Hierarchy
 
@@ -390,7 +401,7 @@ All hooks fail gracefully if optional tools are missing — nothing breaks, you 
    ```
 2. **Open your coding-agent harness:**
    ```bash
-   claude    # or your Codex, Cursor, Antigravity, or other harness entrypoint
+   # Examples: claude, codex, cursor, opencode, or your harness entrypoint
    ```
    GameStudio keeps provider and model choices in the harness or gateway, not
    in skills, hooks, or templates.
@@ -639,15 +650,19 @@ CLAUDE.md                           # Claude Code adapter instructions
 .agents/
   agents/                           # Provider-neutral role source
   docs/                             # Provider-neutral coordination docs
+    provider-gateway-example.yaml    # LiteLLM/OpenRouter gateway starter
     templates/                      # Provider-neutral document templates
   hooks/                            # Provider-neutral lifecycle hook scripts
   hooks.json                        # Provider-neutral hook event registry
   rules/                            # Provider-neutral path-scoped coding standards
   skills/                           # Provider-neutral skill source
+  scripts/                          # Provider-neutral validation scripts
 .codex/
   agents/                           # Codex adapter agent definitions
   hooks/                            # Codex adapter hook scripts
   hooks.json                        # Codex adapter hook wiring
+.cursor/
+  rules/                            # Cursor adapter rules
 .claude/
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # Claude adapter agent definitions
@@ -670,13 +685,16 @@ production/                         # Sprint plans, milestones, release tracking
 
 ## Harness Compatibility
 
-The studio logic is harness-neutral:
+The studio logic is harness-neutral. Start from `.agents/`; use adapter folders
+only to translate that behavior into a specific tool:
 
 - `AGENTS.md` is the common instruction file for AGENTS.md-aware tools.
 - `.agents/skills/` is the canonical skill tree for provider-neutral harnesses.
 - `.agents/agents/` is the canonical role tree for provider-neutral harnesses.
 - `.agents/hooks/` is the canonical lifecycle hook tree for provider-neutral harnesses.
 - `.agents/hooks.json` is the canonical hook registry for generic harnesses.
+- `.agents/rules/` is the canonical path-scoped rule tree.
+- `.agents/docs/` is the canonical documentation and template tree.
 - `.agents/docs/templates/` is the canonical template tree.
 - `.claude/` adapts the same studio to Claude Code.
 - `.codex/` adapts the same studio to Codex/OpenAI-based harnesses.
@@ -688,7 +706,10 @@ model. Differences in model name, API key, base URL, routing, fallback, budget,
 and rate limits belong in the harness configuration or an optional gateway such
 as LiteLLM Proxy or OpenRouter.
 
-Detailed setup notes: `docs/HARNESS-COMPATIBILITY.md`.
+Detailed setup notes: `docs/HARNESS-COMPATIBILITY.md`. Repository contribution,
+security, and review rules follow the same principle: canonical behavior goes
+under `.agents/`; adapter folders mirror or map that behavior for a particular
+harness.
 
 ## How It Works
 

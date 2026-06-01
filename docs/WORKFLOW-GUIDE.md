@@ -75,8 +75,10 @@ This guided onboarding asks where you are and routes you to the right phase:
 
 ### Step 3: Verify Hooks Are Working
 
-Start a new harness session. In Claude Code or Codex adapter mode, you should
-see output from the `session-start.sh` hook:
+Start a new harness session. If your harness supports lifecycle hooks, map its
+session-start event to the canonical `.agents/hooks/session-start.sh` script or
+use the provided adapter wiring. In Claude Code or Codex adapter mode, you
+should see output like:
 
 ```
 === GameStudio -- Session Context ===
@@ -87,9 +89,10 @@ Recent commits:
 ```
 
 If you see this, hooks are working. If not, check the active adapter:
-`.claude/settings.json` for Claude Code, `.codex/hooks.json` for Codex, or
-equivalent hook registration mapped to `.agents/hooks/` in Cursor,
-Antigravity, OpenCode-style tools, or your selected harness.
+`.agents/hooks.json` for the provider-neutral registry, `.claude/settings.json`
+for Claude Code, `.codex/hooks.json` for Codex, or equivalent hook registration
+mapped to `.agents/hooks/` in Cursor, Antigravity, OpenCode-style tools, or your
+selected harness.
 
 ### Step 4: Ask for Help Anytime
 

@@ -26,13 +26,16 @@ Include as much detail as possible:
 
 ## What Is In Scope
 
-GS is a **local development tool** — it installs shell hooks and coordinates
-AI agents that run directly on your machine. Security issues are primarily about
-contributed code that executes in users' environments without their awareness.
+GS is a **local development tool**. It installs provider-neutral studio files
+under `.agents/`, plus adapter files for harnesses such as Claude Code, Codex,
+Cursor, Antigravity-style tools, and OpenCode-style tools. Security issues are
+primarily about contributed code that executes in users' environments without
+their awareness.
 
 ### High Severity
-- Hooks (`.claude/hooks/*.sh`, `.codex/hooks/*.sh`, or another adapter hook
-  path) that execute malicious or undisclosed shell commands on user machines
+- Hooks (`.agents/hooks/*.sh`, `.claude/hooks/*.sh`, `.codex/hooks/*.sh`, or
+  another adapter hook path) that execute malicious or undisclosed shell
+  commands on user machines
 - Skills or agents that exfiltrate environment variables, API keys, or secrets
 - Prompt injection via skill or agent definitions that causes the active harness
   to bypass safety measures or take unauthorized destructive actions
@@ -54,7 +57,7 @@ contributed code that executes in users' environments without their awareness.
 
 ## Security Guidelines for Contributors
 
-When contributing hooks, skills, or agents:
+When contributing hooks, skills, agents, adapters, or gateway examples:
 
 - **Hooks must be POSIX-compatible** — use `grep -E`, not `grep -P`; avoid
   platform-specific syntax that behaves differently across operating systems
@@ -64,6 +67,19 @@ When contributing hooks, skills, or agents:
   required and clearly documented in the skill's header
 - **Skills must not write outside their documented scope** without an explicit
   user confirmation step
+- **Provider routing must stay outside canonical skills and agents**. Configure
+  model providers in the harness or a gateway; do not hide provider selection
+  logic in `.agents/skills/`, `.agents/agents/`, hooks, or templates.
+- **Adapters must point back to `.agents/` behavior**. If an adapter needs
+  harness-specific syntax, it must not weaken approval, security, or
+  collaboration requirements.
+
+Run the compatibility validator after changing hooks, adapters, gateway
+examples, or provider-neutral docs:
+
+```bash
+python .agents/scripts/validate-compatibility.py
+```
 
 ## Disclosure Policy
 

@@ -17,6 +17,9 @@ A brief description of what you'd like added or changed.
 - [ ] New hook
 - [ ] New rule
 - [ ] New template
+- [ ] Harness adapter
+- [ ] Provider gateway example
+- [ ] Security or collaboration policy
 - [ ] Improvement to existing component
 - [ ] Other:
 
@@ -30,6 +33,8 @@ How do you think this should work? Include details like:
 - For agents: what domain, what tier, what tools
 - For skills: what the workflow looks like, what it outputs
 - For hooks: what event triggers it, what it validates
+- For harness adapters: how it maps back to `.agents/` without changing studio behavior
+- For provider support: whether this belongs in harness settings, a gateway example, or docs
 
 ## Alternatives Considered
 

@@ -1,6 +1,6 @@
 # Harness Compatibility
 
-**Last Updated:** 2026-05-30
+**Last Updated:** 2026-06-01
 
 GameStudio is a studio workflow, not a model provider. Agents, skills, hooks,
 rules, and templates must stay provider-neutral so the same project can run from
@@ -222,6 +222,29 @@ behavior must remain transferable.
 Templates live under `.agents/docs/templates/` for provider-neutral use. Adapter
 copies can point to the same template names, but template content should describe
 game artifacts, not model providers or harness-specific commands.
+
+## Repository Governance
+
+Provider-neutral compatibility is enforced through repository metadata as well
+as docs:
+
+- `README.md` should describe GameStudio as a harness-neutral studio framework,
+  not as a Claude-only template.
+- `CONTRIBUTING.md` defines the contribution rule: canonical behavior goes in
+  `.agents/`; adapters translate it for specific harnesses.
+- `SECURITY.md` treats hooks, skills, agents, adapters, gateway examples, and
+  collaboration bypasses as security-sensitive surfaces.
+- `.github/CODEOWNERS` requires maintainer review for `.agents/`, adapter
+  folders, security policy, contribution policy, and GitHub workflow metadata.
+- `.github/PULL_REQUEST_TEMPLATE.md` asks contributors to confirm provider
+  neutrality, compatibility validation, security updates, and collaboration
+  policy updates when relevant.
+- Issue templates ask reporters to identify whether a problem is in canonical
+  `.agents/` content, a harness adapter, a provider gateway example, or repo
+  policy.
+
+When changing any of those files, keep the same invariant: the workflow should
+stay stable while provider, model, and harness selection remain external.
 
 ### Tool Name Mapping
 

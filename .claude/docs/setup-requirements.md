@@ -110,3 +110,9 @@ GameStudio is harness-neutral, with adapters for:
 - **Cursor** via `AGENTS.md` and `.cursor/rules/gamestudio.mdc`
 - **Antigravity/OpenCode-style harnesses** via AGENTS.md plus harness-native skills,
   hooks, and subagent registration mapped back to `.agents/`
+
+The canonical source for all portable behavior is `.agents/`. Treat `.claude/`,
+`.codex/`, `.cursor/`, and future harness-specific folders as adapters that map
+that behavior into a particular tool. Repository security, contribution, PR, and
+issue metadata follow the same rule: review canonical behavior once, then keep
+adapters aligned.

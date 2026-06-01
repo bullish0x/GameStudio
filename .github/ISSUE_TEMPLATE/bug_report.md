@@ -37,11 +37,17 @@ What actually happened. Include any error messages or unexpected output.
 
 ## Affected Component
 
+- [ ] Provider-neutral `.agents/` source
+- [ ] Claude Code adapter (`.claude/`)
+- [ ] Codex/OpenAI adapter (`.codex/`)
+- [ ] Cursor adapter (`.cursor/`)
 - [ ] Agent (which one?):
 - [ ] Skill (which one?):
 - [ ] Hook (which one?):
 - [ ] Rule (which one?):
 - [ ] Template
+- [ ] Provider gateway example
+- [ ] Security or collaboration policy
 - [ ] Documentation
 - [ ] Other:
 

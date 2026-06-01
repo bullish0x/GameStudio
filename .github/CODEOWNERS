@@ -13,10 +13,17 @@ CLAUDE.md                   @bullish0x
 .codex/                     @bullish0x
 .cursor/                    @bullish0x
 settings.json               @bullish0x
+SECURITY.md                 @bullish0x
+CONTRIBUTING.md             @bullish0x
+.github/                    @bullish0x
+docs/HARNESS-COMPATIBILITY.md @bullish0x
 
 # Skills and agents — high-impact, review carefully
 .agents/skills/             @bullish0x
 .agents/agents/             @bullish0x
+.agents/hooks/              @bullish0x
+.agents/hooks.json          @bullish0x
+.agents/scripts/            @bullish0x
 .agents/docs/               @bullish0x
 .agents/docs/templates/     @bullish0x
 .claude/skills/             @bullish0x
@@ -24,3 +31,4 @@ settings.json               @bullish0x
 .claude/hooks/              @bullish0x
 .codex/agents/              @bullish0x
 .codex/hooks/               @bullish0x
+.codex/hooks.json           @bullish0x
