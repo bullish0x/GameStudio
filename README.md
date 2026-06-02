@@ -9,6 +9,8 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="VERSION"><img src="https://img.shields.io/badge/version-2026.06.01-blue.svg" alt="Version 2026.06.01"></a>
+  <a href=".github/workflows/compatibility.yml"><img src="https://github.com/bullish0x/GameStudio/actions/workflows/compatibility.yml/badge.svg" alt="Compatibility workflow"></a>
   <a href=".agents/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 Agents"></a>
   <a href=".agents/skills"><img src="https://img.shields.io/badge/skills-182-green" alt="182 skills"></a>
   <a href=".agents/hooks"><img src="https://img.shields.io/badge/hooks-13-orange" alt="13 Hooks"></a>

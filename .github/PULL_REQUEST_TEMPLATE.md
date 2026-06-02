@@ -28,6 +28,7 @@ Brief description of what this PR does.
 - [ ] Provider-neutral reference docs are updated in `.agents/docs/` (agent-roster, skills-reference, hooks-reference, rules-reference)
 - [ ] Hooks use `grep -E` (POSIX) and fail gracefully without jq/python
 - [ ] If this changes hooks, harness adapters, gateway examples, or provider-neutral docs, `python .agents/scripts/validate-compatibility.py` passes
+- [ ] If this changes release-facing behavior, `VERSION`, `CHANGELOG.md`, or `UPGRADING.md` is updated
 - [ ] If this changes security-sensitive behavior, `SECURITY.md` is updated
 - [ ] If this changes collaboration or review policy, `CONTRIBUTING.md` and this PR template are updated
 - [ ] No hardcoded paths or platform-specific assumptions
