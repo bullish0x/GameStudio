@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   validate:
     name: Provider-neutral compatibility
@@ -20,4 +23,3 @@ jobs:
 
       - name: Validate compatibility assets
         run: python .agents/scripts/validate-compatibility.py
-
