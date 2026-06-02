@@ -620,17 +620,17 @@ and routing examples. For a copyable local gateway starter, use
 harness settings, or ignored local config.
 
 For a guided local launcher, use the optional companion repo
-`bullish0x/gamestudio-launcher`. It provides `gamestudio-launch wizard` and
-`gamestudio-launch run <profile>` for selecting a harness, provider, model, and
+`bullish0x/agent-harness-launcher`. It provides `agent-launch wizard` and
+`agent-launch run <profile>` for selecting a harness, provider, model, and
 workspace without editing GameStudio skills or hooks. Traditional harness setup
 remains fully supported. If you have access to the private launcher repo, install
 it from a GameStudio checkout with:
 
 ```bash
 bash .agents/scripts/install-launcher.sh
-gamestudio-launch init-defaults --workspace "$PWD"
-gamestudio-launch doctor openrouter-codex
-gamestudio-launch web
+agent-launch init-defaults --workspace "$PWD"
+agent-launch doctor openrouter-codex
+agent-launch web
 ```
 
 To check that provider-neutral assets remain wired correctly after edits, run:
@@ -720,7 +720,7 @@ model. Differences in model name, API key, base URL, routing, fallback, budget,
 and rate limits belong in the harness configuration or an optional gateway such
 as LiteLLM Proxy or OpenRouter.
 
-`bullish0x/gamestudio-launcher` is the optional companion for users who want a
+`bullish0x/agent-harness-launcher` is the optional companion for users who want a
 single CLI to choose harness, provider, model, and workspace. It is separate
 from this repo because it owns executable launch and bridge behavior; GameStudio
 keeps the provider-neutral studio instructions. You can always bypass the

@@ -19,7 +19,7 @@ you'll lose validation features.
 | **Python 3** | Hooks (2 of 13) | JSON validation for data files | [python.org](https://www.python.org/) |
 | **Bash** | All hooks | Shell script execution | Included with Git for Windows |
 | **LiteLLM Proxy or OpenRouter** | Optional model gateway | Use when your harness needs one OpenAI-compatible or Anthropic-compatible endpoint for multiple providers |
-| **GameStudio Launcher** | Optional harness launcher | Use when you want a CLI wizard to select harness, provider, model, and workspace |
+| **Agent Harness Launcher** | Optional harness launcher | Use when you want a CLI wizard to select harness, provider, model, and workspace |
 
 ### Installing jq
 
@@ -90,14 +90,14 @@ Keep provider credentials, base URLs, model aliases, budgets, and fallbacks in
 the harness or gateway configuration. Do not hardcode them in GameStudio skills,
 agents, hooks, or project docs.
 
-If you have access to `bullish0x/gamestudio-launcher`, you can install the
+If you have access to `bullish0x/agent-harness-launcher`, you can install the
 optional launcher companion from a GameStudio checkout:
 
 ```bash
 bash .agents/scripts/install-launcher.sh
-gamestudio-launch init-defaults --workspace "$PWD"
-gamestudio-launch doctor openrouter-codex
-gamestudio-launch web
+agent-launch init-defaults --workspace "$PWD"
+agent-launch doctor openrouter-codex
+agent-launch web
 ```
 
 The launcher is separate from GameStudio because it owns executable bridge and

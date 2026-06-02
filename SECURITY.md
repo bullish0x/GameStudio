@@ -51,7 +51,7 @@ their awareness.
 ### Out of Scope
 - The behavior of a model provider, gateway, or coding-agent harness itself
   (report to that provider or tool vendor)
-- The optional `bullish0x/gamestudio-launcher` companion repository, except for
+- The optional `bullish0x/agent-harness-launcher` companion repository, except for
   broken links or misleading GameStudio documentation that points to it
 - Bugs in the user's local harness installation or editor extension
 - Theoretical vulnerabilities with no realistic attack path

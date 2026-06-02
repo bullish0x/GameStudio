@@ -55,8 +55,8 @@ Use the simplest working provider path:
    https://openrouter.ai/docs/guides/overview/models
 4. **Provider-specific OpenAI-compatible endpoints**: Use for vendors that
    already expose OpenAI-compatible chat completions or responses APIs.
-5. **GameStudio Launcher**: Optional companion repo
-   `bullish0x/gamestudio-launcher` for users who want a CLI wizard that selects
+5. **Agent Harness Launcher**: Optional companion repo
+   `bullish0x/agent-harness-launcher` for users who want a CLI wizard that selects
    harness, provider, model, and workspace, then launches Claude Code or a
    Codex/OpenAI-compatible harness with the right bridge or environment.
 
@@ -64,7 +64,7 @@ Do not add provider-specific instructions to individual skills. A `/dev-story`
 workflow should read the same whether the active model is Claude, GPT, Gemini,
 DeepSeek, GLM/Z.ai, Qwen, or local.
 
-GameStudio Launcher is intentionally separate from this repository. It owns
+Agent Harness Launcher is intentionally separate from this repository. It owns
 provider profiles, bridge code, and harness process launch. This repository owns
 portable studio behavior. Traditional direct harness setup remains supported.
 
@@ -127,7 +127,7 @@ OPENAI_MODEL=<provider>/<model>
 Use equivalent settings for harnesses that use Anthropic Messages or Gemini
 native APIs.
 
-## Optional GameStudio Launcher
+## Optional Agent Harness Launcher
 
 If you have access to the private companion repo, install the launcher from a
 GameStudio checkout:
@@ -139,10 +139,10 @@ bash .agents/scripts/install-launcher.sh
 Then create and run a profile:
 
 ```bash
-gamestudio-launch init-defaults --workspace "$PWD"
-gamestudio-launch doctor openrouter-codex
-gamestudio-launch web
-gamestudio-launch run <profile-name>
+agent-launch init-defaults --workspace "$PWD"
+agent-launch doctor openrouter-codex
+agent-launch web
+agent-launch run <profile-name>
 ```
 
 Launcher profiles live in the user's home directory and reference API key
