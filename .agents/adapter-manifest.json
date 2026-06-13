@@ -95,7 +95,10 @@
   "validation_command": "python .agents/scripts/validate-compatibility.py",
   "plugin_packaging": {
     "status": "local-packaging-manifest",
-    "manifest": ".codex-plugin/plugin.json",
+    "manifests": {
+      "codex": ".codex-plugin/plugin.json",
+      "claude": ".claude-plugin/plugin.json"
+    },
     "docs": "docs/PLUGIN_PACKAGING.md"
   }
 }

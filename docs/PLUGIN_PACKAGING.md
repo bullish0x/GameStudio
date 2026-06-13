@@ -1,23 +1,28 @@
-# Codex Plugin Packaging
+# Plugin Packaging
 
-GameStudio includes a local packaging manifest for Codex at
-`.codex-plugin/plugin.json`. The manifest records metadata, canonical assets,
-adapter paths, hook registry location, and validation commands for
-Codex-compatible harnesses.
+GameStudio includes local packaging manifests for Codex and Claude Code:
 
-This is still a project-local packaging surface. It is not a published
-marketplace package, it does not install itself into Codex, and it does not
-guarantee automatic slash-command exposure.
+- `.codex-plugin/plugin.json`
+- `.claude-plugin/plugin.json`
+
+These manifests record metadata, canonical assets, adapter paths, hook registry
+locations, and validation commands for compatible harnesses.
+
+This is still a project-local packaging surface. The manifests are not published
+marketplace packages, they do not install themselves into Codex or Claude Code,
+and they do not guarantee automatic slash-command exposure.
 
 ## Current Model
 
 Use GameStudio by keeping these files in the project repository:
 
 - `AGENTS.md`
+- `CLAUDE.md` when using Claude Code
 - `.agents/`
 - `.codex/` for Codex adapter files
-- `.codex-plugin/plugin.json` for local packaging metadata
+- `.codex-plugin/plugin.json` for local Codex packaging metadata
 - `.claude/` for Claude Code adapter files
+- `.claude-plugin/plugin.json` for local Claude packaging metadata
 - `.cursor/` for Cursor rules
 - `docs/HARNESS-COMPATIBILITY.md` and adapter docs
 
@@ -27,30 +32,35 @@ Hooks only run when the harness supports compatible lifecycle hook registration.
 
 ## Manifest Contents
 
-`.codex-plugin/plugin.json` records:
+Both manifests record:
 
 - Plugin identity, version, license, and status.
-- `AGENTS.md` as the instruction entrypoint.
+- The instruction entrypoint for the target harness.
 - `.agents/` as the source of truth.
-- `.codex/` as the Codex adapter path.
+- Adapter paths for the target harness.
 - Canonical skill, agent, hook, rule, and template locations.
 - Validation commands:
   - `python .agents/scripts/validate-compatibility.py`
   - `python .agents/scripts/sync-adapters.py`
 
+Codex-specific metadata lives in `.codex-plugin/plugin.json` and points to
+`.codex/`. Claude-specific metadata lives in `.claude-plugin/plugin.json` and
+points to `.claude/`.
+
 ## What Is Still Harness-Dependent
 
-A harness or future packaging tool still has to decide how to consume the local
+A harness or future packaging tool still has to decide how to consume each local
 manifest:
 
 - How skills become slash commands, if supported.
-- How hook events map to `.codex/hooks.json`.
-- How agent definitions in `.codex/agents/*.toml` are registered.
+- How hook events map to `.codex/hooks.json` or `.claude/settings.json`.
+- How agent definitions are registered.
 - How install, update, and uninstall preserve user project files.
 - Whether a published package registry requires a different schema.
 
-Do not move canonical behavior into `.codex-plugin/`. The manifest points to
-`.agents/` and adapter files; it is not the source of truth.
+Do not move canonical behavior into `.codex-plugin/` or `.claude-plugin/`. The
+manifests point to `.agents/` and adapter files; they are not the source of
+truth.
 
 ## Sync And Validation
 
@@ -63,5 +73,6 @@ python .agents/scripts/validate-compatibility.py
 ```
 
 `sync-adapters.py --write` can refresh governed adapter outputs from `.agents/`.
-`validate-compatibility.py` verifies the manifest, adapter sync, hook paths,
-README counts, gateway examples, and documentation pointers.
+`validate-compatibility.py` verifies both manifests, adapter sync, hook paths,
+README counts, gateway examples, installer payload coverage, and documentation
+pointers.

@@ -332,12 +332,21 @@ def validate_adapter_manifest() -> None:
             if not (ROOT / item["source"]).exists():
                 fail(f"adapter manifest {adapter_name}.{item_name} source missing: {item['source']}")
 
-    plugin = manifest.get("plugin_packaging", {})
-    if plugin.get("status") != "local-packaging-manifest":
+    packaging = manifest.get("plugin_packaging", {})
+    if packaging.get("status") != "local-packaging-manifest":
         fail("plugin_packaging.status must be local-packaging-manifest")
-    plugin_manifest = plugin.get("manifest")
-    if not plugin_manifest or not (ROOT / plugin_manifest).is_file():
-        fail("plugin_packaging.manifest must reference .codex-plugin/plugin.json")
+    manifests = packaging.get("manifests")
+    if not isinstance(manifests, dict):
+        fail("plugin_packaging.manifests must be an object")
+    expected_manifests = {
+        "codex": ".codex-plugin/plugin.json",
+        "claude": ".claude-plugin/plugin.json",
+    }
+    if manifests != expected_manifests:
+        fail(f"plugin_packaging.manifests mismatch: {manifests!r}")
+    for path in manifests.values():
+        if not (ROOT / path).is_file():
+            fail(f"plugin packaging manifest is missing: {path}")
 
 
 def validate_adapter_mapping() -> None:
@@ -362,45 +371,74 @@ def validate_adapter_sync_script() -> None:
         fail(f"adapter sync check failed: {detail}")
 
 
-def validate_codex_plugin_manifest() -> None:
-    plugin = load_json(".codex-plugin/plugin.json")
+def validate_plugin_manifest(path: str, expected_status: str, expected_entrypoint: str, adapter_key: str, adapter_readme: str) -> None:
+    plugin = load_json(path)
     required = {
         "schema_version": 1,
         "id": "gamestudio",
         "name": "GameStudio",
         "license": "MIT",
         "source_of_truth": ".agents/",
-        "status": "local-packaging-manifest",
+        "status": expected_status,
     }
     for key, expected in required.items():
         if plugin.get(key) != expected:
-            fail(f".codex-plugin/plugin.json {key} should be {expected!r}")
+            fail(f"{path} {key} should be {expected!r}")
 
     version = read_text("VERSION").strip()
     if plugin.get("version") != version:
-        fail(f".codex-plugin/plugin.json version {plugin.get('version')!r} does not match VERSION {version!r}")
+        fail(f"{path} version {plugin.get('version')!r} does not match VERSION {version!r}")
+
+    entrypoints = plugin.get("entrypoints", {})
+    if entrypoints.get("instructions") != expected_entrypoint:
+        fail(f"{path} entrypoints.instructions should be {expected_entrypoint!r}")
+    if entrypoints.get(adapter_key) != adapter_readme:
+        fail(f"{path} entrypoints.{adapter_key} should be {adapter_readme!r}")
 
     referenced_paths = [
-        plugin["entrypoints"]["instructions"],
-        plugin["entrypoints"]["codex_adapter"],
-        plugin["entrypoints"]["adapter_manifest"],
+        entrypoints["instructions"],
+        entrypoints["adapter_manifest"],
+        entrypoints[adapter_key],
         plugin["assets"]["skills"]["source"].split("*", 1)[0],
         plugin["assets"]["agents"]["source"].split("*", 1)[0],
-        plugin["assets"]["agents"]["codex_adapter"].split("*", 1)[0],
         plugin["assets"]["hooks"]["source"].split("*", 1)[0],
-        plugin["assets"]["hooks"]["codex_registry"],
         plugin["assets"]["rules"]["source"].split("*", 1)[0],
         plugin["assets"]["templates"]["source"],
     ]
+    if "neutral_instructions" in entrypoints:
+        referenced_paths.append(entrypoints["neutral_instructions"])
+    for asset in plugin["assets"].values():
+        if isinstance(asset, dict):
+            for key, value in asset.items():
+                if key.endswith("_adapter") or key.endswith("_registry"):
+                    referenced_paths.append(value.split("*", 1)[0])
     for path in referenced_paths:
         if not (ROOT / path).exists():
-            fail(f".codex-plugin/plugin.json references missing path: {path}")
+            fail(f"plugin manifest references missing path: {path}")
+
+
+def validate_plugin_manifests() -> None:
+    validate_plugin_manifest(
+        ".codex-plugin/plugin.json",
+        "local-packaging-manifest",
+        "AGENTS.md",
+        "codex_adapter",
+        ".codex/README.md",
+    )
+    validate_plugin_manifest(
+        ".claude-plugin/plugin.json",
+        "local-packaging-manifest",
+        "CLAUDE.md",
+        "claude_adapter",
+        ".claude/README.md",
+    )
 
 
 def validate_installer_payload() -> None:
     installer = read_text("install.sh")
     required_paths = [
         ".codex-plugin",
+        ".claude-plugin",
         "docs/CODEX_ADAPTER.md",
         "docs/CLAUDE_ADAPTER.md",
         "docs/PLUGIN_PACKAGING.md",
@@ -456,7 +494,8 @@ def validate_docs() -> None:
         "AGENTS.md": [".agents/hooks.json", "OpenCode-style tools"],
         "README.md": [
             ".agents/adapter-manifest.json",
-            "Codex plugin packaging",
+            "plugin packaging",
+            ".claude-plugin/plugin.json",
             "project-local framework",
             "canonical vs adapter-specific",
         ],
@@ -471,16 +510,16 @@ def validate_docs() -> None:
             "docs/PLUGIN_PACKAGING.md",
         ],
         "docs/CODEX_ADAPTER.md": [".codex/hooks.json", ".agents/skills/", ".codex-plugin/plugin.json"],
-        "docs/CLAUDE_ADAPTER.md": [".claude/settings.json", ".agents/skills/", ".agents/adapter-manifest.json"],
-        "docs/PLUGIN_PACKAGING.md": [".codex-plugin/plugin.json", "local packaging manifest"],
-        ".codex/README.md": [".agents/", "docs/CODEX_ADAPTER.md"],
-        ".claude/README.md": [".agents/", "docs/CLAUDE_ADAPTER.md"],
+        "docs/CLAUDE_ADAPTER.md": [".claude/settings.json", ".agents/skills/", ".agents/adapter-manifest.json", ".claude-plugin/plugin.json"],
+        "docs/PLUGIN_PACKAGING.md": [".codex-plugin/plugin.json", ".claude-plugin/plugin.json", "local packaging manifest"],
+        ".codex/README.md": [".agents/", "docs/CODEX_ADAPTER.md", "docs/PLUGIN_PACKAGING.md"],
+        ".claude/README.md": [".agents/", "docs/CLAUDE_ADAPTER.md", ".claude-plugin/plugin.json"],
         ".agents/docs/hooks-reference.md": [".agents/hooks.json", "notify.sh"],
         ".agents/docs/setup-requirements.md": ["provider-gateway-example.yaml", "OpenCode-style tools"],
         ".claude/docs/setup-requirements.md": ["provider-gateway-example.yaml", "OpenCode-style tools"],
         "CONTRIBUTING.md": [".agents/adapter-manifest.json", "validate-compatibility.py"],
-        ".github/CODEOWNERS": [".codex-plugin/", "docs/CODEX_ADAPTER.md", "docs/CLAUDE_ADAPTER.md", "docs/PLUGIN_PACKAGING.md"],
-        ".github/PULL_REQUEST_TEMPLATE.md": [".agents/adapter-manifest.json", ".codex-plugin/plugin.json"],
+        ".github/CODEOWNERS": [".codex-plugin/", ".claude-plugin/", "docs/CODEX_ADAPTER.md", "docs/CLAUDE_ADAPTER.md", "docs/PLUGIN_PACKAGING.md"],
+        ".github/PULL_REQUEST_TEMPLATE.md": [".agents/adapter-manifest.json", ".codex-plugin/plugin.json", ".claude-plugin/plugin.json"],
     }
 
     for path, fragments in required.items():
@@ -508,7 +547,7 @@ def main() -> None:
     validate_hook_registry()
     validate_adapter_mapping()
     validate_adapter_sync_script()
-    validate_codex_plugin_manifest()
+    validate_plugin_manifests()
     validate_installer_payload()
     validate_shell_syntax()
     validate_gateway_examples()

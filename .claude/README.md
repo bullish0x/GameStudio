@@ -14,6 +14,8 @@ Do not make `.claude/` an independent fork of GameStudio behavior. Change the
 canonical source first, then update the adapter mapping.
 
 See `docs/CLAUDE_ADAPTER.md` and `.agents/adapter-manifest.json`.
+Local packaging metadata lives in `.claude-plugin/plugin.json`; see
+`docs/PLUGIN_PACKAGING.md`.
 
 After changing this adapter or canonical `.agents/` files, run:
 

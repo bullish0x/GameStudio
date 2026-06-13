@@ -11,7 +11,7 @@ canonical GameStudio workflow source.
   plugin or harness loader exposes them another way.
 
 See `docs/CODEX_ADAPTER.md` for usage details and
-`docs/PLUGIN_PACKAGING.md` for the local Codex packaging manifest.
+`docs/PLUGIN_PACKAGING.md` for local packaging manifests.
 
 After changing this adapter or canonical `.agents/` files, run:
 

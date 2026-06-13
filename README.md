@@ -689,6 +689,8 @@ CLAUDE.md                           # Claude Code adapter instructions
   hooks.json                        # Codex adapter hook wiring
 .codex-plugin/
   plugin.json                       # Local Codex packaging metadata
+.claude-plugin/
+  plugin.json                       # Local Claude packaging metadata
 .cursor/
   rules/                            # Cursor adapter rules
 .claude/
@@ -767,11 +769,12 @@ coverage where the harness supports it. Claude Code can use `CLAUDE.md`,
 `.claude/settings.json`, and `.claude/skills/`, which map back to `.agents/`.
 Cursor uses `AGENTS.md` plus `.cursor/rules/gamestudio.mdc`.
 
-Codex plugin packaging now has a local manifest at `.codex-plugin/plugin.json`
-that records metadata, canonical assets, adapter paths, and validation commands.
-It is not a published marketplace package and does not guarantee automatic
-slash-command exposure. See `docs/CODEX_ADAPTER.md`,
-`docs/CLAUDE_ADAPTER.md`, and `docs/PLUGIN_PACKAGING.md`.
+Codex and Claude plugin packaging now have local manifests at
+`.codex-plugin/plugin.json` and `.claude-plugin/plugin.json`. They record
+metadata, canonical assets, adapter paths, and validation commands. They are not
+published marketplace packages and do not guarantee automatic slash-command
+exposure. See `docs/CODEX_ADAPTER.md`, `docs/CLAUDE_ADAPTER.md`, and
+`docs/PLUGIN_PACKAGING.md`.
 
 ## How It Works
 

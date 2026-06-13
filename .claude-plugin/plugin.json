@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "gamestudio",
+  "name": "GameStudio",
+  "version": "2026.06.01",
+  "description": "Provider-neutral game development agent framework with Claude Code adapter metadata.",
+  "license": "MIT",
+  "source_of_truth": ".agents/",
+  "status": "local-packaging-manifest",
+  "entrypoints": {
+    "instructions": "CLAUDE.md",
+    "neutral_instructions": "AGENTS.md",
+    "claude_adapter": ".claude/README.md",
+    "adapter_manifest": ".agents/adapter-manifest.json"
+  },
+  "assets": {
+    "skills": {
+      "source": ".agents/skills/*/SKILL.md",
+      "claude_adapter": ".claude/skills/*/SKILL.md",
+      "exposure": "adapter-skill-tree",
+      "slash_command_guarantee": false
+    },
+    "agents": {
+      "source": ".agents/agents/*.md",
+      "claude_adapter": ".claude/agents/*.md"
+    },
+    "hooks": {
+      "source": ".agents/hooks/*.sh",
+      "claude_registry": ".claude/settings.json"
+    },
+    "rules": {
+      "source": ".agents/rules/*.md",
+      "claude_adapter": ".claude/rules/*.md"
+    },
+    "templates": {
+      "source": ".agents/docs/templates/",
+      "claude_adapter": ".claude/docs/templates/"
+    }
+  },
+  "validation": {
+    "compatibility": "python .agents/scripts/validate-compatibility.py",
+    "sync": "python .agents/scripts/sync-adapters.py"
+  },
+  "packaging_notes": [
+    "This manifest records local packaging metadata for Claude Code-compatible harnesses.",
+    "It is not a published marketplace package and does not guarantee automatic slash-command exposure.",
+    "Canonical behavior must remain in .agents/."
+  ]
+}

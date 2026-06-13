@@ -47,3 +47,11 @@ python .agents/scripts/validate-compatibility.py
 
 The validator checks mirrored agents/rules/hooks, skill coverage, hook
 references, README counts, gateway examples, and required documentation.
+
+## Local Plugin Manifest
+
+`.claude-plugin/plugin.json` records local packaging metadata for Claude
+Code-compatible harnesses: canonical assets, `.claude/` adapter paths, hook
+registry, and validation commands. It is not a published marketplace package and
+does not guarantee automatic slash-command exposure. See
+`docs/PLUGIN_PACKAGING.md`.

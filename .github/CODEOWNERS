@@ -11,6 +11,7 @@ CLAUDE.md                   @bullish0x
 .agents/                    @bullish0x
 .agents/adapter-manifest.json @bullish0x
 .claude/                    @bullish0x
+.claude-plugin/             @bullish0x
 .codex/                     @bullish0x
 .codex-plugin/              @bullish0x
 .cursor/                    @bullish0x

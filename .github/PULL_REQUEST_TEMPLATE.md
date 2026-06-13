@@ -26,7 +26,7 @@ Brief description of what this PR does.
 - [ ] New skills use the subdirectory format (`.agents/skills/<name>/SKILL.md`)
 - [ ] Canonical behavior lives under `.agents/`; harness-specific folders only adapt it
 - [ ] Adapter coverage changes update `.agents/adapter-manifest.json`
-- [ ] Codex plugin packaging changes update `.codex-plugin/plugin.json` and `docs/PLUGIN_PACKAGING.md`
+- [ ] Plugin packaging changes update `.codex-plugin/plugin.json`, `.claude-plugin/plugin.json`, and `docs/PLUGIN_PACKAGING.md`
 - [ ] Provider-neutral reference docs are updated in `.agents/docs/` (agent-roster, skills-reference, hooks-reference, rules-reference)
 - [ ] Hooks use `grep -E` (POSIX) and fail gracefully without jq/python
 - [ ] If this changes hooks, harness adapters, gateway examples, or provider-neutral docs, `python .agents/scripts/validate-compatibility.py` passes
