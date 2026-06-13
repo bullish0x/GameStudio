@@ -49,8 +49,9 @@ The validator checks that Codex agents map to canonical agents, Codex hook
 references exist, README counts match the canonical tree, and the adapter
 manifest documents intentional gaps.
 
-## Not A Plugin Yet
+## Local Plugin Manifest
 
-A real Codex plugin would require `.codex-plugin/plugin.json`, curated skill
-exposure, hook registration metadata, packaging metadata, and install/update
-semantics. See `docs/PLUGIN_PACKAGING.md`.
+`.codex-plugin/plugin.json` records local packaging metadata for Codex-compatible
+harnesses: canonical assets, adapter paths, hook registry, and validation
+commands. It is not a published marketplace package and does not guarantee
+automatic slash-command exposure. See `docs/PLUGIN_PACKAGING.md`.

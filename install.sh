@@ -38,7 +38,9 @@ TOOLING_PATHS=(
   ".claude/agents" ".claude/skills" ".claude/hooks" ".claude/rules"
   ".claude/docs" ".claude/agent-memory" ".claude/statusline.sh"
   ".agents" ".codex" ".cursor"
+  ".codex-plugin"
   "docs/engine-reference" "docs/HARNESS-COMPATIBILITY.md"
+  "docs/CODEX_ADAPTER.md" "docs/CLAUDE_ADAPTER.md" "docs/PLUGIN_PACKAGING.md"
   "GameStudio Skill Testing Framework"
 )
 # Handled specially — never overwritten (a side-file is written for you to merge).

@@ -45,7 +45,7 @@ Adapter details:
 
 - Codex/OpenAI adapter: `docs/CODEX_ADAPTER.md`
 - Claude Code adapter: `docs/CLAUDE_ADAPTER.md`
-- Future Codex plugin packaging: `docs/PLUGIN_PACKAGING.md`
+- Codex plugin packaging manifest: `docs/PLUGIN_PACKAGING.md`
 
 ## Provider And Gateway Guidance
 
@@ -88,10 +88,11 @@ network routing. When a harness supports custom base URLs or provider adapters,
 GameStudio documents the shape to use; when it does not, use that harness's
 native provider support or place a gateway in front of the model.
 
-GameStudio is also not currently packaged as a Codex plugin. It is a
-project-local framework/template. A packaged plugin would need
-`.codex-plugin/plugin.json`, curated skill exposure, hook registration metadata,
-agent registration metadata, and packaging/update semantics. See
+GameStudio includes a local Codex packaging manifest at
+`.codex-plugin/plugin.json`. It records metadata, canonical assets, adapter
+paths, and validation commands for Codex-compatible harnesses. It is still a
+project-local framework/template, not a published marketplace package, and it
+does not guarantee automatic slash-command exposure. See
 `docs/PLUGIN_PACKAGING.md`.
 
 Example LiteLLM proxy shape:

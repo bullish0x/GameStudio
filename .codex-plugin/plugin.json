@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "gamestudio",
+  "name": "GameStudio",
+  "version": "2026.06.01",
+  "description": "Provider-neutral game development agent framework with Codex adapter metadata.",
+  "license": "MIT",
+  "source_of_truth": ".agents/",
+  "status": "local-packaging-manifest",
+  "entrypoints": {
+    "instructions": "AGENTS.md",
+    "codex_adapter": ".codex/README.md",
+    "adapter_manifest": ".agents/adapter-manifest.json"
+  },
+  "assets": {
+    "skills": {
+      "source": ".agents/skills/*/SKILL.md",
+      "exposure": "workflow-doc",
+      "slash_command_guarantee": false
+    },
+    "agents": {
+      "source": ".agents/agents/*.md",
+      "codex_adapter": ".codex/agents/*.toml"
+    },
+    "hooks": {
+      "source": ".agents/hooks/*.sh",
+      "codex_registry": ".codex/hooks.json"
+    },
+    "rules": {
+      "source": ".agents/rules/*.md"
+    },
+    "templates": {
+      "source": ".agents/docs/templates/"
+    }
+  },
+  "validation": {
+    "compatibility": "python .agents/scripts/validate-compatibility.py",
+    "sync": "python .agents/scripts/sync-adapters.py"
+  },
+  "packaging_notes": [
+    "This manifest records local packaging metadata for Codex-compatible harnesses.",
+    "It is not a published marketplace package and does not guarantee automatic slash-command exposure.",
+    "Canonical behavior must remain in .agents/."
+  ]
+}

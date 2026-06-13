@@ -687,6 +687,8 @@ CLAUDE.md                           # Claude Code adapter instructions
   agents/                           # Codex adapter agent definitions
   hooks/                            # Codex adapter hook scripts
   hooks.json                        # Codex adapter hook wiring
+.codex-plugin/
+  plugin.json                       # Local Codex packaging metadata
 .cursor/
   rules/                            # Cursor adapter rules
 .claude/
@@ -706,7 +708,7 @@ design/                             # GDDs, narrative docs, level designs
 docs/                               # Technical documentation and ADRs
   CODEX_ADAPTER.md                  # Codex adapter behavior and limits
   CLAUDE_ADAPTER.md                 # Claude adapter behavior and sync rules
-  PLUGIN_PACKAGING.md               # Future Codex plugin packaging requirements
+  PLUGIN_PACKAGING.md               # Local Codex packaging manifest and limits
 tests/                              # Test suites (unit, integration, performance, playtest)
 tools/                              # Build and pipeline tools
 prototypes/                         # Throwaway prototypes (isolated from src/)
@@ -765,11 +767,11 @@ coverage where the harness supports it. Claude Code can use `CLAUDE.md`,
 `.claude/settings.json`, and `.claude/skills/`, which map back to `.agents/`.
 Cursor uses `AGENTS.md` plus `.cursor/rules/gamestudio.mdc`.
 
-Codex plugin packaging is not implemented yet. A real plugin would need
-`.codex-plugin/plugin.json`, curated skill exposure, hook registration metadata,
-agent registration metadata, packaging rules, and sync validation. See
-`docs/CODEX_ADAPTER.md`, `docs/CLAUDE_ADAPTER.md`, and
-`docs/PLUGIN_PACKAGING.md`.
+Codex plugin packaging now has a local manifest at `.codex-plugin/plugin.json`
+that records metadata, canonical assets, adapter paths, and validation commands.
+It is not a published marketplace package and does not guarantee automatic
+slash-command exposure. See `docs/CODEX_ADAPTER.md`,
+`docs/CLAUDE_ADAPTER.md`, and `docs/PLUGIN_PACKAGING.md`.
 
 ## How It Works
 

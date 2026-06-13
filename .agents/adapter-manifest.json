@@ -94,8 +94,8 @@
   },
   "validation_command": "python .agents/scripts/validate-compatibility.py",
   "plugin_packaging": {
-    "status": "not-packaged",
-    "future_manifest": ".codex-plugin/plugin.json",
+    "status": "local-packaging-manifest",
+    "manifest": ".codex-plugin/plugin.json",
     "docs": "docs/PLUGIN_PACKAGING.md"
   }
 }

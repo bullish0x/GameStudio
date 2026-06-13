@@ -9,14 +9,19 @@
 AGENTS.md                    @bullish0x
 CLAUDE.md                   @bullish0x
 .agents/                    @bullish0x
+.agents/adapter-manifest.json @bullish0x
 .claude/                    @bullish0x
 .codex/                     @bullish0x
+.codex-plugin/              @bullish0x
 .cursor/                    @bullish0x
 settings.json               @bullish0x
 SECURITY.md                 @bullish0x
 CONTRIBUTING.md             @bullish0x
 .github/                    @bullish0x
 docs/HARNESS-COMPATIBILITY.md @bullish0x
+docs/CODEX_ADAPTER.md       @bullish0x
+docs/CLAUDE_ADAPTER.md      @bullish0x
+docs/PLUGIN_PACKAGING.md    @bullish0x
 
 # Skills and agents — high-impact, review carefully
 .agents/skills/             @bullish0x

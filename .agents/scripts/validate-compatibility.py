@@ -333,8 +333,11 @@ def validate_adapter_manifest() -> None:
                 fail(f"adapter manifest {adapter_name}.{item_name} source missing: {item['source']}")
 
     plugin = manifest.get("plugin_packaging", {})
-    if plugin.get("status") != "not-packaged":
-        fail("plugin_packaging.status must be not-packaged until a real plugin manifest exists")
+    if plugin.get("status") != "local-packaging-manifest":
+        fail("plugin_packaging.status must be local-packaging-manifest")
+    plugin_manifest = plugin.get("manifest")
+    if not plugin_manifest or not (ROOT / plugin_manifest).is_file():
+        fail("plugin_packaging.manifest must reference .codex-plugin/plugin.json")
 
 
 def validate_adapter_mapping() -> None:
@@ -345,6 +348,66 @@ def validate_adapter_mapping() -> None:
     compare_mirror_tree(".agents/hooks", ".codex/hooks", "*.sh", transform=True, exclude={"notify.sh"})
     validate_claude_skills()
     validate_codex_agents()
+
+
+def validate_adapter_sync_script() -> None:
+    result = subprocess.run(
+        [sys.executable, ".agents/scripts/sync-adapters.py"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        detail = (result.stderr or result.stdout).strip()
+        fail(f"adapter sync check failed: {detail}")
+
+
+def validate_codex_plugin_manifest() -> None:
+    plugin = load_json(".codex-plugin/plugin.json")
+    required = {
+        "schema_version": 1,
+        "id": "gamestudio",
+        "name": "GameStudio",
+        "license": "MIT",
+        "source_of_truth": ".agents/",
+        "status": "local-packaging-manifest",
+    }
+    for key, expected in required.items():
+        if plugin.get(key) != expected:
+            fail(f".codex-plugin/plugin.json {key} should be {expected!r}")
+
+    version = read_text("VERSION").strip()
+    if plugin.get("version") != version:
+        fail(f".codex-plugin/plugin.json version {plugin.get('version')!r} does not match VERSION {version!r}")
+
+    referenced_paths = [
+        plugin["entrypoints"]["instructions"],
+        plugin["entrypoints"]["codex_adapter"],
+        plugin["entrypoints"]["adapter_manifest"],
+        plugin["assets"]["skills"]["source"].split("*", 1)[0],
+        plugin["assets"]["agents"]["source"].split("*", 1)[0],
+        plugin["assets"]["agents"]["codex_adapter"].split("*", 1)[0],
+        plugin["assets"]["hooks"]["source"].split("*", 1)[0],
+        plugin["assets"]["hooks"]["codex_registry"],
+        plugin["assets"]["rules"]["source"].split("*", 1)[0],
+        plugin["assets"]["templates"]["source"],
+    ]
+    for path in referenced_paths:
+        if not (ROOT / path).exists():
+            fail(f".codex-plugin/plugin.json references missing path: {path}")
+
+
+def validate_installer_payload() -> None:
+    installer = read_text("install.sh")
+    required_paths = [
+        ".codex-plugin",
+        "docs/CODEX_ADAPTER.md",
+        "docs/CLAUDE_ADAPTER.md",
+        "docs/PLUGIN_PACKAGING.md",
+    ]
+    for path in required_paths:
+        if path not in installer:
+            fail(f"install.sh does not include required adapter payload path: {path}")
 
 
 def validate_shell_syntax() -> None:
@@ -409,13 +472,15 @@ def validate_docs() -> None:
         ],
         "docs/CODEX_ADAPTER.md": [".codex/hooks.json", ".agents/skills/", ".codex-plugin/plugin.json"],
         "docs/CLAUDE_ADAPTER.md": [".claude/settings.json", ".agents/skills/", ".agents/adapter-manifest.json"],
-        "docs/PLUGIN_PACKAGING.md": [".codex-plugin/plugin.json", "not currently packaged"],
+        "docs/PLUGIN_PACKAGING.md": [".codex-plugin/plugin.json", "local packaging manifest"],
         ".codex/README.md": [".agents/", "docs/CODEX_ADAPTER.md"],
         ".claude/README.md": [".agents/", "docs/CLAUDE_ADAPTER.md"],
         ".agents/docs/hooks-reference.md": [".agents/hooks.json", "notify.sh"],
         ".agents/docs/setup-requirements.md": ["provider-gateway-example.yaml", "OpenCode-style tools"],
         ".claude/docs/setup-requirements.md": ["provider-gateway-example.yaml", "OpenCode-style tools"],
         "CONTRIBUTING.md": [".agents/adapter-manifest.json", "validate-compatibility.py"],
+        ".github/CODEOWNERS": [".codex-plugin/", "docs/CODEX_ADAPTER.md", "docs/CLAUDE_ADAPTER.md", "docs/PLUGIN_PACKAGING.md"],
+        ".github/PULL_REQUEST_TEMPLATE.md": [".agents/adapter-manifest.json", ".codex-plugin/plugin.json"],
     }
 
     for path, fragments in required.items():
@@ -442,6 +507,9 @@ def main() -> None:
     validate_readme_counts()
     validate_hook_registry()
     validate_adapter_mapping()
+    validate_adapter_sync_script()
+    validate_codex_plugin_manifest()
+    validate_installer_payload()
     validate_shell_syntax()
     validate_gateway_examples()
     validate_docs()
