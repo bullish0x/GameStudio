@@ -411,7 +411,7 @@ def validate_installer_payload() -> None:
 
 
 def validate_shell_syntax() -> None:
-    probe = subprocess.run(["bash", "-n", "--version"], cwd=ROOT, text=True, capture_output=True)
+    probe = subprocess.run(["bash", "--version"], cwd=ROOT, text=True, capture_output=True)
     if probe.returncode != 0:
         detail = (probe.stderr or probe.stdout or "").strip().replace("\x00", "")
         warn(f"bash is unavailable or unusable; skipping shell syntax checks locally. Detail: {detail or 'no output'}")
