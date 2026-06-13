@@ -18,6 +18,8 @@ harness.
 - `.agents/rules/` is the canonical provider-neutral path-scoped rules source.
 - `.agents/docs/` is the canonical provider-neutral coordination doc source.
 - `.agents/docs/templates/` is the canonical provider-neutral template source.
+- `.agents/adapter-manifest.json` records how adapter files map back to
+  canonical assets and which gaps are intentional.
 - `.claude/` is the Claude Code adapter.
 - `.codex/` is the Codex/OpenAI adapter.
 - `.cursor/rules/` is the Cursor adapter layer.
@@ -38,6 +40,12 @@ the harness or gateway.
 | Antigravity-style harness | `AGENTS.md` | Harness-native skills mapped to `.agents/skills/` | Harness-native subagents mapped to `.agents/agents/` | Harness-native lifecycle hooks mapped from `.agents/hooks.json` to `.agents/hooks/` | Harness model/provider settings or compatible gateway |
 | OpenCode-style tool | `AGENTS.md` | Tool-native commands mapped to `.agents/skills/` | Tool-native agents or inline `.agents/agents/` roles | Tool-native lifecycle automation mapped from `.agents/hooks.json` to `.agents/hooks/` | Tool provider registry, custom base URL, or compatible gateway |
 | Generic AGENTS.md-aware agent | `AGENTS.md` | `.agents/skills/` | `.agents/agents/` where supported | Manual or harness-native registration from `.agents/hooks.json` | Agent model/provider settings or compatible gateway |
+
+Adapter details:
+
+- Codex/OpenAI adapter: `docs/CODEX_ADAPTER.md`
+- Claude Code adapter: `docs/CLAUDE_ADAPTER.md`
+- Future Codex plugin packaging: `docs/PLUGIN_PACKAGING.md`
 
 ## Provider And Gateway Guidance
 
@@ -79,6 +87,12 @@ active harness still owns authentication, model selection, request format, and
 network routing. When a harness supports custom base URLs or provider adapters,
 GameStudio documents the shape to use; when it does not, use that harness's
 native provider support or place a gateway in front of the model.
+
+GameStudio is also not currently packaged as a Codex plugin. It is a
+project-local framework/template. A packaged plugin would need
+`.codex-plugin/plugin.json`, curated skill exposure, hook registration metadata,
+agent registration metadata, and packaging/update semantics. See
+`docs/PLUGIN_PACKAGING.md`.
 
 Example LiteLLM proxy shape:
 
@@ -253,6 +267,14 @@ behavior must remain transferable.
 Templates live under `.agents/docs/templates/` for provider-neutral use. Adapter
 copies can point to the same template names, but template content should describe
 game artifacts, not model providers or harness-specific commands.
+
+Guarantees are intentionally narrow:
+
+- Skills can always be read and followed as workflow docs from `.agents/skills/`.
+- Slash-command exposure depends on the harness adapter or loader.
+- Hooks depend on the harness hook system and a compatible local shell.
+- Adapter folders must map back to `.agents/` through
+  `.agents/adapter-manifest.json` and validation.
 
 ## Repository Governance
 

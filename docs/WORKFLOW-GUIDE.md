@@ -77,8 +77,8 @@ This guided onboarding asks where you are and routes you to the right phase:
 
 Start a new harness session. If your harness supports lifecycle hooks, map its
 session-start event to the canonical `.agents/hooks/session-start.sh` script or
-use the provided adapter wiring. In Claude Code or Codex adapter mode, you
-should see output like:
+use the provided adapter wiring. In Claude Code or Codex adapter mode with hooks
+enabled and Bash available, you should see output like:
 
 ```
 === GameStudio -- Session Context ===

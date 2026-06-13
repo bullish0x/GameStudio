@@ -35,6 +35,8 @@ adapters where needed:
 - Put canonical rules and templates in `.agents/rules/` and
   `.agents/docs/templates/`.
 - Keep `.claude/`, `.codex/`, `.cursor/`, and similar folders as adapter layers.
+- Keep `.agents/adapter-manifest.json` current whenever canonical assets or
+  adapter coverage change.
 
 Do not make a skill, agent, rule, or template behave differently because the
 active model is Claude, GPT, Gemini, DeepSeek, GLM/Z.ai, Qwen, or local. Model
@@ -63,6 +65,9 @@ These are the things that will get your PR rejected if you miss them.
   (`exit 0`) when not applicable
 - If you change hooks, harness adapters, gateway examples, or provider-neutral
   docs, run `python .agents/scripts/validate-compatibility.py`
+- Adapter files must map back to `.agents/` through
+  `.agents/adapter-manifest.json`. If an adapter intentionally lacks coverage,
+  document the exclusion there and in the relevant adapter doc.
 
 **Agents**
 - New agents must include a **Collaboration Protocol** section that describes

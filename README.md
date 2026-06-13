@@ -32,6 +32,8 @@ Codex/OpenAI-based harnesses, Cursor, Antigravity-style tools, OpenCode-style
 tools, Gemini-style tools, and other AGENTS.md-aware agents should all map back
 to that same provider-neutral source. Harness-specific folders such as
 `.claude/`, `.codex/`, and `.cursor/` are adapters, not separate products.
+GameStudio is currently a project-local framework/template, not an automatically
+installable Codex plugin.
 
 The result: you still make every decision, but now you have a team that asks the right questions, catches mistakes early, and keeps your project organized from first brainstorm to launch.
 
@@ -110,10 +112,12 @@ web engines. Use the set that matches your project:
 
 ## Slash Commands
 
-Type `/` in a supported harness to access all 182 skills. In harnesses that do
-not expose slash commands directly, open the matching `SKILL.md` under
-`.agents/skills/` or the harness-specific adapter directory and follow it as the
-workflow definition:
+Type `/` in a supported harness to access exposed skills. Slash-command
+exposure depends on the harness and adapter loader. In harnesses that do not
+expose slash commands directly, open the matching `SKILL.md` under
+`.agents/skills/` or an adapter directory such as `.claude/skills/` and follow
+it as the workflow definition. The Markdown skill workflows are always usable;
+automatic slash-command registration is not guaranteed in every harness.
 
 **Onboarding & Navigation**
 | Command | What it does |
@@ -641,6 +645,10 @@ To check that provider-neutral assets remain wired correctly after edits, run:
 python .agents/scripts/validate-compatibility.py
 ```
 
+That command validates canonical vs adapter-specific mappings from
+`.agents/adapter-manifest.json`, hook references, adapter coverage, gateway
+examples, and README counts.
+
 Context-heavy skills like `/reverse-document`, `/adopt`, and
 `/review-all-gdds` read a lot of files. If your selected model has a smaller
 context window, scope those skills to one system or module at a time rather
@@ -664,6 +672,7 @@ versions, and which files are safe to overwrite vs. which need a manual merge.
 AGENTS.md                           # Provider-neutral agent instructions
 CLAUDE.md                           # Claude Code adapter instructions
 .agents/
+  adapter-manifest.json             # Canonical-to-adapter sync contract
   agents/                           # Provider-neutral role source
   docs/                             # Provider-neutral coordination docs
     provider-gateway-example.yaml    # LiteLLM/OpenRouter gateway starter
@@ -674,12 +683,14 @@ CLAUDE.md                           # Claude Code adapter instructions
   skills/                           # Provider-neutral skill source
   scripts/                          # Provider-neutral validation and helper scripts
 .codex/
+  README.md                         # Codex adapter notes
   agents/                           # Codex adapter agent definitions
   hooks/                            # Codex adapter hook scripts
   hooks.json                        # Codex adapter hook wiring
 .cursor/
   rules/                            # Cursor adapter rules
 .claude/
+  README.md                         # Claude adapter notes
   settings.json                     # Hooks, permissions, safety rules
   agents/                           # Claude adapter agent definitions
   skills/                           # Claude adapter slash commands
@@ -693,6 +704,9 @@ src/                                # Game source code
 assets/                             # Art, audio, VFX, shaders, data files
 design/                             # GDDs, narrative docs, level designs
 docs/                               # Technical documentation and ADRs
+  CODEX_ADAPTER.md                  # Codex adapter behavior and limits
+  CLAUDE_ADAPTER.md                 # Claude adapter behavior and sync rules
+  PLUGIN_PACKAGING.md               # Future Codex plugin packaging requirements
 tests/                              # Test suites (unit, integration, performance, playtest)
 tools/                              # Build and pipeline tools
 prototypes/                         # Throwaway prototypes (isolated from src/)
@@ -712,6 +726,7 @@ only to translate that behavior into a specific tool:
 - `.agents/rules/` is the canonical path-scoped rule tree.
 - `.agents/docs/` is the canonical documentation and template tree.
 - `.agents/docs/templates/` is the canonical template tree.
+- `.agents/adapter-manifest.json` records canonical vs adapter-specific mappings.
 - `.claude/` adapts the same studio to Claude Code.
 - `.codex/` adapts the same studio to Codex/OpenAI-based harnesses.
 - `.cursor/rules/` can point Cursor Agent at the same collaboration protocol.
@@ -733,6 +748,28 @@ Detailed setup notes: `docs/HARNESS-COMPATIBILITY.md`. Repository contribution,
 security, and review rules follow the same principle: canonical behavior goes
 under `.agents/`; adapter folders mirror or map that behavior for a particular
 harness.
+
+### Installation Model
+
+GameStudio is a project-local framework. You can use it without repackaging by
+placing the canonical `.agents/` tree plus the adapter folders your harness
+needs in a game repo. The safe-to-copy studio payload is `AGENTS.md`, `.agents/`,
+the relevant adapter folders (`.codex/`, `.claude/`, `.cursor/`), harness docs,
+and the MIT license metadata. Do not copy generated game outputs from `design/`,
+`docs/architecture/`, `production/`, or `src/` unless they are part of your
+target game.
+
+Codex usage is project-local today: `AGENTS.md` and `.agents/skills/` provide
+the workflow, while `.codex/agents/` and `.codex/hooks.json` provide adapter
+coverage where the harness supports it. Claude Code can use `CLAUDE.md`,
+`.claude/settings.json`, and `.claude/skills/`, which map back to `.agents/`.
+Cursor uses `AGENTS.md` plus `.cursor/rules/gamestudio.mdc`.
+
+Codex plugin packaging is not implemented yet. A real plugin would need
+`.codex-plugin/plugin.json`, curated skill exposure, hook registration metadata,
+agent registration metadata, packaging rules, and sync validation. See
+`docs/CODEX_ADAPTER.md`, `docs/CLAUDE_ADAPTER.md`, and
+`docs/PLUGIN_PACKAGING.md`.
 
 ## How It Works
 

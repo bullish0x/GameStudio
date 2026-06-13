@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "canonical": {
+    "agents": ".agents/agents",
+    "skills": ".agents/skills",
+    "hooks": ".agents/hooks",
+    "hooks_registry": ".agents/hooks.json",
+    "rules": ".agents/rules",
+    "docs": ".agents/docs",
+    "templates": ".agents/docs/templates"
+  },
+  "adapters": {
+    "claude": {
+      "root": ".claude",
+      "type": "harness-adapter",
+      "docs": "docs/CLAUDE_ADAPTER.md",
+      "coverage": {
+        "agents": {
+          "path": ".claude/agents",
+          "source": ".agents/agents",
+          "mode": "path-transformed-mirror",
+          "allowed_transform": ".agents -> .claude"
+        },
+        "skills": {
+          "path": ".claude/skills",
+          "source": ".agents/skills",
+          "mode": "path-transformed-mirror",
+          "allowed_transform": ".agents/skills -> .claude/skills"
+        },
+        "hooks": {
+          "path": ".claude/hooks",
+          "source": ".agents/hooks",
+          "registry": ".claude/settings.json",
+          "mode": "label-transformed-mirror",
+          "allowed_transform": "provider-neutral labels -> Claude Code labels"
+        },
+        "rules": {
+          "path": ".claude/rules",
+          "source": ".agents/rules",
+          "mode": "mirror"
+        },
+        "docs": {
+          "path": ".claude/docs",
+          "source": ".agents/docs",
+          "mode": "documented-adapter-copy"
+        }
+      },
+      "intentional_exclusions": [
+        ".claude/agent-memory",
+        ".claude/statusline.sh",
+        ".claude/settings.json"
+      ]
+    },
+    "codex": {
+      "root": ".codex",
+      "type": "harness-adapter",
+      "docs": "docs/CODEX_ADAPTER.md",
+      "coverage": {
+        "agents": {
+          "path": ".codex/agents",
+          "source": ".agents/agents",
+          "mode": "toml-agent-adapter"
+        },
+        "hooks": {
+          "path": ".codex/hooks",
+          "source": ".agents/hooks",
+          "registry": ".codex/hooks.json",
+          "mode": "label-transformed-mirror",
+          "allowed_transform": "provider-neutral labels -> Codex-compatible labels"
+        },
+        "skills": {
+          "path": ".agents/skills",
+          "source": ".agents/skills",
+          "mode": "canonical-read-only",
+          "note": "Codex does not ship a duplicate skill tree in this repo. Codex users read canonical SKILL.md files unless their harness exposes a plugin or skill loader."
+        }
+      },
+      "intentional_exclusions": [
+        "notify.sh"
+      ]
+    },
+    "cursor": {
+      "root": ".cursor",
+      "type": "rules-adapter",
+      "docs": "docs/HARNESS-COMPATIBILITY.md",
+      "coverage": {
+        "rules": {
+          "path": ".cursor/rules/gamestudio.mdc",
+          "source": "AGENTS.md",
+          "mode": "pointer"
+        }
+      }
+    }
+  },
+  "validation_command": "python .agents/scripts/validate-compatibility.py",
+  "plugin_packaging": {
+    "status": "not-packaged",
+    "future_manifest": ".codex-plugin/plugin.json",
+    "docs": "docs/PLUGIN_PACKAGING.md"
+  }
+}
