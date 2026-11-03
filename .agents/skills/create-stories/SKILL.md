@@ -212,7 +212,9 @@ For each story, write `production/epics/[epic-slug]/story-[NNN]-[slug].md`:
 
 ## Acceptance Criteria
 
-*From GDD `design/gdd/[filename].md`, scoped to this story:*
+*From GDD `design/gdd/[filename].md`, scoped to this story. Prefer EARS notation so
+criteria are machine-checkable (Kiro pattern): WHEN <trigger> THEN <system> SHALL <response>;
+IF <condition> THEN ...; WHILE <state> ... . Each criterion maps to one test.*
 
 - [ ] [criterion 1 — directly from GDD]
 - [ ] [criterion 2]

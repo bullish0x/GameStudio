@@ -636,3 +636,5 @@ If any spawned agent returns BLOCKED, errors, or fails to complete:
    systems index
 6. **Be specific** — every issue must cite the exact GDD, section, and text
    involved; no vague warnings
+
+Next: run `/architecture-review` after all GDDs are reviewed.

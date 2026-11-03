@@ -8,9 +8,9 @@ training data.
 
 | Package | Reference version | Verified |
 | ------- | ----------------- | -------- |
-| `three` | `0.184.0` | 2026-05-29 |
-| `@react-three/fiber` | `9.6.1` | 2026-05-29 |
-| `@react-three/drei` | `10.7.7` | 2026-05-29 |
+| `three` | `0.187.0` | 2026-11-03 |
+| `@react-three/fiber` | `9.8.2` | 2026-11-03 |
+| `@react-three/drei` | `10.7.9` | 2026-11-03 |
 | loaders/decoders (`GLTFLoader`, `DRACOLoader`, `KTX2Loader`, `MeshoptDecoder`) | ship with `three` (`three/addons/...`) | 2026-05-29 |
 
 ## Knowledge-gap window
@@ -33,3 +33,13 @@ any Three.js / R3F API you are unsure about as **verify-before-use**.
 - `WebGLRenderer` option and output color space changes.
 - Build-system import paths for `examples/jsm` vs `addons` modules.
 - React Three Fiber v8 → v9 changes in event/loop APIs (this stack is on v9).
+
+## 2026-11-03 update (three 0.184→0.187, R3F 9.6.1→9.8.2, drei 10.7.7→10.7.9)
+
+Source: https://github.com/mrdoob/three.js/releases/tag/r187 , https://github.com/pmndrs/react-three-fiber
+
+- three r187: removed `CubeUVReflectionMapping` (PMREM from cube render targets); TSL renames `directionToColor`→`packNormalToRGB`, `colorToDirection`→`unpackRGBToNormal`; `TiledLighting`→`ClusteredLighting`; `Object3D.dispose()` now requires `super.dispose()`; light registration `renderer.library.addLight`→`CustomLight.registerNode`; `storage.get('member')`→`storage.element(0).get('member')`.
+- three r186: added `Object3D.dispose()`, `SunLight` addon with cascaded shadow maps, `compileComputeAsync()`.
+- R3F 9.8: root setup synchronous, `onCreated` fires pre-paint, `<Activity>` keeps canvas alive, R3F-created renderers disposed on unmount.
+- drei 10.7.9: keeps `SoftShadows` working with newer three; do not adopt drei 11 alpha or R3F 10 alpha.
+- Bump three + R3F + drei as one unit; verify with `npm ls three`.

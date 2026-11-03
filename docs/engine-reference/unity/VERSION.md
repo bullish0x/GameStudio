@@ -2,10 +2,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Engine Version** | Unity 6.3 LTS |
+| **Engine Version** | Unity 6.3 LTS (6000.3.27f2) |
 | **Release Date** | December 2025 |
-| **Project Pinned** | 2026-02-13 |
-| **Last Docs Verified** | 2026-02-13 |
+| **Project Pinned** | 2026-11-03 |
+| **Last Docs Verified** | 2026-11-03 |
 | **LLM Knowledge Cutoff** | January 2026 |
 
 ## Knowledge Gap Warning
@@ -56,3 +56,13 @@ cross-reference this directory before suggesting Unity API calls, and treat any
 - Migration guide: https://docs.unity3d.com/6000.0/Documentation/Manual/upgrade-guides.html
 - Unity 6 support: https://unity.com/releases/unity-6/support
 - C# API reference: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/index.html
+
+## 2026-11-03 update (6.3 → 6000.3.27f2)
+
+Source: https://unity.com/blog/unity-6-3-lts-is-now-available , https://docs.unity.com/en-us/engine/6000.3/manual/whats-new/unity63
+
+- Version strings: editor version is `6000.3.x`, not `2023.x`/`6.3.x`. `ProjectVersion.txt` and package `unity:` references must use the 6000.x scheme.
+- Android build tooling: Gradle 9.1.0 + AGP 9.0.0; custom Gradle templates need manual migration.
+- `PlayerSettings.Android.androidIsGame` obsolete; use the replacement large-screen/Android 16 setting (verify name before generating code).
+- New low-level 2D physics on Box2D v3 (multi-threaded, deterministic); do not mix with Rigidbody2D semantics.
+- Stay on the 6.3 LTS stream; do not follow 6.6 (non-LTS) or 7.0 (alpha).

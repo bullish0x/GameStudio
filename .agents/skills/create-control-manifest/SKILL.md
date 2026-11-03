@@ -285,3 +285,5 @@ After writing the manifest:
    technical preference, or an engine reference doc
 5. **No interpretation** — extract rules as stated in ADRs; do not paraphrase
    in ways that change meaning
+
+Next: run `/architecture-review` after the manifest is written.

@@ -2,10 +2,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Engine Version** | Unreal Engine 5.7 |
+| **Engine Version** | Unreal Engine 5.8.4 |
 | **Release Date** | November 2025 |
-| **Project Pinned** | 2026-02-13 |
-| **Last Docs Verified** | 2026-02-13 |
+| **Project Pinned** | 2026-11-03 |
+| **Last Docs Verified** | 2026-11-03 |
 | **LLM Knowledge Cutoff** | January 2026 |
 
 ## Knowledge Gap Warning
@@ -54,3 +54,14 @@ cross-reference this directory before suggesting Unreal API calls, and treat any
 - UE 5.7 announcement: https://www.unrealengine.com/en-US/news/unreal-engine-5-7-is-now-available
 - UE 5.5 blog: https://www.unrealengine.com/en-US/blog/unreal-engine-5-5-is-now-available
 - Migration guides: https://docs.unrealengine.com/5.7/en-US/upgrading-projects/
+
+## 2026-11-03 update (5.7 → 5.8.4)
+
+Source: https://www.unrealengine.com/news/unreal-engine-5-8-is-now-available
+
+- 5.8 is the last planned UE5 major release; target `5.8`, do not emit UE6 APIs.
+- Movie Render Graph is Production-Ready (replaces legacy Movie Render Queue workflow).
+- Dataflow and Mutable are Production-Ready (official runtime character customization path).
+- Substrate shading model introduced; verify per-project before generating material code.
+- Experimental (do not treat as stable): Mesh Terrain, Direct Mesh Controls, Sandbox, Fast Geometry Streaming.
+- Agent-relevant: experimental MCP plugin ships with 5.8 (open-standard LLM↔engine integration) plus integrated LLM workflows.

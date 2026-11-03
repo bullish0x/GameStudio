@@ -1,0 +1,90 @@
+# GameStudio studio workflow — declarative, resumable pipeline.
+# Maps to the 7-stage pipeline in the README. Gate steps use approve/reject
+# and abort on reject (Spec Kit-style gates as data, not prose).
+version: 1
+name: studio-full-cycle
+description: Full game-dev pipeline from concept to release.
+
+state_file: production/workflow-state.json
+
+steps:
+  - id: concept
+    type: skill
+    skill: brainstorm
+    description: Explore the game idea.
+  - id: review-concept
+    type: gate
+    approve: creative-director
+    on_reject: abort
+  - id: systems-design
+    type: skill
+    skill: map-systems
+  - id: design-systems
+    type: skill
+    skill: design-system
+    repeat: per-system
+  - id: review-gdds
+    type: gate
+    skill: review-all-gdds
+    on_reject: revise
+  - id: architecture
+    type: skill
+    skill: create-architecture
+  - id: adrs
+    type: skill
+    skill: architecture-decision
+    repeat: per-decision
+  - id: control-manifest
+    type: skill
+    skill: create-control-manifest
+  - id: architecture-review
+    type: gate
+    skill: architecture-review
+    on_reject: revise
+  - id: prototype
+    type: skill
+    skill: prototype
+  - id: vertical-slice
+    type: skill
+    skill: vertical-slice
+  - id: gate-preprod
+    type: gate
+    skill: gate-check
+    on_reject: abort
+  - id: stories
+    type: skill
+    skill: create-epics
+  - id: create-stories
+    type: skill
+    skill: create-stories
+    repeat: per-epic
+  - id: implementation
+    type: skill
+    skill: dev-story
+    repeat: per-story
+  - id: code-review
+    type: skill
+    skill: code-review
+    repeat: per-story
+  - id: story-close
+    type: skill
+    skill: story-done
+    repeat: per-story
+  - id: qa
+    type: skill
+    skill: qa-plan
+  - id: smoke
+    type: gate
+    skill: smoke-check
+    on_reject: revise
+  - id: release
+    type: skill
+    skill: release-checklist
+  - id: launch
+    type: gate
+    skill: launch-checklist
+    on_reject: abort
+  - id: converge
+    type: skill
+    skill: converge
+    description: Final drift check before shipping.
