@@ -7,7 +7,7 @@ on training data.
 
 | Package | Reference version | Verified |
 | ------- | ----------------- | -------- |
-| `phaser` | `4.1.0` | 2026-05-29 |
+| `phaser` | `4.2.1` | 2026-11-03 |
 
 ## Knowledge-gap window
 
@@ -32,3 +32,12 @@ API you are unsure about as **verify-before-use** against the pinned version.
 - **Removed classes:** `Point`, `Mesh`, `BitmapMask` — use the v4 replacements.
 - **Tint system changed** — `setTint` with 6 tint modes.
 - **GL texture orientation now matches WebGL** (changed from v3).
+
+## 2026-11-03 update (4.1.0 → 4.2.1)
+
+Source: https://github.com/phaserjs/phaser/releases/tag/v4.2.1
+
+- Phaser 4 is not Phaser 3: pipelines replaced by render nodes; FX and Masks unified into one Filter system. Agents emitting v3 `setPipeline`/`postFX`/`preFX` are wrong.
+- 4.2 adds: game config `render.alphaStrategy`/`stencil`/`stencilAlphaStrategy`, `CustomContext` GameObject, `Mesh2D`, `BatchHandlerTri`.
+- 4.1: `Layer` is now a true GameObject (filters on layers work); filter `Controller.getPadding()`→`getPaddingCeil()`.
+- Tint is now six modes with separate color and mode.

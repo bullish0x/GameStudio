@@ -7,7 +7,7 @@ on training data.
 
 | Package | Reference version | Verified |
 | ------- | ----------------- | -------- |
-| `pixi.js` | `8.18.1` | 2026-05-29 |
+| `pixi.js` | `8.22.0` | 2026-11-03 |
 
 ## Knowledge-gap window
 
@@ -29,3 +29,12 @@ any API you are unsure about as **verify-before-use** against the pinned version
 - The unified `Assets` loader replaced the older `Loader`.
 - Graphics API changes (fill/stroke ordering).
 - WebGPU renderer available alongside WebGL — state the fallback explicitly.
+
+## 2026-11-03 update (8.18.1 → 8.22.0)
+
+Source: https://github.com/pixijs/pixijs/releases/tag/v8.22.0
+
+- 8.21: `Matrix.decompose()`/`setFromMatrix()` now return negative `scale.x` instead of skew for mirrored matrices (rendering identical; values read back differ).
+- 8.20: `StructsAndGroups.isUniform` → `accessMode` (`group.accessMode === 'uniform'`); old property silently `undefined`.
+- 8.20: `updateTransform({scaleX:0})` no longer coerces to 1.
+- New features across 8.19–8.22: improved batching, text rendering, WebGPU renderer stability.

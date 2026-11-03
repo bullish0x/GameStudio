@@ -305,3 +305,5 @@ Never end the skill with plain text. Always close with this widget.
 - **If STALE REGISTRY**: Update the registry (Phase 6), then re-run to verify.
 - Run `/consistency-check` after writing each new GDD to catch issues early,
   not at architecture time.
+
+May I write the report to its target file? Confirm before writing.

@@ -1,0 +1,41 @@
+name: Studio validation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  skills:
+    name: Skill lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/validate-skills.mjs
+      - run: node scripts/skill-trigger-eval.mjs --static
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-validation-report
+          path: production/skill-validation-report.md
+
+  converge:
+    name: Converge drift check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/converge-check.mjs
+      - run: node scripts/check-engine-pins.mjs
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: converge-report
+          path: production/converge-report.md

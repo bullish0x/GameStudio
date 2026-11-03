@@ -12,6 +12,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: gate
+    tier: core
 
   - name: design-review
     spec: GameStudio Skill Testing Framework/skills/review/design-review.md
@@ -23,6 +24,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: review
+    tier: core
 
   - name: story-readiness
     spec: GameStudio Skill Testing Framework/skills/readiness/story-readiness.md
@@ -34,6 +36,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: readiness
+    tier: core
 
   - name: story-done
     spec: GameStudio Skill Testing Framework/skills/readiness/story-done.md
@@ -45,6 +48,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: readiness
+    tier: core
 
   - name: review-all-gdds
     spec: GameStudio Skill Testing Framework/skills/review/review-all-gdds.md
@@ -56,6 +60,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: review
+    tier: core
 
   - name: architecture-review
     spec: GameStudio Skill Testing Framework/skills/review/architecture-review.md
@@ -67,6 +72,7 @@ skills:
     last_category_result: ""
     priority: critical
     category: review
+    tier: core
 
   # High — pipeline-critical skills
   - name: create-epics
@@ -79,6 +85,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: create-stories
     spec: GameStudio Skill Testing Framework/skills/pipeline/create-stories.md
@@ -90,6 +97,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: dev-story
     spec: GameStudio Skill Testing Framework/skills/pipeline/dev-story.md
@@ -101,6 +109,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: create-control-manifest
     spec: GameStudio Skill Testing Framework/skills/pipeline/create-control-manifest.md
@@ -112,6 +121,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: propagate-design-change
     spec: GameStudio Skill Testing Framework/skills/pipeline/propagate-design-change.md
@@ -123,6 +133,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: architecture-decision
     spec: GameStudio Skill Testing Framework/skills/authoring/architecture-decision.md
@@ -134,6 +145,7 @@ skills:
     last_category_result: ""
     priority: high
     category: authoring
+    tier: core
 
   - name: map-systems
     spec: GameStudio Skill Testing Framework/skills/pipeline/map-systems.md
@@ -145,6 +157,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pipeline
+    tier: core
 
   - name: design-system
     spec: GameStudio Skill Testing Framework/skills/authoring/design-system.md
@@ -156,6 +169,7 @@ skills:
     last_category_result: ""
     priority: high
     category: authoring
+    tier: core
 
   - name: consistency-check
     spec: GameStudio Skill Testing Framework/skills/analysis/consistency-check.md
@@ -167,6 +181,7 @@ skills:
     last_category_result: ""
     priority: high
     category: analysis
+    tier: core
 
   # Medium — team and sprint management skills
   - name: sprint-plan
@@ -179,6 +194,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: sprint
+    tier: reference
 
   - name: sprint-status
     spec: GameStudio Skill Testing Framework/skills/sprint/sprint-status.md
@@ -190,6 +206,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: sprint
+    tier: reference
 
   - name: team-ui
     spec: GameStudio Skill Testing Framework/skills/team/team-ui.md
@@ -201,6 +218,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-combat
     spec: GameStudio Skill Testing Framework/skills/team/team-combat.md
@@ -212,6 +230,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-narrative
     spec: GameStudio Skill Testing Framework/skills/team/team-narrative.md
@@ -223,6 +242,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-audio
     spec: GameStudio Skill Testing Framework/skills/team/team-audio.md
@@ -234,6 +254,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-level
     spec: GameStudio Skill Testing Framework/skills/team/team-level.md
@@ -245,6 +266,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-polish
     spec: GameStudio Skill Testing Framework/skills/team/team-polish.md
@@ -256,6 +278,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-release
     spec: GameStudio Skill Testing Framework/skills/team/team-release.md
@@ -267,6 +290,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-live-ops
     spec: GameStudio Skill Testing Framework/skills/team/team-live-ops.md
@@ -278,6 +302,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   - name: team-qa
     spec: GameStudio Skill Testing Framework/skills/team/team-qa.md
@@ -289,6 +314,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: team
+    tier: reference
 
   # Low — analysis, reporting, utility skills
   - name: skill-test
@@ -301,6 +327,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: utility
+    tier: reference
 
   - name: skill-improve
     spec: GameStudio Skill Testing Framework/skills/utility/skill-improve.md
@@ -312,6 +339,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: start
     spec: GameStudio Skill Testing Framework/skills/utility/start.md
@@ -323,6 +351,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: help
     spec: GameStudio Skill Testing Framework/skills/utility/help.md
@@ -334,6 +363,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: brainstorm
     spec: GameStudio Skill Testing Framework/skills/utility/brainstorm.md
@@ -345,6 +375,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: project-stage-detect
     spec: GameStudio Skill Testing Framework/skills/utility/project-stage-detect.md
@@ -356,6 +387,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: setup-engine
     spec: GameStudio Skill Testing Framework/skills/utility/setup-engine.md
@@ -367,6 +399,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: quick-design
     spec: GameStudio Skill Testing Framework/skills/authoring/quick-design.md
@@ -378,6 +411,7 @@ skills:
     last_category_result: ""
     priority: low
     category: authoring
+    tier: reference
 
   - name: ux-design
     spec: GameStudio Skill Testing Framework/skills/authoring/ux-design.md
@@ -389,6 +423,7 @@ skills:
     last_category_result: ""
     priority: low
     category: authoring
+    tier: reference
 
   - name: ux-review
     spec: GameStudio Skill Testing Framework/skills/authoring/ux-review.md
@@ -400,6 +435,7 @@ skills:
     last_category_result: ""
     priority: low
     category: authoring
+    tier: reference
 
   - name: art-bible
     spec: GameStudio Skill Testing Framework/skills/authoring/art-bible.md
@@ -411,6 +447,7 @@ skills:
     last_category_result: ""
     priority: low
     category: authoring
+    tier: reference
 
   - name: create-architecture
     spec: GameStudio Skill Testing Framework/skills/authoring/create-architecture.md
@@ -422,6 +459,7 @@ skills:
     last_category_result: ""
     priority: low
     category: authoring
+    tier: reference
 
   - name: code-review
     spec: GameStudio Skill Testing Framework/skills/analysis/code-review.md
@@ -433,6 +471,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: balance-check
     spec: GameStudio Skill Testing Framework/skills/analysis/balance-check.md
@@ -444,6 +483,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: asset-audit
     spec: GameStudio Skill Testing Framework/skills/analysis/asset-audit.md
@@ -455,6 +495,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: content-audit
     spec: GameStudio Skill Testing Framework/skills/analysis/content-audit.md
@@ -466,6 +507,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: tech-debt
     spec: GameStudio Skill Testing Framework/skills/analysis/tech-debt.md
@@ -477,6 +519,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: scope-check
     spec: GameStudio Skill Testing Framework/skills/analysis/scope-check.md
@@ -488,6 +531,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: estimate
     spec: GameStudio Skill Testing Framework/skills/analysis/estimate.md
@@ -499,6 +543,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: perf-profile
     spec: GameStudio Skill Testing Framework/skills/analysis/perf-profile.md
@@ -510,6 +555,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: security-audit
     spec: GameStudio Skill Testing Framework/skills/analysis/security-audit.md
@@ -521,6 +567,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: test-evidence-review
     spec: GameStudio Skill Testing Framework/skills/analysis/test-evidence-review.md
@@ -532,6 +579,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: test-flakiness
     spec: GameStudio Skill Testing Framework/skills/analysis/test-flakiness.md
@@ -543,6 +591,7 @@ skills:
     last_category_result: ""
     priority: low
     category: analysis
+    tier: reference
 
   - name: reverse-document
     spec: GameStudio Skill Testing Framework/skills/utility/reverse-document.md
@@ -554,6 +603,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: bug-report
     spec: GameStudio Skill Testing Framework/skills/utility/bug-report.md
@@ -565,6 +615,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: hotfix
     spec: GameStudio Skill Testing Framework/skills/utility/hotfix.md
@@ -576,6 +627,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: prototype
     spec: GameStudio Skill Testing Framework/skills/utility/prototype.md
@@ -587,6 +639,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: playtest-report
     spec: GameStudio Skill Testing Framework/skills/utility/playtest-report.md
@@ -598,6 +651,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: milestone-review
     spec: GameStudio Skill Testing Framework/skills/sprint/milestone-review.md
@@ -609,6 +663,7 @@ skills:
     last_category_result: ""
     priority: low
     category: sprint
+    tier: reference
 
   - name: retrospective
     spec: GameStudio Skill Testing Framework/skills/sprint/retrospective.md
@@ -620,6 +675,7 @@ skills:
     last_category_result: ""
     priority: low
     category: sprint
+    tier: reference
 
   - name: changelog
     spec: GameStudio Skill Testing Framework/skills/sprint/changelog.md
@@ -631,6 +687,7 @@ skills:
     last_category_result: ""
     priority: low
     category: sprint
+    tier: reference
 
   - name: patch-notes
     spec: GameStudio Skill Testing Framework/skills/sprint/patch-notes.md
@@ -642,6 +699,7 @@ skills:
     last_category_result: ""
     priority: low
     category: sprint
+    tier: reference
 
   - name: onboard
     spec: GameStudio Skill Testing Framework/skills/utility/onboard.md
@@ -653,6 +711,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: localize
     spec: GameStudio Skill Testing Framework/skills/utility/localize.md
@@ -664,6 +723,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: launch-checklist
     spec: GameStudio Skill Testing Framework/skills/utility/launch-checklist.md
@@ -675,6 +735,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: release-checklist
     spec: GameStudio Skill Testing Framework/skills/utility/release-checklist.md
@@ -686,6 +747,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: adopt
     spec: GameStudio Skill Testing Framework/skills/utility/adopt.md
@@ -697,6 +759,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: smoke-check
     spec: GameStudio Skill Testing Framework/skills/utility/smoke-check.md
@@ -708,6 +771,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: soak-test
     spec: GameStudio Skill Testing Framework/skills/utility/soak-test.md
@@ -719,6 +783,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: test-setup
     spec: GameStudio Skill Testing Framework/skills/utility/test-setup.md
@@ -730,6 +795,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: test-helpers
     spec: GameStudio Skill Testing Framework/skills/utility/test-helpers.md
@@ -741,6 +807,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: regression-suite
     spec: GameStudio Skill Testing Framework/skills/utility/regression-suite.md
@@ -752,6 +819,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: qa-plan
     spec: GameStudio Skill Testing Framework/skills/utility/qa-plan.md
@@ -763,6 +831,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: bug-triage
     spec: GameStudio Skill Testing Framework/skills/utility/bug-triage.md
@@ -774,6 +843,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: asset-spec
     spec: GameStudio Skill Testing Framework/skills/utility/asset-spec.md
@@ -785,6 +855,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
   - name: day-one-patch
     spec: GameStudio Skill Testing Framework/skills/utility/day-one-patch.md
@@ -796,6 +867,7 @@ skills:
     last_category_result: ""
     priority: low
     category: utility
+    tier: reference
 
 
   # Web game-dev skills + pre-production gate (added 2026-05-29)
@@ -810,6 +882,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: audio-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/audio-system.md
@@ -821,6 +894,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: battery-optimization
     spec: GameStudio Skill Testing Framework/skills/mobile/battery-optimization.md
@@ -832,6 +906,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: mobile
+    tier: engine
 
   - name: camera-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/camera-system.md
@@ -843,6 +918,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: collision-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/collision-system.md
@@ -854,6 +930,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: ecs-architecture
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-architecture.md
@@ -865,6 +942,7 @@ skills:
     last_category_result: ""
     priority: high
     category: ecs
+    tier: engine
 
   - name: ecs-component-patterns
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-component-patterns.md
@@ -876,6 +954,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: ecs-events
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-events.md
@@ -887,6 +966,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: ecs-performance
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-performance.md
@@ -898,6 +978,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: ecs-queries
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-queries.md
@@ -909,6 +990,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: ecs-serialization
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-serialization.md
@@ -920,6 +1002,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: ecs-system-patterns
     spec: GameStudio Skill Testing Framework/skills/ecs/ecs-system-patterns.md
@@ -931,6 +1014,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: ecs
+    tier: engine
 
   - name: health-combat-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/health-combat-system.md
@@ -942,6 +1026,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: input-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/input-system.md
@@ -953,6 +1038,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: inventory-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/inventory-system.md
@@ -964,6 +1050,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: level-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/level-system.md
@@ -975,6 +1062,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: memory-management
     spec: GameStudio Skill Testing Framework/skills/mobile/memory-management.md
@@ -986,6 +1074,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: mobile
+    tier: engine
 
   - name: mobile-performance
     spec: GameStudio Skill Testing Framework/skills/mobile/mobile-performance.md
@@ -997,6 +1086,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: mobile
+    tier: engine
 
   - name: phaser-2d-game
     spec: GameStudio Skill Testing Framework/skills/web/phaser-2d-game.md
@@ -1008,6 +1098,7 @@ skills:
     last_category_result: ""
     priority: high
     category: web
+    tier: engine
 
   - name: physics-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/physics-system.md
@@ -1019,6 +1110,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: r3f-component-patterns
     spec: GameStudio Skill Testing Framework/skills/react/r3f-component-patterns.md
@@ -1030,6 +1122,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: react
+    tier: engine
 
   - name: r3f-ecs-integration
     spec: GameStudio Skill Testing Framework/skills/react/r3f-ecs-integration.md
@@ -1041,6 +1134,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: react
+    tier: engine
 
   - name: r3f-mobile-patterns
     spec: GameStudio Skill Testing Framework/skills/react/r3f-mobile-patterns.md
@@ -1052,6 +1146,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: react
+    tier: engine
 
   - name: r3f-performance
     spec: GameStudio Skill Testing Framework/skills/react/r3f-performance.md
@@ -1063,6 +1158,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: react
+    tier: engine
 
   - name: r3f-state-management
     spec: GameStudio Skill Testing Framework/skills/react/r3f-state-management.md
@@ -1074,6 +1170,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: react
+    tier: engine
 
   - name: react-three-fiber-setup
     spec: GameStudio Skill Testing Framework/skills/react/react-three-fiber-setup.md
@@ -1085,6 +1182,7 @@ skills:
     last_category_result: ""
     priority: high
     category: react
+    tier: engine
 
   - name: spawn-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/spawn-system.md
@@ -1096,6 +1194,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: threejs-animation
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-animation.md
@@ -1107,6 +1206,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-animation-systems
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-animation-systems.md
@@ -1118,6 +1218,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-best-practices
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-best-practices.md
@@ -1129,6 +1230,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-camera-controls
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-camera-controls.md
@@ -1140,6 +1242,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-environment-maps
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-environment-maps.md
@@ -1151,6 +1254,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-fog
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-fog.md
@@ -1162,6 +1266,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-geometry-management
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-geometry-management.md
@@ -1173,6 +1278,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-instancing-advanced
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-instancing-advanced.md
@@ -1184,6 +1290,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-lighting
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-lighting.md
@@ -1195,6 +1302,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-loaders
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-loaders.md
@@ -1206,6 +1314,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-material-systems
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-material-systems.md
@@ -1217,6 +1326,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-math-utilities
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-math-utilities.md
@@ -1228,6 +1338,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-model-loading
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-model-loading.md
@@ -1239,6 +1350,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-particles
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-particles.md
@@ -1250,6 +1362,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-pbr-materials
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-pbr-materials.md
@@ -1261,6 +1374,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-performance-profiling
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-performance-profiling.md
@@ -1272,6 +1386,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-postprocessing
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-postprocessing.md
@@ -1283,6 +1398,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-raycasting
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-raycasting.md
@@ -1294,6 +1410,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-scene-setup
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-scene-setup.md
@@ -1305,6 +1422,7 @@ skills:
     last_category_result: ""
     priority: high
     category: threejs
+    tier: engine
 
   - name: threejs-shaders
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-shaders.md
@@ -1316,6 +1434,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-shadows
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-shadows.md
@@ -1327,6 +1446,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-sprites
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-sprites.md
@@ -1338,6 +1458,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: threejs-texture-management
     spec: GameStudio Skill Testing Framework/skills/threejs/threejs-texture-management.md
@@ -1349,6 +1470,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: threejs
+    tier: engine
 
   - name: touch-input-handling
     spec: GameStudio Skill Testing Framework/skills/mobile/touch-input-handling.md
@@ -1360,6 +1482,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: mobile
+    tier: engine
 
   - name: typescript-ecs-types
     spec: GameStudio Skill Testing Framework/skills/typescript/typescript-ecs-types.md
@@ -1371,6 +1494,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: typescript
+    tier: engine
 
   - name: typescript-game-types
     spec: GameStudio Skill Testing Framework/skills/typescript/typescript-game-types.md
@@ -1382,6 +1506,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: typescript
+    tier: engine
 
   - name: typescript-performance
     spec: GameStudio Skill Testing Framework/skills/typescript/typescript-performance.md
@@ -1393,6 +1518,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: typescript
+    tier: engine
 
   - name: ui-system
     spec: GameStudio Skill Testing Framework/skills/game-systems/ui-system.md
@@ -1404,6 +1530,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: game-systems
+    tier: engine
 
   - name: vertical-slice
     spec: GameStudio Skill Testing Framework/skills/gate/vertical-slice.md
@@ -1415,6 +1542,7 @@ skills:
     last_category_result: ""
     priority: high
     category: gate
+    tier: core
 
   - name: web-game-foundations
     spec: GameStudio Skill Testing Framework/skills/web/web-game-foundations.md
@@ -1426,6 +1554,7 @@ skills:
     last_category_result: ""
     priority: high
     category: web
+    tier: engine
 
 
   # PixiJS + Phaser 4 official 2D skills (added 2026-05-29)
@@ -1440,6 +1569,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-animations
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-animations.md
@@ -1451,6 +1581,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-audio-and-sound
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-audio-and-sound.md
@@ -1462,6 +1593,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-cameras
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-cameras.md
@@ -1473,6 +1605,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-curves-and-paths
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-curves-and-paths.md
@@ -1484,6 +1617,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-data-manager
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-data-manager.md
@@ -1495,6 +1629,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-events-system
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-events-system.md
@@ -1506,6 +1641,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-filters-and-postfx
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-filters-and-postfx.md
@@ -1517,6 +1653,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-game-object-components
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-game-object-components.md
@@ -1528,6 +1665,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-game-setup-and-config
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-game-setup-and-config.md
@@ -1539,6 +1677,7 @@ skills:
     last_category_result: ""
     priority: high
     category: phaser
+    tier: engine
 
   - name: phaser-geometry-and-math
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-geometry-and-math.md
@@ -1550,6 +1689,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-graphics-and-shapes
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-graphics-and-shapes.md
@@ -1561,6 +1701,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-groups-and-containers
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-groups-and-containers.md
@@ -1572,6 +1713,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-input-keyboard-mouse-touch
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-input-keyboard-mouse-touch.md
@@ -1583,6 +1725,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-loading-assets
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-loading-assets.md
@@ -1594,6 +1737,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-particles
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-particles.md
@@ -1605,6 +1749,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-physics-arcade
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-physics-arcade.md
@@ -1616,6 +1761,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-physics-matter
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-physics-matter.md
@@ -1627,6 +1773,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-render-textures
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-render-textures.md
@@ -1638,6 +1785,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-scale-and-responsive
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-scale-and-responsive.md
@@ -1649,6 +1797,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-scenes
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-scenes.md
@@ -1660,6 +1809,7 @@ skills:
     last_category_result: ""
     priority: high
     category: phaser
+    tier: engine
 
   - name: phaser-sprites-and-images
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-sprites-and-images.md
@@ -1671,6 +1821,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-text-and-bitmaptext
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-text-and-bitmaptext.md
@@ -1682,6 +1833,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-tilemaps
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-tilemaps.md
@@ -1693,6 +1845,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-time-and-timers
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-time-and-timers.md
@@ -1704,6 +1857,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-tweens
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-tweens.md
@@ -1715,6 +1869,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-v3-to-v4-migration
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-v3-to-v4-migration.md
@@ -1726,6 +1881,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: phaser-v4-new-features
     spec: GameStudio Skill Testing Framework/skills/phaser/phaser-v4-new-features.md
@@ -1737,6 +1893,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: phaser
+    tier: engine
 
   - name: pixi
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi.md
@@ -1748,6 +1905,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pixi
+    tier: engine
 
   - name: pixi-accessibility
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-accessibility.md
@@ -1759,6 +1917,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-application
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-application.md
@@ -1770,6 +1929,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pixi
+    tier: engine
 
   - name: pixi-assets
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-assets.md
@@ -1781,6 +1941,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-blend-modes
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-blend-modes.md
@@ -1792,6 +1953,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-color
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-color.md
@@ -1803,6 +1965,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-core-concepts
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-core-concepts.md
@@ -1814,6 +1977,7 @@ skills:
     last_category_result: ""
     priority: high
     category: pixi
+    tier: engine
 
   - name: pixi-create
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-create.md
@@ -1825,6 +1989,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-custom-rendering
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-custom-rendering.md
@@ -1836,6 +2001,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-environments
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-environments.md
@@ -1847,6 +2013,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-events
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-events.md
@@ -1858,6 +2025,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-filters
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-filters.md
@@ -1869,6 +2037,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-math
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-math.md
@@ -1880,6 +2049,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-migration-v8
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-migration-v8.md
@@ -1891,6 +2061,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-performance
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-performance.md
@@ -1902,6 +2073,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-container
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-container.md
@@ -1913,6 +2085,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-core-concepts
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-core-concepts.md
@@ -1924,6 +2097,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-dom-container
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-dom-container.md
@@ -1935,6 +2109,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-gif
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-gif.md
@@ -1946,6 +2121,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-graphics
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-graphics.md
@@ -1957,6 +2133,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-mesh
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-mesh.md
@@ -1968,6 +2145,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-particle-container
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-particle-container.md
@@ -1979,6 +2157,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-sprite
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-sprite.md
@@ -1990,6 +2169,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-scene-text
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-scene-text.md
@@ -2001,6 +2181,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
   - name: pixi-ticker
     spec: GameStudio Skill Testing Framework/skills/pixi/pixi-ticker.md
@@ -2012,6 +2193,7 @@ skills:
     last_category_result: ""
     priority: medium
     category: pixi
+    tier: engine
 
 agents:
   # Tier 1 Directors (highest reasoning)
@@ -2020,24 +2202,28 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: director
+    tier: reference
 
   - name: technical-director
     spec: GameStudio Skill Testing Framework/agents/directors/technical-director.md
     last_spec: ""
     last_spec_result: ""
     category: director
+    tier: reference
 
   - name: producer
     spec: GameStudio Skill Testing Framework/agents/directors/producer.md
     last_spec: ""
     last_spec_result: ""
     category: director
+    tier: reference
 
   - name: art-director
     spec: GameStudio Skill Testing Framework/agents/directors/art-director.md
     last_spec: ""
     last_spec_result: ""
     category: director
+    tier: reference
 
   # Tier 2 Leads (balanced reasoning)
   - name: lead-programmer
@@ -2045,42 +2231,49 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: qa-lead
     spec: GameStudio Skill Testing Framework/agents/leads/qa-lead.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: narrative-director
     spec: GameStudio Skill Testing Framework/agents/leads/narrative-director.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: audio-director
     spec: GameStudio Skill Testing Framework/agents/leads/audio-director.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: game-designer
     spec: GameStudio Skill Testing Framework/agents/leads/game-designer.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: systems-designer
     spec: GameStudio Skill Testing Framework/agents/leads/systems-designer.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   - name: level-designer
     spec: GameStudio Skill Testing Framework/agents/leads/level-designer.md
     last_spec: ""
     last_spec_result: ""
     category: lead
+    tier: reference
 
   # Core Specialists (balanced reasoning)
   - name: gameplay-programmer
@@ -2088,72 +2281,84 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: ai-programmer
     spec: GameStudio Skill Testing Framework/agents/specialists/ai-programmer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: technical-artist
     spec: GameStudio Skill Testing Framework/agents/specialists/technical-artist.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: sound-designer
     spec: GameStudio Skill Testing Framework/agents/specialists/sound-designer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: engine-programmer
     spec: GameStudio Skill Testing Framework/agents/specialists/engine-programmer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: tools-programmer
     spec: GameStudio Skill Testing Framework/agents/specialists/tools-programmer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: network-programmer
     spec: GameStudio Skill Testing Framework/agents/specialists/network-programmer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: security-engineer
     spec: GameStudio Skill Testing Framework/agents/qa/security-engineer.md
     last_spec: ""
     last_spec_result: ""
     category: qa
+    tier: reference
 
   - name: accessibility-specialist
     spec: GameStudio Skill Testing Framework/agents/qa/accessibility-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: qa
+    tier: reference
 
   - name: ux-designer
     spec: GameStudio Skill Testing Framework/agents/specialists/ux-designer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: ui-programmer
     spec: GameStudio Skill Testing Framework/agents/specialists/ui-programmer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: performance-analyst
     spec: GameStudio Skill Testing Framework/agents/specialists/performance-analyst.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   # Engine Specialists — Godot
   - name: godot-specialist
@@ -2161,30 +2366,35 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: godot-gdscript-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/godot/godot-gdscript-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: godot-csharp-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/godot/godot-csharp-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: godot-shader-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/godot/godot-shader-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: godot-gdextension-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/godot/godot-gdextension-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   # Engine Specialists — Unity
   - name: unity-specialist
@@ -2192,30 +2402,35 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: unity-ui-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unity/unity-ui-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: unity-shader-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unity/unity-shader-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: unity-dots-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unity/unity-dots-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: unity-addressables-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unity/unity-addressables-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   # Engine Specialists — Unreal
   - name: unreal-specialist
@@ -2223,30 +2438,35 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: ue-blueprint-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unreal/ue-blueprint-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: ue-gas-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unreal/ue-gas-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: ue-umg-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unreal/ue-umg-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: ue-replication-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/unreal/ue-replication-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   # Operations
   - name: devops-engineer
@@ -2254,42 +2474,49 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: release-manager
     spec: GameStudio Skill Testing Framework/agents/operations/release-manager.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: live-ops-designer
     spec: GameStudio Skill Testing Framework/agents/operations/live-ops-designer.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: community-manager
     spec: GameStudio Skill Testing Framework/agents/operations/community-manager.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: analytics-engineer
     spec: GameStudio Skill Testing Framework/agents/operations/analytics-engineer.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: economy-designer
     spec: GameStudio Skill Testing Framework/agents/operations/economy-designer.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   - name: localization-lead
     spec: GameStudio Skill Testing Framework/agents/operations/localization-lead.md
     last_spec: ""
     last_spec_result: ""
     category: operations
+    tier: reference
 
   # QA & Creative
   - name: qa-tester
@@ -2297,24 +2524,28 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: qa
+    tier: reference
 
   - name: prototyper
     spec: GameStudio Skill Testing Framework/agents/specialists/prototyper.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: writer
     spec: GameStudio Skill Testing Framework/agents/specialists/writer.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   - name: world-builder
     spec: GameStudio Skill Testing Framework/agents/specialists/world-builder.md
     last_spec: ""
     last_spec_result: ""
     category: specialist
+    tier: reference
 
   # Web engine specialists (added 2026-05-29)
 
@@ -2323,24 +2554,28 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: webgl-shader-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/web/webgl-shader-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: web3d-asset-pipeline
     spec: GameStudio Skill Testing Framework/agents/engine/web/web3d-asset-pipeline.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: pixijs-specialist
     spec: GameStudio Skill Testing Framework/agents/engine/web/pixijs-specialist.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   # Web 2D engine specialists (added 2026-05-29)
 
@@ -2349,9 +2584,37 @@ agents:
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
 
   - name: web2d-asset-pipeline
     spec: GameStudio Skill Testing Framework/agents/engine/web/web2d-asset-pipeline.md
     last_spec: ""
     last_spec_result: ""
     category: engine
+    tier: engine
+
+  # Convergence / verification (added 2026-11-03)
+
+  - name: converge
+    spec: GameStudio Skill Testing Framework/skills/pipeline/converge.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: critical
+    category: pipeline
+    tier: core
+
+  - name: verify
+    spec: GameStudio Skill Testing Framework/skills/pipeline/verify.md
+    last_static: ""
+    last_static_result: ""
+    last_spec: ""
+    last_spec_result: ""
+    last_category: ""
+    last_category_result: ""
+    priority: critical
+    category: pipeline
+    tier: core

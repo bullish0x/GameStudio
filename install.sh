@@ -37,11 +37,11 @@ use_existing_manifest(){
 TOOLING_PATHS=(
   ".claude/agents" ".claude/skills" ".claude/hooks" ".claude/rules"
   ".claude/docs" ".claude/agent-memory" ".claude/statusline.sh"
-  ".agents" ".codex" ".cursor"
+  ".agents" ".codex" ".cursor" ".opencode"
   ".codex-plugin" ".claude-plugin"
   "docs/engine-reference" "docs/HARNESS-COMPATIBILITY.md"
-  "docs/CODEX_ADAPTER.md" "docs/CLAUDE_ADAPTER.md" "docs/PLUGIN_PACKAGING.md"
-  "GameStudio Skill Testing Framework"
+  "docs/CODEX_ADAPTER.md" "docs/CLAUDE_ADAPTER.md" "docs/PLUGIN_PACKAGING.md" "docs/OPENCODE_ADAPTER.md"
+  "GameStudio Skill Testing Framework" "tools"
 )
 # Handled specially — never overwritten (a side-file is written for you to merge).
 SPECIAL_PATHS=( ".claude/settings.json" "CLAUDE.md" "AGENTS.md" )

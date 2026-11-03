@@ -662,3 +662,5 @@ If any spawned agent returns BLOCKED, errors, or fails to complete:
    with grouped options — not a separate plain-text question per file.
 6. **Non-blocking** — the verdict is advisory; the user decides whether to continue
    despite CONCERNS or even FAIL findings
+
+Next: run `/gate-check` after the slice review.

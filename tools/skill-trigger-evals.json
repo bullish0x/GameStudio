@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "updated": "2026-11-03",
+  "threshold": 0.8,
+  "skills": {
+    "gate-check": {
+      "should": [
+        "Are we ready to move from pre-production into production?",
+        "Run the phase gate check before we advance.",
+        "Give me a PASS/CONCERNS/FAIL verdict on advancing to the next stage."
+      ],
+      "should_not": [
+        "Review this design document for completeness.",
+        "Start coding the next backlog story."
+      ]
+    },
+    "design-review": {
+      "should": [
+        "Review the combat GDD for gaps and contradictions.",
+        "Is this design doc complete enough to hand to the architects?",
+        "Critique this game design document before implementation."
+      ],
+      "should_not": [
+        "Are all the GDDs consistent with each other?",
+        "Draft a new system design doc from scratch."
+      ]
+    },
+    "story-readiness": {
+      "should": [
+        "Is this story ready to be implemented?",
+        "Check the story file for acceptance criteria and ADR references.",
+        "Validate story readiness before the sprint starts."
+      ],
+      "should_not": [
+        "Mark this story done and update its status.",
+        "Break the epic into individual stories."
+      ]
+    },
+    "story-done": {
+      "should": [
+        "This story is finished, close it out.",
+        "Verify the acceptance criteria for the jump story and mark it done.",
+        "Do the end-of-story completion review."
+      ],
+      "should_not": [
+        "Is this story ready to start?",
+        "Run the build and tests for the whole project."
+      ]
+    },
+    "review-all-gdds": {
+      "should": [
+        "Check all system GDDs for contradictions with each other.",
+        "Do a holistic cross-GDD consistency review.",
+        "Find stale references between every design document."
+      ],
+      "should_not": [
+        "Review just the combat GDD.",
+        "Scan the entity registry for stat mismatches."
+      ]
+    },
+    "architecture-review": {
+      "should": [
+        "Review the architecture against all the GDDs.",
+        "Build a traceability matrix from GDD requirements to ADRs.",
+        "Review the architecture against all GDDs and report coverage gaps."
+      ],
+      "should_not": [
+        "Write an ADR for the networking decision.",
+        "Check whether the control manifest rules are actionable."
+      ]
+    },
+    "create-epics": {
+      "should": [
+        "Turn the approved GDDs and architecture into epics.",
+        "Create one epic per architectural module.",
+        "Break the approved design into epics with ADR references."
+      ],
+      "should_not": [
+        "Break this epic into implementable story files.",
+        "Implement the first story."
+      ]
+    },
+    "create-stories": {
+      "should": [
+        "Break the combat epic into implementable stories.",
+        "Create story files from this epic with acceptance criteria.",
+        "Split the epic into stories with GDD TR-IDs."
+      ],
+      "should_not": [
+        "Turn the design into epics.",
+        "Implement the story about the dash ability."
+      ]
+    },
+    "dev-story": {
+      "should": [
+        "Implement the player dash story.",
+        "Read the story file and build it.",
+        "Code the story for the inventory system."
+      ],
+      "should_not": [
+        "Is this story ready for implementation?",
+        "Close out the finished story."
+      ]
+    },
+    "create-control-manifest": {
+      "should": [
+        "Produce the flat rules sheet for programmers from the ADRs.",
+        "Create the control manifest after architecture is done.",
+        "List what programmers must and must not do per system."
+      ],
+      "should_not": [
+        "Review the architecture against the GDDs.",
+        "Write an ADR for the save system."
+      ]
+    },
+    "propagate-design-change": {
+      "should": [
+        "The combat GDD changed, which ADRs are now stale?",
+        "Propagate this design change through the architecture.",
+        "Scan the ADRs and traceability index after a GDD revision."
+      ],
+      "should_not": [
+        "Write the new GDD section for combat.",
+        "Check all GDDs against the entity registry."
+      ]
+    },
+    "architecture-decision": {
+      "should": [
+        "Write an ADR for choosing an ECS architecture.",
+        "Document the networking decision with context and alternatives.",
+        "Record this technical decision as an architecture decision record."
+      ],
+      "should_not": [
+        "Review the whole architecture against the GDDs.",
+        "Create the control manifest."
+      ]
+    },
+    "map-systems": {
+      "should": [
+        "Decompose this game concept into systems.",
+        "Map the dependencies between game systems.",
+        "Create the systems index and prioritize design order."
+      ],
+      "should_not": [
+        "Write the GDD for one system.",
+        "Create epics from the architecture."
+      ]
+    },
+    "design-system": {
+      "should": [
+        "Write the GDD for the inventory system section by section.",
+        "Author the combat system design document with me.",
+        "Walk me through each required GDD section for crafting."
+      ],
+      "should_not": [
+        "Decompose the concept into systems.",
+        "Review the design doc for completeness."
+      ]
+    },
+    "consistency-check": {
+      "should": [
+        "Scan all GDDs against the entity registry for stat mismatches.",
+        "Find the same item with different values across documents.",
+        "Detect cross-document inconsistencies in formulas."
+      ],
+      "should_not": [
+        "Review one GDD for internal consistency.",
+        "Check the architecture traceability matrix."
+      ]
+    },
+    "vertical-slice": {
+      "should": [
+        "Build a production-quality vertical slice to prove the game loop.",
+        "Create the end-to-end pre-production validation build.",
+        "Prove the full game loop is achievable before production."
+      ],
+      "should_not": [
+        "Implement one story from the backlog.",
+        "Run the phase gate check."
+      ]
+    },
+    "converge": {
+      "should": [
+        "Check what has drifted between the docs and the implementation.",
+        "Run the terminal drift check after this change set.",
+        "Do the converge report before the milestone review."
+      ],
+      "should_not": [
+        "Run the build and tests.",
+        "Check all GDDs against each other."
+      ]
+    },
+    "verify": {
+      "should": [
+        "Run the build, typecheck, lint, and tests and report evidence.",
+        "Verify the project actually passes before we call it done.",
+        "Run the real verification commands for this change."
+      ],
+      "should_not": [
+        "Check the docs for drift against the code.",
+        "Close the finished story."
+      ]
+    }
+  }
+}

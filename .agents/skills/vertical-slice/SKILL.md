@@ -355,3 +355,5 @@ Ask: "May I append this to `prototypes/GRAVEYARD.md`?" If yes, add one entry:
   network delay. The slice can validate that the game loop is interesting and
   complete; it cannot validate that networked mechanics feel good under real
   conditions. Network feel requires real peers or simulated latency.
+
+Verdict: PASS / CONCERNS / FAIL (mapped to PROCEED / PIVOT / KILL).
